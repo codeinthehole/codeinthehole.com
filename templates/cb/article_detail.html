@@ -1,0 +1,13 @@
+{% extends 'html5boilerplate/index.html' %}
+
+{% block header %}
+	<h1>{{ article.title }}</h1>
+	<h2>David Winterbottom</h2>
+	<h3>{{ article.date_published|default:"Unpublished" }}</h3>
+{% endblock %}
+
+{% block main %}
+
+{{ article.body_html|safe }}
+
+{% endblock %}

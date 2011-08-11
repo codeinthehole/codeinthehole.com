@@ -2,7 +2,7 @@
 
 {% block main %}
     <div id="main_article">
-        <h3>{{ main_article.title }}</h3>
+        <h3><a href="{% url article-detail main_article.id %}">{{ main_article.title }}</a></h3>
     </div>
     <div id="other_articles">
         <h3>Recent articles</h3>
