@@ -60,6 +60,8 @@ This can be used within your celery task to capture the logging output
         payload.log_messages = handler.messages_str()
         payload.save()
 
+    xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|
+
 And here is some PHP.
 
 .. sourcecode:: php

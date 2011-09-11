@@ -214,7 +214,7 @@ td { vertical-align: top; }
 #container {
     margin: 0 auto;
     position: relative;
-    width: 800px;
+    width: 820px;
     overflow: auto;
 }
 pre {
@@ -245,17 +245,18 @@ p, h2, h3 {
 }
 
 /* RST */
+div.highlight {
+    width: 820px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 tt.docutils {
     border: 1px solid #ccc;
     background-color: #f8f8f8;
     padding: 2px 5px;
 }
-.highlight {
-    background-color: white;
-}
 .highlight pre {
-    border: 1px dashed #ddd;
-    padding: 8px 8px;   
+    padding: 10px;   
 }
 
 #main {
