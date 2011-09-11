@@ -5,6 +5,8 @@ Fabric vs. Phing
 A comparison of the popular deployment tools for PHP and Python
 ---------------------------------------------------------------
 
+.. image:: /static/images/me.jpg
+
 As far as I'm aware, fabric and phing are the most popular deployment tools for Python and PHP
 projects respectively.  I've used them both extensively; this article details some of the 
 main differences.

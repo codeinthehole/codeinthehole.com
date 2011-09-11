@@ -18,6 +18,9 @@ class ArticleListView(ListView):
     template_name = 'cb/article_list.html'
     context_object_name = 'articles'
     
+    def get_queryset(self):
+        return self.model.objects.all().exclude(date_published=None)
+    
 
 class ArticleDetailView(DetailView):
     model = Article

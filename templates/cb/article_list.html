@@ -3,13 +3,18 @@
 {% block content %}
 
     <h1>Articles</h1>
-    <table>
-        {% for article in articles %}
-        <tr>
-            <td>{{ article.date_published|date:"d m Y"}}</td>
-            <td><a href="{{ article.get_absolute_url }}">{{ article.title}}</a> --- {{ article.summary }}</td>
-        </tr>
-        {% endfor %}        
+    <table class="articles">
+        <tbody>
+            {% for article in articles %}
+            <tr>
+                <td class="date">{{ article.date_published|date:"F d, Y"}}</td>
+                <td>
+                    <h2><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h2>
+                    <p>{{ article.summary }}</p>
+                </td>
+            </tr>
+            {% endfor %}   
+        </tbody>     
     </table>
 
 {% endblock %}

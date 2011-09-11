@@ -285,6 +285,30 @@ tt.docutils {
     padding: 10px;   
 }
 
+/* Article list styles */
+.articles {
+    margin-top: 30px;
+}
+.articles td.date {
+    color: #aaa;
+    white-space: nowrap;
+    padding-right: 20px;
+} 
+.articles td h2 {
+    width: auto;
+    font-family: 'Droid Serif', serif;
+    color: #8C0808;
+    margin: 0px;
+}
+.articles td h2 a:active, .articles td h2 a:visited, .articles td h2 a:link {
+    font-family: 'Droid Serif', serif;
+    color: #8C0808;
+    text-decoration: none;
+}
+.articles td p {
+    width: auto;
+    margin: 5px 0 20px 0;
+}
 
 
 /* ==|== non-semantic helper classes ========================================
