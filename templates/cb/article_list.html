@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div id="main_article">
-        <h3><a href="{{ main_article.get_absolute_url }}">{{ main_article.title }}</a></h3>
-    </div>
-    <div id="other_articles">
-        <h3>Recent articles</h3>
-        {% for article in other_articles %}
-            <h4>{{ article.title }}</h4>
-            {{ article.body_html|safe }}
-            <a href="{{ article.get_absolute_url }}">Read more...</a>
-        {% endfor %}
-    </div>
+
+    <h1>Articles</h1>
+    <table>
+        {% for article in articles %}
+        <tr>
+            <td>{{ article.date_published|date:"d m Y"}}</td>
+            <td><a href="{{ article.get_absolute_url }}">{{ article.title}}</a> --- {{ article.summary }}</td>
+        </tr>
+        {% endfor %}        
+    </table>
 
 {% endblock %}

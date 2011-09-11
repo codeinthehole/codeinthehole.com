@@ -12,7 +12,8 @@ class Article(models.Model):
     filename = models.CharField(max_length=255, unique=True)
 
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True)
+    summary = models.TextField()
     
     # Article is created in RST, oonverted to HTML
     body_rst = models.TextField()

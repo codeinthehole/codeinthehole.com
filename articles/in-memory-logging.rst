@@ -2,6 +2,10 @@
 Using an in-memory logger with Celery tasks
 ===========================================
 
+----------------------------------------------------------------------------------------------------
+Creating a custom logging handler that allows output to be captured so it can be written to a model.
+----------------------------------------------------------------------------------------------------
+
 Problem
 =======
 You want to be able to capture the logging output for a Celery task

@@ -1,6 +1,9 @@
 Todo
 ====
 
+- Extract summary out of RST
+
+
 * Single article page
     - Related articles
     - Syntax highlighting

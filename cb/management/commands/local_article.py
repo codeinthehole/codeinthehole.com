@@ -37,6 +37,7 @@ class Command(BaseCommand):
 
         # Update model
         article.title = parts['title']
+        article.summary = parts['subtitle']
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
         article.save()
