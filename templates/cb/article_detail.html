@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block extra_head %}
+{{ block.super }}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
@@ -17,10 +18,10 @@
 
 <div id="further-reading">
     {% if previous_article %}
-    Previous: <a href="{{ article.get_absolute_url }}">{{ previous_article.title }}</a>
+    <p>Previous: <a href="{{ previous_article.get_absolute_url }}">{{ previous_article.title }}</a></p>
     {% endif %}
     {% if next_article %}
-    Next: <a href="{{ article.get_absolute_url }}">{{ next_article.title }}</a>
+    <p>Next: <a href="{{ next_article.get_absolute_url }}">{{ next_article.title }}</a></p>
     {% endif %}
 </div>
 

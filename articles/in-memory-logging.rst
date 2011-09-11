@@ -15,6 +15,9 @@ Do something with ``python manage.py something``.
 
 Solution
 ========
+xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxxxxx|xxxxxx
+
+
 Create an in-memory logging handler
 
 .. sourcecode:: python

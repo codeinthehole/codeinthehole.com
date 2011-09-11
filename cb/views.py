@@ -18,9 +18,6 @@ class ArticleListView(ListView):
     template_name = 'cb/article_list.html'
     context_object_name = 'articles'
     
-#    def get_context_data(self, **kwargs):
-#        assert False
-
 
 class ArticleDetailView(DetailView):
     model = Article

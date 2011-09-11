@@ -211,37 +211,63 @@ td { vertical-align: top; }
    Author: David Winerbottom
    ========================================================================== */
 
-#container {
-    margin: 0 auto;
-    position: relative;
-    width: 820px;
-    overflow: auto;
+/* Global */
+header, footer, p, h2, h3, th, td, li {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+.meta {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    color: #333;
+    text-align: center;
+}
+footer {
+    margin: 30px 0 0 0;
+}
+header a, header a:active, header a:link, header a:visited {
+    color: #333;
 }
 pre {
     font-size: 1.2em;
 }
-
-/* Global */
-p, h2, h3 {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+#container {
+    margin: 0 auto;
+    position: relative;
+    width: 820px;
+    overflow: hidden;
 }
+h1, h2, h3, h4 {
+    width: 820px;
+}
+p {
+    width: 600px;
+}
+h1 {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 20px 0px 0px 0px;
+}
+
 
 /* Article styles */
 .article h1#article_title {
-    font-family: 'Black Ops One', sans-serif;
+    font-family: 'Droid Serif', serif;
     font-size: 4em;
     font-weight: normal;
     color: #8C0808;
     margin-bottom: 0;
 }
-.article h3 {
-    color: #555;
+.article h1 {
+    font-family: 'Droid Serif', serif;
+    font-weight: normal;
 }
 .article h3#published_date {
-    margin-top: 0;
+    margin: 0 0 30px 0;
     font-weight: normal;
-    font-family: 'Cedarville Cursive', cursive;    
+    font-style: italic;
+    
 }
 
 /* RST */
@@ -258,37 +284,6 @@ tt.docutils {
 .highlight pre {
     padding: 10px;   
 }
-
-#main {
-    overflow: auto;
-}
-#meta-content {
-    float: right;
-    width: 200px;
-}
-#content {
-    float: left;
-    width: 580px;
-}
-
-
-/* Django admin overrides */
-#id_body_rst {
-    color: red;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

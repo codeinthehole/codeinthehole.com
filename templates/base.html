@@ -3,32 +3,25 @@
 {% block title %}codeinthehole.com{% endblock %}
 
 {% block extra_head %}
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block bodyclass %}article{% endblock %}
     
 {% block body %}    
 <div id="container">
+    <header class="meta">
+        {% block header %}
+            <a href="{% url home %}"><strong>codeinthehole.com</strong></a> is the personal site of 
+            <a href="{% url about %}"><strong>David Winterbottom</strong></a>.
+        {% endblock header %}
+    </header>
     <div id="main" role="main">
-        <div id="meta-content">
-            <header>
-                {% block header %}
-                    <h1>David Winterbottom</h1>
-                    <h2>codeinthehole.com</h2>
-                {% endblock header %}
-            </header>
-            <a href="{% url home %}" title="Home">Home</a> |
-            <a href="{% url articles %}" title="Blog">Blog</a> |
-            <a href="{% url about %}" title="About">About</a>            
-        </div>
         <div id="content">
             {% block content %}{% endblock %}
         </div>
     </div>
-    <footer>
+    <footer class="meta">
         {% block footer %}Copyright {% now "Y" %} by David Winterbottom<br/>
         Contact me via 
         <a href"mailto:david.winterbottom@gmail.com">email</a>,
