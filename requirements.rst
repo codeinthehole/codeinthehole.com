@@ -5,6 +5,7 @@ Todo
     - Related articles
     - Syntax highlighting
     - Put meta at top of page
+    - Article summary
     
 * Show snippets on homepage
 * Get python highlighted correctly

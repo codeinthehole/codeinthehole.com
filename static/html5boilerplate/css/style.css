@@ -227,7 +227,7 @@ p, h2, h3 {
 
 /* Article styles */
 .article h1#article_title {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Black Ops One', sans-serif;
     font-size: 4em;
     font-weight: normal;
     color: #8C0808;
@@ -238,7 +238,8 @@ p, h2, h3 {
 }
 .article h3#published_date {
     margin-top: 0;
-    font-weight: normal;    
+    font-weight: normal;
+    font-family: 'Cedarville Cursive', cursive;    
 }
 
 #main {
