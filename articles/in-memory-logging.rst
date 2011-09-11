@@ -9,11 +9,15 @@ Creating a custom logging handler that allows output to be captured so it can be
 Problem
 =======
 You want to be able to capture the logging output for a Celery task
-and update a model with this information.
+and update a model with this information [1]_.
+
+Do something with ``python manage.py something``.
 
 Solution
 ========
-Create an in-memory logging handler::
+Create an in-memory logging handler
+
+.. sourcecode:: python
 
     import logging
 
@@ -35,7 +39,9 @@ Create an in-memory logging handler::
             """
             return "\n".join(self.messages)
 
-This can be used within your celery task to capture the logging output::
+This can be used within your celery task to capture the logging output
+
+.. sourcecode:: python
 
     @task
     def process_model(payload):
@@ -54,8 +60,26 @@ This can be used within your celery task to capture the logging output::
         payload.log_messages = handler.messages_str()
         payload.save()
 
+And here is some PHP.
+
+.. sourcecode:: php
+
+    <?php
+    $a = 100;
+
+    class Dave()
+    {
+        public function __construct($name)
+        {
+            $this->name = $name;
+        }
+    }
+
+
 Discussion
 ==========
 This is a useful pattern to use.
 
+-----------------------
 
+.. [1] This is the text in the footnote

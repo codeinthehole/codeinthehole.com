@@ -215,8 +215,10 @@ td { vertical-align: top; }
     margin: 0 auto;
     position: relative;
     width: 800px;
-    border: 1px solid red;
     overflow: auto;
+}
+pre {
+    font-size: 1.2em;
 }
 
 /* Global */
@@ -242,17 +244,29 @@ p, h2, h3 {
     font-family: 'Cedarville Cursive', cursive;    
 }
 
+/* RST */
+tt.docutils {
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 2px 5px;
+}
+.highlight {
+    background-color: white;
+}
+.highlight pre {
+    border: 1px dashed #ddd;
+    padding: 8px 8px;   
+}
+
 #main {
     overflow: auto;
 }
 #meta-content {
     float: right;
-    border: 1px solid blue;
     width: 200px;
 }
 #content {
     float: left;
-    border: 1px solid green;
     width: 580px;
 }
 

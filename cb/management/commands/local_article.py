@@ -3,11 +3,16 @@ For creating a local article based on a RST file
 """
 import logging
 import os
+
+import cb.rstcode
+
 from docutils.core import publish_parts
 
 from django.core.management.base import BaseCommand, CommandError
 
 from cb.models import Article
+
+
 
 
 class Command(BaseCommand):

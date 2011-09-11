@@ -1,7 +1,9 @@
 Todo
 ====
 
-- Extract summary out of RST
+- Sort out single page layout
+- Allow code to be wider than text
+
 
 
 * Single article page
