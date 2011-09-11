@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block main %}
+{% block content %}
     <div id="main_article">
-        <h3><a href="{% url article main_article.id %}">{{ main_article.title }}</a></h3>
+        <h3><a href="{{ main_article.get_absolute_url }}">{{ main_article.title }}</a></h3>
     </div>
     <div id="other_articles">
         <h3>Recent articles</h3>
         {% for article in other_articles %}
             <h4>{{ article.title }}</h4>
             {{ article.body_html|safe }}
-            <a href="{% url article article.id %}">Read more...</a>
+            <a href="{{ article.get_absolute_url }}">Read more...</a>
         {% endfor %}
     </div>
 
