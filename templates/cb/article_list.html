@@ -1,13 +1,16 @@
-{% extends 'html5boilerplate/index.html' %}
+{% extends 'base.html' %}
 
 {% block main %}
     <div id="main_article">
-        <h3><a href="{% url article-detail main_article.id %}">{{ main_article.title }}</a></h3>
+        <h3><a href="{% url article main_article.id %}">{{ main_article.title }}</a></h3>
     </div>
     <div id="other_articles">
         <h3>Recent articles</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        {% for article in other_articles %}
+            <h4>{{ article.title }}</h4>
+            {{ article.body_html|safe }}
+            <a href="{% url article article.id %}">Read more...</a>
+        {% endfor %}
     </div>
 
 {% endblock %}

@@ -208,13 +208,15 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author: 
+   Author: David Winerbottom
    ========================================================================== */
 
 #container {
     margin: 0 auto;
     position: relative;
-    width: 512px;
+    width: 800px;
+    border: 1px solid red;
+    overflow: auto;
 }
 h1, h2, p {
     font-family: 'Josefin Sans', sans-serif;
@@ -222,6 +224,27 @@ h1, h2, p {
 p {
     font-size: 1.6em;
 }
+
+#main {
+    overflow: auto;
+}
+#meta-content {
+    float: right;
+    border: 1px solid blue;
+    width: 200px;
+}
+#content {
+    float: left;
+    border: 1px solid green;
+    width: 580px;
+}
+
+
+/* Django admin overrides */
+#id_body_rst {
+    color: red;
+}
+
 
 
 

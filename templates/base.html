@@ -1,0 +1,32 @@
+{% extends 'html5boilerplate/index.html' %}
+
+{% block title %}codeinthehole.com{% endblock %}
+
+{% block extra_head %}
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+{% endblock %}
+    
+{% block body %}    
+<div id="container">
+    <div id="main" role="main">
+        <div id="meta-content">
+            <header>
+                {% block header %}
+                    <h1>David Winterbottom</h1>
+                    <h2>codeinthehole.com</h2>
+                {% endblock header %}
+            </header>
+            <a href="{% url home %}" title="Home">Home</a> |
+            <a href="{% url articles %}" title="Blog">Blog</a> |
+            <a href="{% url about %}" title="About">About</a>            
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        {% block footer %}Copyright David Winterbottom // Created using Django, HTML5BoilerPlate
+        {% endblock %}
+    </footer>
+</div>
+{% endblock %}

@@ -1,8 +1,18 @@
 Todo
 ====
 
-Single article page
-Show snippets on homepage
+* Single article page
+    - Related articles
+    - Syntax highlighting
+    
+* Show snippets on homepage
+* Get python highlighted correctly
+* Long code lines?
+* Next and prevoius articles
+TAgging articles
+RSS feeds
+
+* Split project into library and project
 
 
 Requirements
@@ -21,7 +31,17 @@ Pages
 =====
 
 * Homepage - extended snippet of first article, short snippets of 4 more
+  - some intro text and links to github etc
+* Blog page - Extended snippet of most recent 5 articles and shorter
+  shippets of next 5.
 * Article page - links to previous and next articles
+* About page
+
+
+To copy
+=======
+http://hawksworx.com/blog/
+http://kev.inburke.com/kevin/site-redesign/
 
 Design
 ======

@@ -12,7 +12,7 @@
 	More info: h5bp.com/b/378 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>{% block title %}codeinthehole.com{% endblock %}</title>
+	<title>{% block title %}{% endblock %}</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -26,7 +26,8 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}html5boilerplate/css/style.css">
 	<!-- end CSS-->
 
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    {% block extra_head %}
+	{% endblock %}
 
 	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -37,22 +38,7 @@
 	</head>
 
 	<body>
-		<div id="container">
-			<header>
-			    {% block header %}
-				<h1>David Winterbottom</h1>
-				<h2>codeinthehole.com</h2>
-				{% endblock header %}
-			</header>
-			<div id="main" role="main">
-				{% block main %}{% endblock %}
-			</div>
-			<footer>
-			{% block footer %}Copyright David Winterbottom // Created using Django, HTML5BoilerPlate
-			
-			{% endblock %}
-			</footer>
-		</div>
+	    {% block body %}{% endblock %}
 
 		<!-- JavaScript at the bottom for fast page loading -->
 

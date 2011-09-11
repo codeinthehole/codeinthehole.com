@@ -1,13 +1,23 @@
-{% extends 'html5boilerplate/index.html' %}
+{% extends 'base.html' %}
 
-{% block header %}
-	<h1>{{ article.title }}</h1>
-	<h2>David Winterbottom</h2>
-	<h3>{{ article.date_published|default:"Unpublished" }}</h3>
-{% endblock %}
-
-{% block main %}
-
+{% block content %}
+<h1>{{ article.title }}</h1>
+<h3>
+    {% if article.is_published %}
+        Published {{ article.date_published }}
+    {% else %}
+        Unpublished
+    {% endif %}
+</h3>
 {{ article.body_html|safe }}
+
+<div id="further-reading">
+    {% if previous_article %}
+    Previous: <a href="{% url article previous_article.id %}">{{ previous_article.title }}</a>
+    {% endif %}
+    {% if next_article %}
+    Next: <a href="{% url article next_article.id %}">{{ next_article.title }}</a>
+    {% endif %}
+</div>
 
 {% endblock %}

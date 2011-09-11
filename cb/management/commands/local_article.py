@@ -17,18 +17,21 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         logger = self.create_logger() 
         if len(args) != 1:
-            raise CommandError("Please specify the article to process")
-        logger.info("Processing article file %s" % args[0])
+            raise CommandError("Please specify the article file to process")
+        logger.info("Processing article file %s", args[0])
 
+        # We use the filename as the identifier of the article
         filepath = args[0]
         filename = os.path.basename(filepath)
         try:
             article = Article.objects.get(filename=filename)
-            logger.info("Updating an existing article")
         except Article.DoesNotExist:
             article = Article(filename=filename)
             logger.info("Creating a new article")
+        else:
+            logger.info("Updating an existing article (id #%d)", article.id)
 
+        # Extract data from the RST file
         body_rst = open(filepath).read()
         parts = publish_parts(body_rst, writer_name='html4css1')
 
@@ -37,6 +40,8 @@ class Command(BaseCommand):
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
         article.save()
+        
+        logger.info("Title: %s", article.title)
 
     def create_logger(self):
         logger = logging.getLogger(__name__)
