@@ -218,11 +218,27 @@ td { vertical-align: top; }
     border: 1px solid red;
     overflow: auto;
 }
-h1, h2, p {
-    font-family: 'Josefin Sans', sans-serif;
+
+/* Global */
+p, h2, h3 {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
 }
-p {
-    font-size: 1.6em;
+
+/* Article styles */
+.article h1#article_title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4em;
+    font-weight: normal;
+    color: #8C0808;
+    margin-bottom: 0;
+}
+.article h3 {
+    color: #555;
+}
+.article h3#published_date {
+    margin-top: 0;
+    font-weight: normal;    
 }
 
 #main {

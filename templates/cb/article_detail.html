@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
-<h1>{{ article.title }}</h1>
-<h3>
+<h1 id="article_title">{{ article.title }}</h1>
+<h3 id="published_date">
     {% if article.is_published %}
-        Published {{ article.date_published }}
+        Published {{ article.date_published|date:"l, j F Y" }}
     {% else %}
         Unpublished
     {% endif %}
