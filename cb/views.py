@@ -21,6 +21,11 @@ class ArticleListView(ListView):
     def get_queryset(self):
         return self.model.objects.all().exclude(date_published=None)
     
+    def get_context_data(self, **kwargs):
+        ctx = super(ArticleListView, self).get_context_data(**kwargs)
+        ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
+        return ctx
+    
 
 class ArticleDetailView(DetailView):
     model = Article
@@ -31,6 +36,7 @@ class ArticleDetailView(DetailView):
         ctx = super(ArticleDetailView, self).get_context_data(**kwargs)
         
         article = self.object
+        ctx['related_articles'] = Article.tagged.related_to(article)
         
         # We need to use a different date field for comparison depending on
         # if the article is published
@@ -44,17 +50,14 @@ class ArticleDetailView(DetailView):
         ctx['previous_article'] = previous[0] if len(previous) > 0 else None
         ctx['next_article'] = next[0] if len(next) > 0 else None
         return ctx
-         
-
-
-class TagView(DetailView):
-    template_name = 'tag.html'
-
-
-class TagsView(ListView):
-    template_name = 'tags.html'
-    
     
 class AboutView(TemplateView):
     template_name = 'about.html'
+
+
+class ProjectsView(TemplateView):
+    template_name = 'projects.html'
+
     
+class TalksView(TemplateView):
+    template_name = 'talks.html'

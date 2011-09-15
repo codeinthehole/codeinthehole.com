@@ -5,9 +5,12 @@
 <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
+{% block title %}{{ article.title }}{% endblock %}
+
 {% block content %}
 <h1 id="article_title">{{ article.title }}</h1>
 <h3 id="published_date">
+    By <a href="{% url about %}">David Winterbottom</a>,
     {% if article.is_published %}
         Published {{ article.date_published|date:"l, j F Y" }}
     {% else %}
@@ -16,12 +19,30 @@
 </h3>
 {{ article.body_html|safe }}
 
+<div>
+    Tags: {% for tag in article.tags.all %}
+    {{ tag }}
+    {% endfor %}
+    
+    
+</div>
+
+
 <div id="further-reading">
+    {% if related_articles %}
+    <h4>Related articles</h4>
+    <ul>
+    {% for article in related_articles %}
+        <li><a href="{{ article.get_absolute_url }}" title="{{ article.summary }}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    
     {% if previous_article %}
-    <p>Previous: <a href="{{ previous_article.get_absolute_url }}">{{ previous_article.title }}</a></p>
+    <p>Previous: <a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary }}">{{ previous_article.title }}</a></p>
     {% endif %}
     {% if next_article %}
-    <p>Next: <a href="{{ next_article.get_absolute_url }}">{{ next_article.title }}</a></p>
+    <p>Next: <a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary }}">{{ next_article.title }}</a></p>
     {% endif %}
 </div>
 

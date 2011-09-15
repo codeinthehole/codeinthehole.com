@@ -103,4 +103,5 @@ INSTALLED_APPS = (
     'cb',
     'south',
     'django_extensions',
+    'tagging',
 )

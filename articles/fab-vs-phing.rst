@@ -1,9 +1,9 @@
 ================
 Fabric vs. Phing
 ================
----------------------------------------------------------------
-A comparison of the popular deployment tools for PHP and Python
----------------------------------------------------------------
+----------------------------------------------------------------------------------
+A comparison of the popular deployment tools for PHP and Python :: Python, Recipes
+----------------------------------------------------------------------------------
 
 .. image:: /static/images/me.jpg
 
@@ -17,6 +17,12 @@ Genuinely not nice. Also:
 
 * The docs are not good
 * What do bullet points look like?
+* Why not visit http://www.twitter.com
+
+Here is a quote from someone:
+
+    The trouble with quotes on the internet is that you never
+    know if they are true of not.
 
 Fabric works better when you have a multi-server infrastructure
 ---------------------------------------------------------------

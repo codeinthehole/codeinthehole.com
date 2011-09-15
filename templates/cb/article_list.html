@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Articles{% endblock %}
+
 {% block content %}
 
     <h1>Articles</h1>
@@ -8,6 +10,21 @@
             {% for article in articles %}
             <tr>
                 <td class="date">{{ article.date_published|date:"F d, Y"}}</td>
+                <td>
+                    <h2><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h2>
+                    <p>{{ article.summary }}</p>
+                </td>
+            </tr>
+            {% endfor %}   
+        </tbody>     
+    </table>
+    
+    <h1>Unpublished articles</h1>
+    <table class="articles">
+        <tbody>
+            {% for article in unpublished_articles %}
+            <tr>
+                <td class="date">{{ article.date_created|date:"F d, Y"}}</td>
                 <td>
                     <h2><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h2>
                     <p>{{ article.summary }}</p>

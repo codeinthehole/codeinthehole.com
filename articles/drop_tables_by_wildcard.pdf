@@ -1,0 +1,286 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 5 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Helvetica-BoldOblique
+<< /BaseFont /Helvetica-BoldOblique
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+5 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+6 0 obj
+% Page dictionary
+<< /Contents 14 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 13 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R7': class PDFCatalog 
+7 0 obj
+% Document Root
+<< /Outlines 9 0 R
+ /PageLabels 15 0 R
+ /PageMode /UseNone
+ /Pages 13 0 R
+ /Type /Catalog >>
+endobj
+% 'R8': class PDFInfo 
+8 0 obj
+<< /Author ()
+ /CreationDate (D:20110915220839+00'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (How to drop MySQL tables using a wildcard) >>
+endobj
+% 'R9': class PDFOutlines 
+9 0 obj
+<< /Count 3
+ /First 10 0 R
+ /Last 12 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+10 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 681.0236
+ 0 ]
+ /Next 11 0 R
+ /Parent 9 0 R
+ /Title (Problem) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+11 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 529.0236
+ 0 ]
+ /Next 12 0 R
+ /Parent 9 0 R
+ /Prev 10 0 R
+ /Title (Solution) >>
+endobj
+% 'Outline.2': class OutlineEntryObject 
+12 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 448.0236
+ 0 ]
+ /Parent 9 0 R
+ /Prev 11 0 R
+ /Title (Discussion) >>
+endobj
+% 'R13': class PDFPages 
+13 0 obj
+% page tree
+<< /Count 1
+ /Kids [ 6 0 R ]
+ /Type /Pages >>
+endobj
+% 'R14': class PDFStream 
+14 0 obj
+% page stream
+<< /Length 2293 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 26.56488 0 Td (How to drop MySQL tables using a wildcard) Tj T* -26.56488 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 693.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 21 Tm /F2 15 Tf 18 TL 9.884882 0 Td (You can use awk with MySQL to drop tables that match a given) Tj T* 197.5575 0 Td (pattern.) Tj T* -207.4424 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 660.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Problem) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 630.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .065988 Tw (You want to drop all tables in a MySQL database that match some pattern. It would be nice if the following) Tj T* 0 Tw (worked) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 618.0236 cm
+Q
+q
+1 0 0 1 62.69291 547.0236 cm
+.960784 .960784 .862745 rg
+n 0 71 469.8898 -71 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 6 45 Tm  T* ET
+q
+1 0 0 1 16 40 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.5 Tm /F3 12.5 Tf 15 TL (Note) Tj T* ET
+Q
+Q
+q
+1 0 0 1 16 16 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (This is a special note) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.662745 .662745 .662745 RG
+.5 w
+n 0 71 m 469.8898 71 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 71 l S
+n 469.8898 0 m 469.8898 71 l S
+Q
+Q
+q
+1 0 0 1 62.69291 541.0236 cm
+Q
+q
+1 0 0 1 62.69291 508.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Solution) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 490.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Use the following command) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 460.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .761654 Tw 12 TL /F1 10 Tf 0 0 0 rg (This uses awk to filter the results of the call to ) Tj /F4 10 Tf (SHOW TABLES) Tj /F1 10 Tf (, which does support the pattern matching) Tj T* 0 Tw (syntax.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 427.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Discussion) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 409.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The output of the ) Tj /F4 10 Tf (SHOW TABLES ) Tj /F1 10 Tf (call takes this form:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 391.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (A similar command for showing table sizes is:) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R15': class PDFPageLabels 
+15 0 obj
+% Document Root
+<< /Nums [ 0
+ 16 0 R ] >>
+endobj
+% 'R16': class PDFPageLabel 
+16 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+xref
+0 17
+0000000000 65535 f
+0000000113 00000 n
+0000000245 00000 n
+0000000410 00000 n
+0000000585 00000 n
+0000000774 00000 n
+0000000933 00000 n
+0000001212 00000 n
+0000001368 00000 n
+0000001655 00000 n
+0000001779 00000 n
+0000001945 00000 n
+0000002127 00000 n
+0000002280 00000 n
+0000002387 00000 n
+0000004783 00000 n
+0000004876 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\265\350@\034/\243K\020_\005\303g\253\362\314\220) (\265\350@\034/\243K\020_\005\303g\253\362\314\220)] 
+
+ /Info 8 0 R
+ /Root 7 0 R
+ /Size 17 >>
+startxref
+4923
+%%EOF

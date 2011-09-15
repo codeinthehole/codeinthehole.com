@@ -4,15 +4,11 @@ For creating a local article based on a RST file
 import logging
 import os
 
-import cb.rstcode
-
 from docutils.core import publish_parts
-
 from django.core.management.base import BaseCommand, CommandError
 
 from cb.models import Article
-
-
+import cb.rstcode
 
 
 class Command(BaseCommand):
@@ -40,11 +36,17 @@ class Command(BaseCommand):
         body_rst = open(filepath).read()
         parts = publish_parts(body_rst, writer_name='html4css1')
 
+        # The subtitle should contains the summary and the tags
+        sections = parts['subtitle'].split('::')
+        summary = sections[0].strip()
+        tags = sections[1].strip()
+
         # Update model
         article.title = parts['title']
         article.summary = parts['subtitle']
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
+        article.tags = tags
         article.save()
         
         logger.info("Title: %s", article.title)

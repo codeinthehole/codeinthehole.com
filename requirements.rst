@@ -1,16 +1,24 @@
 Todo
 ====
 
-- Sort out single page layout
-- Allow code to be wider than text
+- Homepage
+    * Photo
+    * Blurb
+    * Projects
+    * Github
+    * Twitter 
+    * Stack Overflow 
+    * Shelfari
+    
+- Latex tutorial
+- CGL tutorial
 
+- Redirects from old site - give them the same PKs to make lookups easier
 
+- Write up latex tutorial as article
 
 * Single article page
     - Related articles
-    - Syntax highlighting
-    - Put meta at top of page
-    - Article summary
     
 * Show snippets on homepage
 * Get python highlighted correctly
@@ -49,6 +57,7 @@ To copy
 =======
 http://hawksworx.com/blog/
 http://kev.inburke.com/kevin/site-redesign/
+http://zachholman.com/
 
 Design
 ======

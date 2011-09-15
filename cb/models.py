@@ -1,7 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
-
+import tagging
 
 class Article(models.Model):
     """
@@ -40,4 +40,7 @@ class Article(models.Model):
     @property
     def is_published(self):
         return self.date_published is not None
+    
+    
+tagging.register(Article)
 

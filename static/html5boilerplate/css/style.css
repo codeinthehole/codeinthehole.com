@@ -212,7 +212,7 @@ td { vertical-align: top; }
    ========================================================================== */
 
 /* Global */
-header, footer, p, h2, h3, th, td, li {
+header, footer, p, h2, h3, th, td, li, blockquote {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 1.2em;
 }
@@ -232,6 +232,14 @@ header a, header a:active, header a:link, header a:visited {
 pre {
     font-size: 1.2em;
 }
+blockquote {
+    background-color: #eee;
+     -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0;
+    padding: 1em 40px;
+    font-style: italic;
+}
 #container {
     margin: 0 auto;
     position: relative;
@@ -241,6 +249,10 @@ pre {
 h1, h2, h3, h4 {
     width: 820px;
 }
+a, a:active, a.link, a:visited, a:hover {
+    text-decoration: none;
+    color: #8C0808;
+}
 p {
     width: 600px;
 }
@@ -249,7 +261,12 @@ h1 {
     color: #333;
     margin: 20px 0px 0px 0px;
 }
-
+h1#title {
+    font-family: 'Droid Serif', serif;
+    font-size: 4em;
+    font-weight: normal;
+    color: #8C0808;
+}
 
 /* Article styles */
 .article h1#article_title {
