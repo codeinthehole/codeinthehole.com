@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, DetailView, ListView
+from tagging.models import Tag
 
 from cb.models import Article
 
@@ -26,6 +27,20 @@ class ArticleListView(ListView):
         ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
         return ctx
     
+
+class ArticleTagView(ListView):
+    template_name = 'cb/article_list.html'
+    context_object_name = 'articles'
+    
+    def get_queryset(self):
+        self.tag = Tag.objects.get(name=self.kwargs['name'])
+        return Article.tagged.with_all([self.tag])
+    
+    def get_context_data(self, **kwargs):
+        ctx = super(ArticleTagView, self).get_context_data(**kwargs)
+        ctx['title'] = 'Articles tagged "%s"' % self.tag.name
+        return ctx
+
 
 class ArticleDetailView(DetailView):
     model = Article

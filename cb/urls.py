@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from cb.views import ArticleListView, ArticleDetailView, AboutView, ProjectsView, TalksView
+from cb.views import ArticleListView, ArticleDetailView, AboutView, ProjectsView, TalksView, ArticleTagView
 
 urlpatterns = patterns('',
     # Static pages
@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     url(r'^talks/$', TalksView.as_view(), name='talks'),
     # Blog pages
     url(r'^articles/$', ArticleListView.as_view(), name='articles'),
-    url(r'^article/(?P<slug>[\w-]+)/$', ArticleDetailView.as_view(), name='article'),
+    url(r'^articles/(?P<slug>[\w-]+)/$', ArticleDetailView.as_view(), name='article'),
+    url(r'^articles/tagged/(?P<name>[\w-]+)/$', ArticleTagView.as_view(), name='tagged'),
 )

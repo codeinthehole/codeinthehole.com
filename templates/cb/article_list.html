@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <h1>Articles</h1>
+    <h1>{{ title|default:"Articles" }}</h1>
     <table class="articles">
         <tbody>
             {% for article in articles %}

@@ -39,14 +39,14 @@ class Command(BaseCommand):
         # The subtitle should contains the summary and the tags
         sections = parts['subtitle'].split('::')
         summary = sections[0].strip()
-        tags = sections[1].strip()
 
         # Update model
         article.title = parts['title']
-        article.summary = parts['subtitle']
+        article.summary = summary
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
-        article.tags = tags
+        if len(sections) > 1:
+            article.tags = sections[1].strip()
         article.save()
         
         logger.info("Title: %s", article.title)

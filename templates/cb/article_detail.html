@@ -16,13 +16,14 @@
     {% else %}
         Unpublished
     {% endif %}
+    {% for tag in article.tags.all %}
+    <a href="{% url tagged tag.name %}" title="View all articles tagged ">{{ tag.name }}</a>
+    {% endfor %}
 </h3>
 {{ article.body_html|safe }}
 
 <div>
-    Tags: {% for tag in article.tags.all %}
-    {{ tag }}
-    {% endfor %}
+    Tags: 
     
     
 </div>
@@ -30,7 +31,7 @@
 
 <div id="further-reading">
     {% if related_articles %}
-    <h4>Related articles</h4>
+    <h3>Related articles</h3>
     <ul>
     {% for article in related_articles %}
         <li><a href="{{ article.get_absolute_url }}" title="{{ article.summary }}">{{ article.title }}</a></li>
