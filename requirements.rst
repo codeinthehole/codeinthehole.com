@@ -1,9 +1,11 @@
 Todo
 ====
 
-
+- Rename files with numbers
 - Rename to rsb
 - Upload to github
+
+
 - Homepage
     * Photo
     * Blurb

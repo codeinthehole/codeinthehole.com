@@ -310,6 +310,9 @@ h1#title {
     font-weight: normal;
     color: #8C0808;
 }
+#article {
+    line-height: 1.8em;
+}
 
 /* Article styles */
 .article h1#article_title {
@@ -337,7 +340,6 @@ div.highlight {
     border-radius: 3px;
 }
 tt.docutils {
-    border: 1px solid #ccc;
     background-color: #f8f8f8;
     padding: 2px 5px;
 }
