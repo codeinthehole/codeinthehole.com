@@ -1,6 +1,9 @@
 Todo
 ====
 
+
+- Rename to rsb
+- Upload to github
 - Homepage
     * Photo
     * Blurb

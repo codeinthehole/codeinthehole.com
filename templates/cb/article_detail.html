@@ -5,44 +5,41 @@
 <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
-{% block title %}{{ article.title }}{% endblock %}
+{% block title %}{{ article.title }}
+    ({% for tag in article.tags.all %}{{ tag}},{% endfor %})
+    codeinthehole.com
+{% endblock %}
 
 {% block content %}
 <h1 id="article_title">{{ article.title }}</h1>
 <h3 id="published_date">
-    By <a href="{% url about %}">David Winterbottom</a>,
+    by <a href="{% url about %}">David Winterbottom</a><br/>
     {% if article.is_published %}
-        Published {{ article.date_published|date:"l, j F Y" }}
-    {% else %}
-        Unpublished
+        {{ article.date_published|date:"l, j F Y" }}
     {% endif %}
-    {% for tag in article.tags.all %}
-    <a href="{% url tagged tag.name %}" title="View all articles tagged ">{{ tag.name }}</a>
-    {% endfor %}
 </h3>
+
 {{ article.body_html|safe }}
-
-<div>
-    Tags: 
-    
-    
-</div>
-
 
 <div id="further-reading">
     {% if related_articles %}
-    <h3>Related articles</h3>
-    <ul>
-    {% for article in related_articles %}
-        <li><a href="{{ article.get_absolute_url }}" title="{{ article.summary }}">{{ article.title }}</a></li>
-    {% endfor %}
-    </ul>
+        <p>You might also like:</p>
+        {% for article in related_articles %}
+            <p><a href="{{ article.get_absolute_url }}" title="{{ article.summary }}">{{ article.title }}</a></p>
+        {% endfor %}
     {% endif %}
+    {% with tags=article.tags.all %}
+    {% if tags %}
+        <p>Tags: 
+           {% for tag in tags %}<a href="{% url tagged tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}.
+        </p>
+    {% endif %}
+    {% endwith %}
     
     {% if previous_article %}
     <p>Previous: <a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary }}">{{ previous_article.title }}</a></p>
     {% endif %}
-    {% if next_article %}
+    {% if next_article %} 
     <p>Next: <a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary }}">{{ next_article.title }}</a></p>
     {% endif %}
 </div>

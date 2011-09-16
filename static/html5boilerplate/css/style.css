@@ -216,19 +216,6 @@ header, footer, p, h2, h3, th, td, li, blockquote {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 1.2em;
 }
-.meta {
-    padding: 10px;
-    background-color: #eee;
-    border: 1px solid #ddd;
-    color: #333;
-    text-align: center;
-}
-footer {
-    margin: 30px 0 0 0;
-}
-header a, header a:active, header a:link, header a:visited {
-    color: #333;
-}
 pre {
     font-size: 1.2em;
 }
@@ -240,12 +227,68 @@ blockquote {
     padding: 1em 40px;
     font-style: italic;
 }
+
+/* Layout */
 #container {
     margin: 0 auto;
     position: relative;
     width: 820px;
     overflow: hidden;
 }
+
+/* Header */
+header {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding: 4px 0;
+    color: #aaa;
+}
+header h3 {
+    float: left;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+header #nav {
+    float: right;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+header a, header a:active, header a:link, header a:visited {
+    color: #aaa;
+}
+header a:hover {
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #eee;
+    padding: 10px 10px 50px 10px;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+    font-size: 1em;
+}
+footer p {
+    width: auto;
+}
+footer #profile_photo {
+    float: left;
+    background-color: white;
+    padding: 3px 4px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+/* Articles */
+#further-reading {
+    border-top: 1px solid #eee;
+    margin-top: 60px;
+}
+
 h1, h2, h3, h4 {
     width: 820px;
 }
