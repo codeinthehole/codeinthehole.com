@@ -3,6 +3,7 @@ For creating a local article based on a RST file
 """
 import logging
 import os
+import re
 
 from docutils.core import publish_parts
 from django.core.management.base import BaseCommand, CommandError
@@ -23,13 +24,25 @@ class Command(BaseCommand):
 
         # We use the filename as the identifier of the article
         filepath = args[0]
+        folder = os.path.dirname(filepath)
         filename = os.path.basename(filepath)
-        try:
-            article = Article.objects.get(filename=filename)
-        except Article.DoesNotExist:
-            article = Article(filename=filename)
-            logger.info("Creating a new article")
+
+        # Ensure filename has a number in it
+        rename_file = False
+        m = re.match(r'(\d+)-.*\.rst', filename)
+        if not m:
+            # New file, we need to rename
+            rename_file = True
+            try:
+                article = Article.objects.get(filename=filename)
+            except Article.DoesNotExist:
+                article = Article(filename=filename)
+                logger.info("Creating a new article")
+            else:
+                logger.info("Updating an existing article (id #%d)", article.id)
         else:
+            id = m.group(1)
+            article = Article.objects.get(id=id)
             logger.info("Updating an existing article (id #%d)", article.id)
 
         # Extract data from the RST file
@@ -45,9 +58,16 @@ class Command(BaseCommand):
         article.summary = summary
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
+        article.save()
+        
         if len(sections) > 1:
             article.tags = sections[1].strip()
-        article.save()
+        
+        if rename_file:
+            new_filename = "%d-%s" % (article.id, filename.replace('_', '-'))
+            logger.info("Renaming %s to %s", filename, new_filename)
+            new_path = os.path.join(folder, new_filename)
+            os.rename(filepath, new_path)
         
         logger.info("Title:   %s", article.title)
         logger.info("Summary: %s", article.summary)
