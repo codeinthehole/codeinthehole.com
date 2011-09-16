@@ -10,6 +10,8 @@
     codeinthehole.com
 {% endblock %}
 
+{% block description %}{{ article.summary }}{% endblock %}
+
 {% block content %}
 <h1 id="article_title">{{ article.title }}</h1>
 <h3 id="published_date">

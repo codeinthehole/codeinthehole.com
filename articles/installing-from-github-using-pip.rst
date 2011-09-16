@@ -1,9 +1,9 @@
 ================================
 Installing from Github using pip
 ================================
-----------------------------------------------------------------------------------
-Using pip and requirements.txt to install from the HEAD of a Github branch Problem
-----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+Using pip and requirements.txt to install from the HEAD of a Github branch Problem :: Python, Git
+-------------------------------------------------------------------------------------------------
 
 The python package installer pip can be used to install directly from Github:
 

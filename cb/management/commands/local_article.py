@@ -49,7 +49,9 @@ class Command(BaseCommand):
             article.tags = sections[1].strip()
         article.save()
         
-        logger.info("Title: %s", article.title)
+        logger.info("Title:   %s", article.title)
+        logger.info("Summary: %s", article.summary)
+        logger.info("Tags:    %s", ", ".join([tag.name for tag in article.tags.all()]))
 
     def create_logger(self):
         logger = logging.getLogger(__name__)
