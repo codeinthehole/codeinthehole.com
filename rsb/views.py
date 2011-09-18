@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView, DetailView, ListView
 from tagging.models import Tag
 
-from cb.models import Article
+from rsb.models import Article
 
 
 class HomeView(TemplateView):

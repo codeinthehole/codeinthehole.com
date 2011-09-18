@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from cb.views import ArticleListView, ArticleDetailView, AboutView, ProjectsView, TalksView, ArticleTagView
+from rsb.views import ArticleListView, ArticleDetailView, AboutView, ProjectsView, TalksView, ArticleTagView
 
 urlpatterns = patterns('',
     # Static pages

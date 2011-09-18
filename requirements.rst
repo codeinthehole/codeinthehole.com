@@ -1,11 +1,9 @@
 Todo
 ====
 
-- Rename files with numbers
 - Rename to rsb
 - Upload to github
 - Don't show bio on non-article pages
-- HTML meta
 
 
 - Homepage

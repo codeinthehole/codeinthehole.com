@@ -8,18 +8,30 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding unique constraint on 'Article', fields ['slug']
-        db.create_unique('cb_article', ['slug'])
+        # Adding model 'Article'
+        db.create_table('rsb_article', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('filename', self.gf('django.db.models.fields.CharField')(unique=True, max_length=255)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('slug', self.gf('django.db.models.fields.SlugField')(unique=True, max_length=255, db_index=True)),
+            ('summary', self.gf('django.db.models.fields.TextField')()),
+            ('body_rst', self.gf('django.db.models.fields.TextField')()),
+            ('body_html', self.gf('django.db.models.fields.TextField')()),
+            ('date_created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
+            ('date_published', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
+            ('date_updated', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
+        ))
+        db.send_create_signal('rsb', ['Article'])
 
 
     def backwards(self, orm):
         
-        # Removing unique constraint on 'Article', fields ['slug']
-        db.delete_unique('cb_article', ['slug'])
+        # Deleting model 'Article'
+        db.delete_table('rsb_article')
 
 
     models = {
-        'cb.article': {
+        'rsb.article': {
             'Meta': {'object_name': 'Article'},
             'body_html': ('django.db.models.fields.TextField', [], {}),
             'body_rst': ('django.db.models.fields.TextField', [], {}),
@@ -34,4 +46,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['cb']
+    complete_apps = ['rsb']

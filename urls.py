@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    (r'', include('cb.urls')),
+    (r'', include('rsb.urls')),
 )
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()

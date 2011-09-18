@@ -8,8 +8,8 @@ import re
 from docutils.core import publish_parts
 from django.core.management.base import BaseCommand, CommandError
 
-from cb.models import Article
-import cb.rstcode
+from rsb.models import Article
+import rsb.rstcode
 
 
 class Command(BaseCommand):
@@ -27,9 +27,9 @@ class Command(BaseCommand):
         folder = os.path.dirname(filepath)
         filename = os.path.basename(filepath)
 
-        # Ensure filename has a number in it
+        # Ensure filename has a 4-digit number in it
         rename_file = False
-        m = re.match(r'(\d+)-.*\.rst', filename)
+        m = re.match(r'(\d{4})-.*\.rst', filename)
         if not m:
             # New file, we need to rename
             rename_file = True
@@ -41,7 +41,7 @@ class Command(BaseCommand):
             else:
                 logger.info("Updating an existing article (id #%d)", article.id)
         else:
-            id = m.group(1)
+            id = int(m.group(1))
             article = Article.objects.get(id=id)
             logger.info("Updating an existing article (id #%d)", article.id)
 
@@ -64,7 +64,7 @@ class Command(BaseCommand):
             article.tags = sections[1].strip()
         
         if rename_file:
-            new_filename = "%d-%s" % (article.id, filename.replace('_', '-'))
+            new_filename = "%04d-%s" % (article.id, filename.replace('_', '-'))
             logger.info("Renaming %s to %s", filename, new_filename)
             new_path = os.path.join(folder, new_filename)
             os.rename(filepath, new_path)
