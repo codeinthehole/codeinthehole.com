@@ -1,10 +1,10 @@
 from django.conf.urls.defaults import *
 
-from rsb.views import ArticleListView, ArticleDetailView, AboutView, ProjectsView, TalksView, ArticleTagView
+from rsb.views import ArticleListView, ArticleDetailView, AboutView, ProjectsView, TalksView, ArticleTagView, HomeView
 
 urlpatterns = patterns('',
     # Static pages
-    url(r'^$', ArticleListView.as_view(), name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^projects/$', ProjectsView.as_view(), name='projects'),
     url(r'^talks/$', TalksView.as_view(), name='talks'),

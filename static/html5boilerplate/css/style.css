@@ -372,6 +372,10 @@ tt.docutils {
     margin: 5px 0 20px 0;
 }
 
+/* Twitter widget */
+.twtr-hd, .twtr-ft {
+    display: none;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
