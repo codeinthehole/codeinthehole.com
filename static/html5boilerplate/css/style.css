@@ -212,7 +212,7 @@ td { vertical-align: top; }
    ========================================================================== */
 
 /* Global */
-header, footer, p, h2, h3, th, td, li, blockquote {
+header, footer, p, h2, h3, th, td, li, dt, dd, blockquote {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 1.2em;
 }
@@ -226,6 +226,9 @@ blockquote {
     margin: 0;
     padding: 1em 40px;
     font-style: italic;
+}
+dt {
+    font-weight: bold;
 }
 
 /* Layout */
@@ -243,7 +246,8 @@ header {
     border-bottom: 1px solid #ccc;
     padding: 4px 0;
     color: #aaa;
-}
+    font-size: 10pt;
+    }
 header h3 {
     float: left;
     width: auto;
@@ -321,6 +325,7 @@ h1#title {
     font-weight: normal;
     color: #8C0808;
     margin-bottom: 0;
+	text-align: left;
 }
 .article h1 {
     font-family: 'Droid Serif', serif;
@@ -329,8 +334,18 @@ h1#title {
 .article h3#published_date {
     margin: 0 0 30px 0;
     font-weight: normal;
-    font-style: italic;
-    
+	font-size: 1em;
+	text-align: left;
+}
+.article p {
+	text-align: justify;
+}
+.article img.align-right {
+    float: right;
+    padding: 2px;
+    margin: 0 0 2em 1em;
+    background-color: white;
+    border: 1px solid #aaa;
 }
 
 /* RST */
