@@ -5,15 +5,15 @@
 <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
-{% block title %}{{ article.title }}
+{% block title %}{{ article.title|safe }}
     ({% for tag in article.tags.all %}{{ tag}},{% endfor %})
     codeinthehole.com
 {% endblock %}
 
-{% block description %}{{ article.summary }}{% endblock %}
+{% block description %}{{ article.summary|striptags }}{% endblock %}
 
 {% block content %}
-<h1 id="article_title">{{ article.title }}</h1>
+<h1 id="article_title">{{ article.title|safe }}</h1>
 <h3 id="published_date">
     by <a href="{% url about %}">David Winterbottom</a><br/>
     {% if article.is_published %}
@@ -29,7 +29,7 @@
     {% if related_articles %}
         <p>You might also like:</p>
         {% for article in related_articles %}
-            <p><a href="{{ article.get_absolute_url }}" title="{{ article.summary }}">{{ article.title }}</a></p>
+            <p><a href="{{ article.get_absolute_url }}" title="{{ article.summary|striptags }}">{{ article.title }}</a></p>
         {% endfor %}
     {% endif %}
     {% with tags=article.tags.all %}
@@ -41,10 +41,10 @@
     {% endwith %}
     
     {% if previous_article %}
-    <p>Previous: <a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary }}">{{ previous_article.title }}</a></p>
+    <p>Previous: <a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary|striptags }}">{{ previous_article.title|safe }}</a></p>
     {% endif %}
     {% if next_article %} 
-    <p>Next: <a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary }}">{{ next_article.title }}</a></p>
+    <p>Next: <a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a></p>
     {% endif %}
 </div>
 
