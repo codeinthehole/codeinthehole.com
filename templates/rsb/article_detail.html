@@ -13,6 +13,14 @@
 
 {% block description %}{{ article.summary|striptags }}{% endblock %}
 
+{% block header %}
+<div id="logo">
+    <h4>codeinthehole.com</h4>
+    <h5>by David Winterbottom</h5>
+</div>
+
+{% endblock %}
+
 {% block content %}
 <h3 id="article_date">
     {% if article.is_published %}

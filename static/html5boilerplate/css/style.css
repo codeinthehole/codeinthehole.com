@@ -246,7 +246,6 @@ dt {
 /* Header */
 header {
     overflow: hidden;
-    border-bottom: 1px solid #ccc;
     padding: 4px 0;
     color: #aaa;
     font-size: 10pt;
@@ -269,6 +268,26 @@ header a, header a:active, header a:link, header a:visited {
 }
 header a:hover {
     color: #555;
+}
+
+/* Logo */
+#logo {
+    color: #222;
+    font-family: 'Inconsolata', sans-serif;
+    float: right;
+}
+#logo h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    font-weight: normal;
+}
+#logo h5 {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 1.1em;
+    font-weight: normal;
 }
 
 /* Footer */
@@ -339,7 +358,7 @@ h1 {
     font-weight: normal;
 	font-size: 1.2em;
 	text-align: left;
-	margin: 1.8em 0 0 0;
+	margin: 0 0 0 0;
 }
 .article p {
 }
