@@ -8,9 +8,7 @@ class HomeView(TemplateView):
     template_name = 'rsb/home.html'
 
     def get_context_data(self):
-        ctx = {'articles': Article.objects.all().order_by('-date_created')[0:5]}
-        
-        return ctx
+        return {'articles': Article.objects.all().order_by('-date_created')[0:5]}
         
         
 class ArticleListView(ListView):
@@ -46,6 +44,12 @@ class ArticleDetailView(DetailView):
     template_name = 'rsb/article_detail.html'
     context_object_name = 'article'
     
+    def get(self, request, **kwargs):
+        response = super(ArticleDetailView, self).get(request, **kwargs)
+        # Track the view
+        self.object.record_view()
+        return response
+    
     def get_context_data(self, **kwargs):
         ctx = super(ArticleDetailView, self).get_context_data(**kwargs)
         
@@ -63,6 +67,7 @@ class ArticleDetailView(DetailView):
         
         ctx['previous_article'] = previous[0] if len(previous) > 0 else None
         ctx['next_article'] = next[0] if len(next) > 0 else None
+
         return ctx
     
 class AboutView(TemplateView):

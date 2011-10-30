@@ -19,6 +19,8 @@ class Article(models.Model):
     body_rst = models.TextField()
     body_html = models.TextField()
 
+    num_views = models.PositiveIntegerField(default=0, db_index=True)
+
     date_created = models.DateTimeField(auto_now_add=True)
     
     # This is the date the article was uploaded from the dev 
@@ -40,6 +42,10 @@ class Article(models.Model):
     @property
     def is_published(self):
         return self.date_published is not None
+    
+    def record_view(self):
+        self.num_views += 1
+        self.save()
     
     
 tagging.register(Article)
