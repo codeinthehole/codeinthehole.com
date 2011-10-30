@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load url from future %}
 
 {% block extra_head %}
 {{ block.super }}
@@ -7,19 +8,20 @@
 
 {% block title %}{{ article.title|safe }}
     ({% for tag in article.tags.all %}{{ tag}},{% endfor %})
-    codeinthehole.com
+    codeinthehole.com by David Winterbottom
 {% endblock %}
 
 {% block description %}{{ article.summary|striptags }}{% endblock %}
 
 {% block content %}
-<h1 id="article_title">{{ article.title|safe }}</h1>
-<h3 id="published_date">
-    by <a href="{% url about %}">David Winterbottom</a><br/>
+<h3 id="article_date">
     {% if article.is_published %}
         {{ article.date_published|date:"l, j F Y" }}
+    {% else %}
+        {{ article.date_created|date:"l, j F Y" }}
     {% endif %}
 </h3>
+<h1 id="article_title">{{ article.title|safe }}</h1>
 
 <div id="article">
     {{ article.body_html|safe }}
@@ -35,7 +37,7 @@
     {% with tags=article.tags.all %}
     {% if tags %}
         <p>Tags: 
-           {% for tag in tags %}<a href="{% url tagged tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}.
+           {% for tag in tags %}<a href="{% url 'tagged' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}.
         </p>
     {% endif %}
     {% endwith %}

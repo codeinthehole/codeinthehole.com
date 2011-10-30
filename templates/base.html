@@ -1,4 +1,6 @@
 {% extends 'html5boilerplate/index.html' %}
+{% load url from future %}
+
 
 {% block title %}codeinthehole.com{% endblock %}
 {% block author %}David Winterbottom{% endblock %}
@@ -6,6 +8,7 @@
 
 {% block extra_head %}
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block bodyclass %}article{% endblock %}
@@ -15,12 +18,12 @@
     <header>
         {% block header %}
             <div id="nav">
-                <a href="{% url articles %}">articles</a> |
-                <a href="{% url projects %}">projects</a> |
-                <a href="{% url about %}">about</a>
+                <a href="{% url 'articles' %}">articles</a> |
+                <a href="{% url 'projects' %}">projects</a> |
+                <a href="{% url 'about' %}">about</a>
             </div>
             <div id="logo">
-                <a href="{% url home %}">codeinthehole.com</a>
+                <a href="{% url 'home' %}">codeinthehole.com</a>
             </div>
         {% endblock header %}
     </header>

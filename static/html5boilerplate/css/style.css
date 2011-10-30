@@ -207,17 +207,21 @@ table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
-/* ==|== primary styles =====================================================
+/* ===== primary styles =====================================================
    Author: David Winerbottom
    ========================================================================== */
 
 /* Global */
 header, footer, p, h2, h3, th, td, li, dt, dd, blockquote {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 1.2em;
+}
+h1, h2, h3, h4 {
 }
 pre {
     font-size: 1.2em;
+    font-family: 'Inconsolata', sans-serif;
+    line-height: 1.2em;
 }
 blockquote {
     background-color: #eee;
@@ -241,13 +245,12 @@ dt {
 
 /* Header */
 header {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     overflow: hidden;
     border-bottom: 1px solid #ccc;
     padding: 4px 0;
     color: #aaa;
     font-size: 10pt;
-    }
+}
 header h3 {
     float: left;
     width: auto;
@@ -288,32 +291,30 @@ footer #profile_photo {
 }
 
 /* Articles */
+h1#title {
+    font-family: 'Droid Serif', serif;
+    font-size: 4em;
+    font-weight: normal;
+    color: #8C0808;
+    margin: 0;
+    padding: 0;
+}
 #further-reading {
     border-top: 1px solid #eee;
     margin-top: 60px;
-}
-
-h1, h2, h3, h4 {
-    width: 820px;
 }
 a, a:active, a.link, a:visited, a:hover {
     text-decoration: none;
     color: #8C0808;
 }
 p {
-    width: 600px;
+    width: 39em;
 }
 h1 {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     color: #333;
     margin: 20px 0px 0px 0px;
 }
-h1#title {
-    font-family: 'Droid Serif', serif;
-    font-size: 4em;
-    font-weight: normal;
-    color: #8C0808;
-}
+
 #article {
     line-height: 1.8em;
 }
@@ -321,24 +322,26 @@ h1#title {
 /* Article styles */
 .article h1#article_title {
     font-family: 'Droid Serif', serif;
-    font-size: 4em;
+    font-size: 4.05em;
     font-weight: normal;
     color: #8C0808;
-    margin-bottom: 0;
+    margin: 0 0 0.4em 0;
+    padding: 0;
 	text-align: left;
 }
 .article h1 {
     font-family: 'Droid Serif', serif;
     font-weight: normal;
 }
-.article h3#published_date {
-    margin: 0 0 30px 0;
+.article h3#article_date {
+    font-family: 'Droid Serif', serif;
+    color: #A67676;
     font-weight: normal;
-	font-size: 1em;
+	font-size: 1.2em;
 	text-align: left;
+	margin: 1.8em 0 0 0;
 }
 .article p {
-	text-align: justify;
 }
 .article img.align-right {
     float: right;
