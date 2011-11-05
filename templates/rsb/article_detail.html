@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
-{% block title %}{{ article.title|safe }}
-    ({% for tag in article.tags.all %}{{ tag }}{% if not forloop.last %},{% endif %}{% endfor %}) |
+{% block title %}{{ article.title|safe }} | 
+    {% for tag in article.tags.all %}{{ tag }}{% if not forloop.last %}, {% endif %}{% endfor %} |
     codeinthehole.com by David Winterbottom
 {% endblock %}
 
@@ -37,25 +37,31 @@
 
 <div id="further-reading">
     {% if related_articles %}
-        <p>You might also like:</p>
+        <p>If this article was interesting, you might like these:</p>
+		<ul>
         {% for article in related_articles %}
-            <p><a href="{{ article.get_absolute_url }}" title="{{ article.summary|striptags }}">{{ article.title }}</a></p>
+            <li><a href="{{ article.get_absolute_url }}" title="{{ article.summary|striptags }}">{{ article.title }}</a>
+                
+            </li>
         {% endfor %}
+	</ul>
     {% endif %}
     {% with tags=article.tags.all %}
     {% if tags %}
-        <p>Tags: 
+        <p>See all articles tagged with 
            {% for tag in tags %}<a href="{% url 'tagged' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}.
         </p>
     {% endif %}
     {% endwith %}
     
     {% if previous_article %}
-    <p>Previous: <a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary|striptags }}">{{ previous_article.title|safe }}</a></p>
+    <ul>
+    <li>Previous article: <a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary|striptags }}">{{ previous_article.title|safe }}</a></li>
     {% endif %}
     {% if next_article %} 
-    <p>Next: <a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a></p>
+    <li>Next article: <a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a></li>
     {% endif %}
+    </ul>
 </div>
 
 {% endblock %}
