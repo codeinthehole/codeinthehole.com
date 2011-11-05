@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block title %}{{ article.title|safe }}
-    ({% for tag in article.tags.all %}{{ tag}},{% endfor %})
+    ({% for tag in article.tags.all %}{{ tag }}{% if not forloop.last %},{% endif %}{% endfor %}) |
     codeinthehole.com by David Winterbottom
 {% endblock %}
 
