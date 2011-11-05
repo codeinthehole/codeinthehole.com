@@ -37,18 +37,23 @@ status, and interacting with the Unfuddle API. Creating a Nabaztag task was
 just a simple extension of these cURL-based tasks. The various attributes
 mirror those from the API docs.
 
-NabaztagTask.php attributes Name	Type	Description	Default	Required
-serialNum	String	Serial number	n/a	Yes
-token	Integer	Token number	n/a	Yes
-leftEarPosition	String	Position of the left ear (0-16)	n/a	No
-rightEarPosition	String	Position of the right ear (0-16)	n/a	No
-message	String	Message.	n/a	No
-messageId	Integer	Message id.	n/a	No
-voice	Integer	Voice to use (use the API to fetch the full list)	n/a	No
-choreography	String	A string which prescribes the choreography to use (see API docs)	n/a	No
-choreographyTitle	Boolean	Choreography title	n/a	No
-urlList	Boolean	List of URLs to pass to the Nabaztag (can be used for playing audio files)	n/a	No
-checkReturn	Boolean	Whether to check the return code of the request, throws a BuildException if the update fails	false	No
+==================  ==========  ==================================================  ==========      =========
+Name                Type        Description                                         Default         Required
+serialNum           String      Serial number                                       n/a             Yes
+token               Integer     Token number                                        n/a             Yes
+leftEarPosition     String      Position of the left ear (0-16)                     n/a             No
+rightEarPosition    String      Position of the right ear (0-16)                    n/a             No
+message             String      Message.                                            n/a             No
+messageId           Integer     Message id.                                         n/a             No
+voice               Integer     Voice to use (use the API to fetch the full list)   n/a             No
+choreography        String      A string which prescribes the choreography 
+                                to use (see API docs)                               n/a             No
+choreographyTitle   Boolean     Choreography title                                  n/a             No
+urlList             Boolean     List of URLs to pass to the Nabaztag (can be 
+                                used for playing audio files)                       n/a             No
+checkReturn         Boolean     Whether to check the return code of the request, 
+                                throws a BuildException if the update fails         false           No
+==================  ==========  ==================================================  ==========      =========
 
 The code for this task can be found in my github repo - to install locally,
 export the file to a local phing tasks folder (I use

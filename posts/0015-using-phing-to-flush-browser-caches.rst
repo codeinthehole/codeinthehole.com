@@ -50,19 +50,19 @@ following snippet in your Phing deployment script.
 .. sourcecode:: xml
 
     <tstamp>
-    <format property="build.datetimestring" pattern="%Y-%m-%d-%H-%M" />
+        <format property="build.datetimestring" pattern="%Y-%m-%d-%H-%M" />
     </tstamp>
     ...
     <target name="create-temp-build" description="Creates a temporary copy of the source files">    
-    <echo msg="Copying deployment files into temporary directory" />
-    <copy todir="${dev.folder.temp}">
-        <filterchain>
-            <replacetokens begintoken="~~" endtoken="~~">
-                <token key="CACHEBUSTER" value="${build.datetimestring}" />
-            </replacetokens>
-        </filterchain>
-        <fileset refid="deployment-files" />
-    </copy>
+        <echo msg="Copying deployment files into temporary directory" />
+        <copy todir="${dev.folder.temp}">
+            <filterchain>
+                <replacetokens begintoken="~~" endtoken="~~">
+                    <token key="CACHEBUSTER" value="${build.datetimestring}" />
+                </replacetokens>
+            </filterchain>
+            <fileset refid="deployment-files" />
+        </copy>
     </target>
 
 The filterchain component of the copy task parses the given fileset for

@@ -31,7 +31,7 @@ risk of corruption). There are various scripts (written in PHP and bash) posted
 on the ``CHECK TABLE`` `manual page`_ but this operation can be done easily through a
 single line:
 
-.. _manual page: http://dev.mysql.com/doc/mysql/en/CHECK_TABLE.html
+.. _manual page: http://dev.mysql.com/doc/refman/5.0/en/check-table.html
 
 .. sourcecode:: bash
 
