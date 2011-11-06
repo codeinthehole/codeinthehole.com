@@ -12,5 +12,5 @@ urlpatterns = patterns('',
     # Blog pages
     url(r'^articles/$', ArticleListView.as_view(), name='articles'),
     url(r'^articles/(?P<slug>[\w-]+)/$', ArticleDetailView.as_view(), name='article'),
-    url(r'^articles/tagged/(?P<name>[\w-]+)/$', ArticleTagView.as_view(), name='tagged'),
+    url(r'^articles/tagged/(?P<name>[.\w-]+)/$', ArticleTagView.as_view(), name='tagged'),
 )

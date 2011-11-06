@@ -383,6 +383,12 @@ h1 {
     background-color: white;
     border: 1px solid #aaa;
 }
+.article .screenshot {
+    background-color: white;
+    border: 1px dashed #aaa;
+    margin-left: 20px;
+    padding: 8px 12px;
+}
 
 /* RST */
 div.highlight {
@@ -394,6 +400,7 @@ div.highlight {
 tt.docutils {
     background-color: #f8f8f8;
     padding: 2px 5px;
+    white-space: nowrap;
 }
 .highlight pre {
     margin: 0px;
