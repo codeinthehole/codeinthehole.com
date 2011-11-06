@@ -265,30 +265,49 @@ header #nav {
     font-weight: normal;
 }
 header a, header a:active, header a:link, header a:visited {
-    color: #aaa;
+    color: #222;
 }
 header a:hover {
-    color: #555;
+    color: #222;
+    text-decoration: underline;
 }
 
 /* Logo */
 #logo {
     color: #222;
-    font-family: 'Inconsolata', sans-serif;
+}
+.article #logo {
     float: right;
 }
-#logo h4 {
+.home #logo {
+    text-align: center;
+}
+#logo h1, 
+#logo h2,
+#logo h3,
+#logo h4,
+#logo h5 {
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: normal;
     margin: 0;
     padding: 0;
+}
+#logo h1 {
+    font-size: 4em;
+    margin-top: 0.2em;
+}
+#logo h2 {
+    font-size: 1.8em;
+}
+#logo h3 {
+    margin-top: 1em;
+}
+#logo h4 {
     font-size: 2em;
-    font-weight: normal;
 }
 #logo h5 {
-    margin: 0;
-    padding: 0;
     text-align: right;
     font-size: 1.1em;
-    font-weight: normal;
 }
 
 /* Footer */
@@ -336,10 +355,6 @@ a, a:active, a.link, a:visited, a:hover {
 }
 p {
     width: 39em;
-}
-h1 {
-    color: #333;
-    margin: 20px 0px 0px 0px;
 }
 
 #article,
