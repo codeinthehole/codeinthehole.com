@@ -5,6 +5,6 @@
 {% block description %}{{ description }}{% endblock %}
 
 {% block content %}
-    <h1 id="article_title">{{ title|default:"Writing" }}</h1>
+    <h1 id="title">{{ title|default:"Writing" }}</h1>
     {% include "rsb/includes/articles.html" %}
 {% endblock %}
