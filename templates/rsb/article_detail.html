@@ -42,7 +42,6 @@
 		<ul>
         {% for article in related_articles %}
             <li><a href="{{ article.get_absolute_url }}" title="{{ article.summary|striptags }}">{{ article.title }}</a>
-                
             </li>
         {% endfor %}
 	</ul>

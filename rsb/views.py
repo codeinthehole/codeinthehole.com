@@ -21,6 +21,7 @@ class ArticleListView(ListView):
     
     def get_context_data(self, **kwargs):
         ctx = super(ArticleListView, self).get_context_data(**kwargs)
+        ctx['title'] = "Writing"
         ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
         return ctx
     
@@ -35,7 +36,7 @@ class ArticleTagView(ListView):
     
     def get_context_data(self, **kwargs):
         ctx = super(ArticleTagView, self).get_context_data(**kwargs)
-        ctx['title'] = 'Articles tagged "%s"' % self.tag.name
+        ctx['title'] = "Writing on %s" % self.tag.name
         return ctx
 
 

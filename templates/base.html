@@ -1,9 +1,9 @@
 {% extends 'html5boilerplate/index.html' %}
 {% load url from future %}
 
-{% block title %}codeinthehole.com{% endblock %}
+{% block title %} | codeinthehole.com{% endblock %}
 {% block author %}David Winterbottom{% endblock %}
-{% block description %}Personal site of David Winterbottom{% endblock %}
+{% block description %}Personal site of David Winterbottom, a London-based progamming addict.{% endblock %}
 
 {% block extra_head %}
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
@@ -16,6 +16,12 @@
 <div id="container">
     <header>
         {% block header %}
+        <div id="logo">
+            <h4><a href="/" title="David Winterbottom">codeinthehole.com</a></h4>
+            <h5><a href="{% url 'articles' %}">writing</a> | 
+                <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">twitter</a> | 
+                <a href="http://github.com/codeinthehole">github</a></h5>
+        </div>
         {% endblock header %}
     </header>
     <div id="main" role="main">

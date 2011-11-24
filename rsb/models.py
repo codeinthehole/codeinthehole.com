@@ -28,6 +28,9 @@ class Article(models.Model):
     date_published = models.DateTimeField(null=True, blank=True)
     date_updated = models.DateTimeField(null=True, blank=True)
 
+    class Meta:
+        ordering = ('-date_published',)
+
     def __unicode__(self):
         return self.title
 

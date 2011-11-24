@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% load url from future %}
 
+{% block title %}David Winterbottom | codeinthehole.com{% endblock %}
+
 {% block bodyclass %}home{% endblock %}
+
+{% block header %}{% endblock %}
 
 {% block content %}
     <div id="logo">
         <h1>codeinthehole.com</h1>
         <h2>David Winterbottom</h2>
-        <h3><a href="{% url 'articles' %}">writing</a> | 
-            <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">@codeinthehole</a> | 
-            <a href="http://github.com/codeinthehole">github</a></h3>
+        <h3><a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
+            <a href="http://twitter.com/codeinthehole" title="Sometimes I make a funny on the Twitter">@codeinthehole</a> | 
+            <a href="http://github.com/codeinthehole" title="See my source code">github</a></h3>
     </div>
 
     <br/>

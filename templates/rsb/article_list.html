@@ -1,37 +1,28 @@
 {% extends 'base.html' %}
+{% load url from future %}
 
-{% block title %}Articles{% endblock %}
+{% block title %}{{ title }}{{ block.super }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
 
 {% block content %}
 
-    <h1>{{ title|default:"Articles" }}</h1>
-    <table class="articles">
-        <tbody>
-            {% for article in articles %}
-            <tr>
-                <td class="date">{{ article.date_published|date:"F d, Y"}}</td>
-                <td>
-                    <h2><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h2>
-                    <p>{{ article.summary|safe }}</p>
-                </td>
-            </tr>
-            {% endfor %}   
-        </tbody>     
-    </table>
+    <h1 id="article_title">{{ title|default:"Writing" }}</h1>
     
-    <h1>Unpublished articles</h1>
-    <table class="articles">
-        <tbody>
-            {% for article in unpublished_articles %}
-            <tr>
-                <td class="date">{{ article.date_created|date:"F d, Y"}}</td>
-                <td>
-                    <h2><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h2>
+    <div class="articles">
+        {% for article in articles %}
+            <div class="article">
+                <div class="meta">
+                    {{ article.date_published|date:"l, j F Y" }}<br/>
+                    {% for tag in article.tags.all %}
+                        <a href="{% url 'tagged' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="main">
+                    <a href="{{ article.get_absolute_url }}">{{ article.title|safe }}</a>
                     <p>{{ article.summary|safe }}</p>
-                </td>
-            </tr>
-            {% endfor %}   
-        </tbody>     
-    </table>
-
+                </div>
+            </div>
+        {% endfor %}
+    </div>   
+    
 {% endblock %}
