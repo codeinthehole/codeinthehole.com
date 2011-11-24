@@ -108,7 +108,6 @@ INSTALLED_APPS = (
     'django_extensions',
     'tagging',
     'debug_toolbar',
-    'devserver',
 )
 
 DEVSERVER_MODULES = (

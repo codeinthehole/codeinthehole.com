@@ -213,7 +213,7 @@ td { vertical-align: top; }
 
 /* Global */
 header, footer, p, h2, h3, th, td, li, dt, dd, blockquote {
-    font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 1.2em;
 }
 h1, h2, h3, h4 {
@@ -304,6 +304,7 @@ header a:hover {
 }
 #logo h4 {
     font-size: 2em;
+    text-align: right;
 }
 #logo h5 {
     text-align: right;
@@ -355,6 +356,16 @@ a, a:active, a.link, a:visited, a:hover {
 }
 p {
     width: 39em;
+}
+
+/* Homepage styles */
+.home h2 {
+    font-family: 'Droid Serif', serif; 
+    font-size: 1.8em;
+}
+.twtr-widget .twtr-tweet-wrap {
+    color: red;
+    padding: 0.5em 0 !important;
 }
 
 #article,
@@ -423,8 +434,13 @@ tt.docutils {
 
 /* Article list styles */
 .articles {
-    margin-top: 30px;
+    font-size: 1.2em;
 }
+.articles div.article {
+    padding: 0.5em 0 0.5em 0;
+    border-bottom: 1px dotted #ddd;
+}
+
 .articles td.date {
     color: #aaa;
     white-space: nowrap;
@@ -443,7 +459,7 @@ tt.docutils {
 }
 .articles td p {
     width: auto;
-    margin: 5px 0 20px 0;
+    margin: 0px 0 0px 0;
 }
 
 /* Twitter widget */

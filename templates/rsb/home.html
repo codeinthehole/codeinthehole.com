@@ -1,32 +1,32 @@
 {% extends 'base.html' %}
+{% load url from future %}
 
 {% block bodyclass %}home{% endblock %}
 
 {% block content %}
     <div id="logo">
         <h1>codeinthehole.com</h1>
-        <h2>David Winterbottom | @codeinthehole</h2>
+        <h2>David Winterbottom</h2>
+        <h3><a href="{% url 'articles' %}">writing</a> | 
+            <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">@codeinthehole</a> | 
+            <a href="http://github.com/codeinthehole">github</a></h3>
     </div>
 
     <br/>
     <hr/>
 
-    <h2>Articles</h2>
-    <table class="articles">
-        <tbody>
-            {% for article in articles %}
-            <tr>
-                <td class="date">{{ article.date_published|date:"F d, Y"}}</td>
-                <td>
-                    <h2><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h2>
-                    <p>{{ article.summary|safe }}</p>
-                </td>
-            </tr>
-            {% endfor %}   
-        </tbody>     
-    </table>
+    <h2>Latest writing</h2>
+    <div class="articles">
+    {% for article in articles %}
+        <div class="article">
+            <a href="{{ article.get_absolute_url }}">{{ article.title}}</a><br/>
+            {{ article.summary|safe }}
+        </div>
+    {% endfor %}    
+    </div>
     
-    <h2>Tweets</h2>
+    
+    <h2>Latest thinking</h2>
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
     <script>
     new TWTR.Widget({

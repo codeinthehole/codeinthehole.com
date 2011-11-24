@@ -12,7 +12,7 @@ The python package installer pip can be used to install directly from Github:
 
 .. sourcecode:: bash
 
-    pip install -e git+git://github.com/tangentlabs/django-oscar.git#egg=django-oscar
+    $ pip install -e git+git://github.com/tangentlabs/django-oscar.git#egg=django-oscar
 
 This will install from the HEAD of the master branch. However, when you use pip
 freeze to export your dependencies (usually to a ``requirements.txt`` file), pip

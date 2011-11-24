@@ -2,8 +2,8 @@
 {% load url from future %}
 
 {% block extra_head %}
-{{ block.super }}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
 {% block title %}{{ article.title|safe }} | 
@@ -14,11 +14,12 @@
 {% block description %}{{ article.summary|striptags }}{% endblock %}
 
 {% block header %}
-<div id="logo">
-    <h4><a href="/">codeinthehole.com</a></h4>
-	<h5>by <a href="/about/" title="@codeinthehole">David Winterbottom</a></h5>
-</div>
-
+    <div id="logo">
+        <h4><a href="/" title="David Winterbottom">codeinthehole.com</a></h4>
+    	<h5><a href="{% url 'articles' %}">writing</a> | 
+    	    <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">@codeinthehole</a> | 
+    	    <a href="http://github.com/codeinthehole">github</a></h5>
+    </div>
 {% endblock %}
 
 {% block content %}
