@@ -1,15 +1,18 @@
 from django.views.generic import TemplateView, DetailView, ListView
 from tagging.models import Tag
+import requests
 
 from rsb.models import Article
+from rsb.utils import fetch_tweets
 
 
 class HomeView(TemplateView):
     template_name = 'rsb/home.html'
 
     def get_context_data(self):
-        return {'articles': Article.objects.all().order_by('-date_created')[0:5]}
-        
+        return {'articles': Article.objects.all().order_by('-date_created')[0:5],
+                'tweets': fetch_tweets()}
+    
         
 class ArticleListView(ListView):
     model = Article

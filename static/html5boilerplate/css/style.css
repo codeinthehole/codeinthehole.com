@@ -371,6 +371,9 @@ p {
     margin: 0;
     padding: 0;
 }
+.twtr-widget {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+}
 .twtr-widget .twtr-tweet-wrap {
     color: red;
     padding: 0.5em 0 !important;
@@ -475,6 +478,30 @@ tt.docutils {
     margin: 0.1em 0 0 0;
 }
 
+/* Tweet styles */
+.tweets {
+    padding: 0 0 40px 0;
+    font-size: 1.2em;
+}
+.tweets .tweet {
+    border-bottom: 1px dotted #ddd;
+    overflow: hidden;
+    padding: 0.5em 0;
+}
+.tweets .tweet .meta {
+    float: right;
+    width: 30%;
+    text-align: right;
+    color: #666;
+    font-size: 0.85em;
+}
+.tweets .tweet .meta a {
+    color: #974747;
+}
+.tweets .tweet .main p {
+    font-size: 1em;
+    margin: 0.1em 0 0 0;
+}
 
 
 /* Twitter widget */

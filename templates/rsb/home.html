@@ -17,40 +17,21 @@
         </h3>
     </div>
 
-    <h2>Latest writing</h2>
+    <h2>Words</h2>
     {% include "rsb/includes/articles.html" %}
-    
-    <h2>Latest thinking</h2>
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-    <script>
-    new TWTR.Widget({
-      version: 2,
-      type: 'profile',
-      rpp: 8,
-      interval: 30000,
-      width: 'auto',
-      height: 300,
-      theme: {
-        shell: {
-          background: '#fff',
-          color: '#333'
-        },
-        tweets: {
-          background: '#fff',
-          color: '#333',
-          links: '#8C0808'
-        }
-      },
-      features: {
-        scrollbar: false,
-        loop: false,
-        live: false,
-        hashtags: true,
-        timestamp: true,
-        avatars: false,
-        behavior: 'all'
-      }
-    }).render().setUser('codeinthehole').start();
-    </script>
+
+    <h2>Tweets</h2>
+    <div class="tweets">
+    {% for tweet in tweets %}
+        <div class="tweet">
+            <div class="meta">
+                {{ tweet.date_created|timesince }} ago
+            </div>
+            <div class="main">
+                {{ tweet.text|safe }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
 
 {% endblock %}
