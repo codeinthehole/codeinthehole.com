@@ -5,24 +5,6 @@
 {% block description %}{{ description }}{% endblock %}
 
 {% block content %}
-
     <h1 id="article_title">{{ title|default:"Writing" }}</h1>
-    
-    <div class="articles">
-        {% for article in articles %}
-            <div class="article">
-                <div class="meta">
-                    {{ article.date_published|date:"l, j F Y" }}<br/>
-                    {% for tag in article.tags.all %}
-                        <a href="{% url 'tagged' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="main">
-                    <a href="{{ article.get_absolute_url }}">{{ article.title|safe }}</a>
-                    <p>{{ article.summary|safe }}</p>
-                </div>
-            </div>
-        {% endfor %}
-    </div>   
-    
+    {% include "rsb/includes/articles.html" %}
 {% endblock %}
