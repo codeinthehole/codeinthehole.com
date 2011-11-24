@@ -1,7 +1,9 @@
+import tagging
+
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
-import tagging
+
 
 class Article(models.Model):
     """
@@ -19,6 +21,7 @@ class Article(models.Model):
     body_rst = models.TextField()
     body_html = models.TextField()
 
+    # Track number of clicks
     num_views = models.PositiveIntegerField(default=0, db_index=True)
 
     date_created = models.DateTimeField(auto_now_add=True)
@@ -52,4 +55,3 @@ class Article(models.Model):
     
     
 tagging.register(Article)
-
