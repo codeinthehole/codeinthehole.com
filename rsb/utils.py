@@ -1,11 +1,24 @@
 import re
 import datetime
-
 import requests
 import simplejson as json
 
+from django.core.cache import cache
+
 
 def fetch_tweets(username='codeinthehole'):
+    """
+    Return tweets but with caching
+    """
+    key = 'tweets_%s' % username
+    tweets = cache.get(key)
+    if tweets is None:
+        tweets = _fetch_tweets(username)
+        cache.set(key, tweets, 300)
+    return tweets
+
+
+def _fetch_tweets(username='codeinthehole'):
     """
     Return a list of tweets for a given user
     """

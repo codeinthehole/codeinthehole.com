@@ -30,6 +30,9 @@ class Article(models.Model):
     # environment to production.  That is what "published" means.
     date_published = models.DateTimeField(null=True, blank=True)
     date_updated = models.DateTimeField(null=True, blank=True)
+    
+    # The ID from the old blogging software to allow redirects
+    old_id = models.IntegerField(null=True, blank=True)
 
     class Meta:
         ordering = ('-date_published',)

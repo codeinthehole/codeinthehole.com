@@ -25,11 +25,18 @@ class ArticleModelTests(TestCase):
         
 class ArticleViewsTests(TestCase):
     
+    def setUp(self):
+        self.client = Client()
+
     def test_single_article_view(self):
         article = create_article()
         url = reverse('article', kwargs={'slug': article.slug})
-        response = Client().get(url)
+        response = self.client.get(url)
         self.assertEqual(httplib.OK, response.status_code)
+        
+    def test_old_urls_redirect(self):
+        response = self.client.get('/archives/45-Using-pip-and-requirements.txt-to-install-from-the-HEAD-of-a-Github-branch.html')
+        self.assertEquals(httplib.MOVED_PERMANENTLY, response.status_code)
         
         
 class TwitterTests(TestCase):

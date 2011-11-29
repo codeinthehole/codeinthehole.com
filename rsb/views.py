@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView, DetailView, ListView, RedirectView
 from tagging.models import Tag
 import requests
 
@@ -73,6 +73,18 @@ class ArticleDetailView(DetailView):
         ctx['next_article'] = next[0] if len(next) > 0 else None
 
         return ctx
+    
+    
+class ArticleRedirectView(RedirectView):
+    
+    def get_redirect_url(self, **kwargs):
+        try:
+            article = Article.objects.get(old_id=kwargs['id'])
+        except Article.DoesNotExist:
+            return reverse('home')
+        else:
+            return article.get_absolute_url()
+    
     
 class AboutView(TemplateView):
     template_name = 'about.html'
