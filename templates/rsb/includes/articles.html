@@ -14,5 +14,7 @@
                 <p>{{ article.summary|safe }}</p>
             </div>
         </div>
+	{% empty %}
+		<p>No articles.</p>
     {% endfor %}
 </div>   

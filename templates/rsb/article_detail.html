@@ -6,21 +6,13 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
 {% endblock %}
 
-{% block title %}{{ article.title|safe }} | 
+{% block title %}{{ article.title|striptags }} | 
     {% for tag in article.tags.all %}{{ tag }}{% if not forloop.last %}, {% endif %}{% endfor %} |
     codeinthehole.com by David Winterbottom
 {% endblock %}
 
 {% block description %}{{ article.summary|striptags }}{% endblock %}
 
-{% block header %}
-    <div id="logo">
-        <h4><a href="/" title="David Winterbottom">codeinthehole.com</a></h4>
-    	<h5><a href="{% url 'articles' %}">writing</a> | 
-    	    <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">@codeinthehole</a> | 
-    	    <a href="http://github.com/codeinthehole">github</a></h5>
-    </div>
-{% endblock %}
 
 {% block content %}
 <h3 id="article_date">

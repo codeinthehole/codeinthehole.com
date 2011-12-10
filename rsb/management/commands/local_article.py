@@ -4,9 +4,11 @@ For creating a local article based on a RST file
 import logging
 import os
 import re
+import datetime
 
 from docutils.core import publish_parts
 from django.core.management.base import BaseCommand, CommandError
+from django.template.defaultfilters import striptags
 
 from rsb.models import Article
 import rsb.rstcode
@@ -17,13 +19,15 @@ class Command(BaseCommand):
     output_transaction = True
     
     def handle(self, *args, **options):
-        logger = self.create_logger() 
-        if len(args) != 1:
-            raise CommandError("Please specify the article file to process")
-        logger.info("Processing article file %s", args[0])
+        self.logger = self.create_logger() 
+        if not len(args):
+            raise CommandError("Please specify the article file(s) to process")
+        for filepath in args:
+            self.process_file(filepath)
 
+    def process_file(self, filepath):
+        self.logger.info("Processing article file %s", filepath)
         # We use the filename as the identifier of the article
-        filepath = args[0]
         folder = os.path.dirname(filepath)
         filename = os.path.basename(filepath)
 
@@ -37,13 +41,18 @@ class Command(BaseCommand):
                 article = Article.objects.get(filename=filename)
             except Article.DoesNotExist:
                 article = Article(filename=filename)
-                logger.info("Creating a new article")
+                self.logger.info("Creating a new article")
             else:
-                logger.info("Updating an existing article (id #%d)", article.id)
+                self.logger.info("Updating an existing article (id #%d)", article.id)
         else:
             id = int(m.group(1))
-            article = Article.objects.get(id=id)
-            logger.info("Updating an existing article (id #%d)", article.id)
+            try:
+                article = Article.objects.get(id=id)
+            except Article.DoesNotExist:
+                self.logger.warning("Creating a new article, even though the file is numbered")
+                article = Article(id=id, filename=filename)
+            else:
+                self.logger.info("Updating an existing article (id #%d)", article.id)
 
         # Extract data from the RST file
         body_rst = open(filepath).read()
@@ -51,13 +60,14 @@ class Command(BaseCommand):
 
         # The subtitle should contains the summary and the tags
         sections = parts['subtitle'].split('::')
-        summary = sections[0].strip()
+        summary = striptags(sections[0].strip())
 
         # Update model
         article.title = parts['title']
         article.summary = summary
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
+        article.date_published = datetime.datetime.now()
         article.save()
         
         if len(sections) > 1:
@@ -65,13 +75,13 @@ class Command(BaseCommand):
         
         if rename_file:
             new_filename = "%04d-%s" % (article.id, filename.replace('_', '-'))
-            logger.info("Renaming %s to %s", filename, new_filename)
+            self.logger.info("Renaming %s to %s", filename, new_filename)
             new_path = os.path.join(folder, new_filename)
             os.rename(filepath, new_path)
         
-        logger.info("Title:   %s", article.title)
-        logger.info("Summary: %s", article.summary)
-        logger.info("Tags:    %s", ", ".join([tag.name for tag in article.tags.all()]))
+        self.logger.info("Title:   %s", article.title)
+        self.logger.info("Summary: %s", article.summary)
+        self.logger.info("Tags:    %s", ", ".join([tag.name for tag in article.tags.all()]))
 
     def create_logger(self):
         logger = logging.getLogger(__name__)

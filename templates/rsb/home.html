@@ -11,16 +11,24 @@
     <div id="logo">
         <h1>codeinthehole.com</h1>
         <h2>David Winterbottom</h2>
-        <h3><a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
-            <a href="http://twitter.com/codeinthehole" title="Sometimes I make a funny on the Twitter">twitter</a> | 
-            <a href="http://github.com/codeinthehole" title="See my source code">github</a>
+		<h3>
+			&laquo;
+			<a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
+			<a href="{% url 'articles' %}" title="">RSS</a> | 
+			<a href="{% url 'projects' %}" title="Stuff I did">projects</a> |
+            <a href="http://twitter.com/codeinthehole" title="Once I made a funny on the Twitter">twitter</a> | 
+			<a href="http://github.com/codeinthehole" title="See my source code">github</a> |
+			<a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
+			&raquo;
         </h3>
     </div>
 
-    <h2>Words</h2>
-    {% include "rsb/includes/articles.html" %}
+	{% if articles %}
+		<h2 id="writing">Writing</h2>
+		{% include "rsb/includes/articles.html" %}
+	{% endif %}
 
-    <h2>Tweets</h2>
+    <h2 id="thinking">Thinking</h2>
     <div class="tweets">
     {% for tweet in tweets %}
         <div class="tweet">
@@ -31,7 +39,12 @@
                 {{ tweet.text|safe }}
             </div>
         </div>
+	{% empty %}
+		<p>Nothing going on at the moment.</p>
     {% endfor %}
     </div>
 
+{% endblock %}
+
+{% block footer %}
 {% endblock %}

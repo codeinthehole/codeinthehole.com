@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, DetailView, ListView, RedirectView
+from django.core.urlresolvers import reverse
 from tagging.models import Tag
 import requests
 
@@ -76,6 +77,9 @@ class ArticleDetailView(DetailView):
     
     
 class ArticleRedirectView(RedirectView):
+    """
+    For ensuring SEO goodness for URLs from the old site
+    """
     
     def get_redirect_url(self, **kwargs):
         try:

@@ -368,9 +368,13 @@ p {
     font-size: 2.4em;
     font-weight: normal;
     color: #333;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
 }
+.home footer {
+	background-color: white;
+}
+
 .twtr-widget {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
 }

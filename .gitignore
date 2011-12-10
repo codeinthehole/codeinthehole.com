@@ -1,4 +1,6 @@
 *.pyc
 *.swp
-draft/*
+*.DS_Store
+draft/
 notes.rst
+*.sqlite3
