@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>The CGLE: coupled Ginzburg-Landau equations</title>
+		<link rel="stylesheet" href="tutorial-styles.css" type="text/css" />
+		<link rel="home" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="previous" href="2D.html" title="Previous page" />
+		<link rel="next" href="summary.html" title="Next page" />
+	</head>
+	<body>
+		<div class="navheader">
+			<table summary="Navigation header" width="100%">
+				<tbody>
+					<tr>
+						<th colspan="3" align="center">The Complex Ginzburg-Landau equation</th>
+					</tr>
+					<tr>
+						<td class="leftlink"><a accesskey="p" href="2D.html">Previous</a></td>
+						<td class="centerlink"></td>
+						<td class="rightlink"><a accesskey="n" href="summary.html">Next</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+		</div>
+		<h2 class="title">
+			4 Coupled Ginzburg-Landau equations
+		</h2>
+		<div class="toc">
+			<dl>
+				<dt>4.0.1 <a href="#ccgl">Coupled complex Ginzburg-Landau equations</a></dt>
+				<dt>4.0.2 <a href="#mfgl">Mean-field Ginzburg-Landau equations</a></dt>
+			</dl>
+		</div> 
+		<p>
+		On this page, we briefly review two other amplitude descriptions, composed
+		of two complex Ginzburg-Landau equations coupled together.
+		</p>
+		<h4><a name="ccgl">4.0.1 Coupled complex Ginzburg-Landau equations</a></h4>
+		<p>
+		As noted in our original survey of the CGLE, when
+		the oscillatory system has a reflection symmetry, one has to take into account
+		modes travelling in both directions.  As such, the weakly nonlinear
+		patterns are of the form:
+		</p>
+		<div class="eq"><img src="eqs/CCGLplan.gif" alt="CCGL planform" /></div>
+		<p>
+		Following the same arguments for the derivation of the CGLE, one finds the appropriate
+		amplitude equations to be the complex coupled Ginzburg-Landau equations (CCGLE):
+		</p>
+		<div class="eq"><img src="eqs/CCGL.gif" alt="CCGL" /></div>
+		<p>
+		Depending on the nonlinear interaction coefficient, <img class="high" src="eqs/b3.gif" alt="b3" />,
+		two forms of plane wave can be stable.  For <img class="high" src="eqs/b3gt1.gif" alt="b3 gt 1" />, the
+		preferred pattern takes the form of travelling waves, analogous to those detailed
+		<a href="planewaves.html">earlier</a>.  However, for 
+		<img class="high" src="eqs/b3lt1.gif" alt="b3 lt 1" />, the selected patterns are standing waves.
+		The stability behaviour of standing waves is more complicated than for travelling waves; their
+		stability regions are delimited by several non-trivial boundaries (see 
+		<a class="ref" href="references.html#riecke00">Riecke and Kramer, 2000</a>).  They also
+		play host to a wide variety of coherent structures 
+		(see <a class="ref" href="references.html#vanhecke99">van Hecke et al., 1999</a>).
+		</p>
+		
+		<h4><a name="ccgl">4.0.2 Mean-field Ginzburg-Landau equations</a></h4>
+		<p>
+		One has to be cautious with the range of validity of the CCGLE.  This is because
+		the coupled equations are only formally valid when the group velocity is small.
+		In the more widely applicable case of finite group velocity, the CCGLE fail
+		to scale uniformly with the distance above threshold and their validity is not
+		guaranteed.  Rather, as proposed by 
+		<a class="ref" href="references.html#knobloch90">Knobloch and De Luca (1990)</a>, 
+		the counter-propagating amplitudes need to be treated in separate moving frames.		
+		In this formulation, the appropriate amplitude equations
+		are the mean-field Ginzburg-Landau equations (MFGL):
+		</p>
+		<div class="eq"><img src="eqs/MFGL.gif" alt="MFGL" /></div>
+		<p>
+		where the angled braces <img class="high" src="eqs/braces.gif" alt="braces" /> denote
+		averages in the co-moving frames of the amplitudes. In this case, 
+		the travelling modes move past each other so quickly that they
+		only interact through their average values.
+		</p>
+		<div class="navfooter"><hr />
+		<table summary="Navigation footer" width="100%">
+			<tbody>
+				<tr>
+					<td align="left"><a accesskey="p" href="2D.html">Previous</a></td>
+					<td align="center"></td>
+					<td align="right"><a accesskey="n" href="summary.html">Next</a></td>
+				</tr>
+				<tr>
+					<td class="leftlink">3 Two-dimensional behaviour</td>
+					<td class="centerlink"><a href="index.html">Home</a></td>
+					<td class="rightlink">5 Summary</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3494213-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	</body>
+</html>

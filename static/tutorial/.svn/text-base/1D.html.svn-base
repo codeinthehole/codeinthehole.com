@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>The CGLE: 1D behaviour</title>
+		<link rel="stylesheet" href="tutorial-styles.css" type="text/css" />
+		<link rel="home" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="previous" href="history.html" title="Abstract" />
+		<link rel="next" href="planewaves.html" title="Next page" />
+	</head>
+	<body>
+		<div class="navheader">
+			<table summary="Navigation header" width="100%">
+				<tbody>
+					<tr>
+						<th colspan="3" align="center">The Complex Ginzburg-Landau equation</th>
+					</tr>
+					<tr>
+						<td class="leftlink"><a accesskey="p" href="history.html">Previous</a></td>
+						<td class="centerlink"></td>
+						<td class="rightlink"><a accesskey="n" href="planewaves.html">Next</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+		</div>
+		<h2 class="title">
+			2 One-dimensional behaviour
+		</h2>
+		<div class="toc">
+			<dl>
+				<dt>2.1 <a href="planewaves.html">Plane waves: stability</a></dt>
+				<dt>2.2 <a href="pw-sims.html">Plane waves: simulations</a></dt>
+				<dt>2.3 <a href="coherent.html">Other behaviours</a></dt>
+			</dl>
+		</div> 
+		<p>
+	  A huge body of literature has been devoted to the analysis of the one-dimenional
+		CGLE (See <a class="ref" href="references.html#aranson02">Aranson and Kramer, 2002</a> and
+		references therein).  Hence, this tutorial is confined to reviewing the most
+		elementary behaviours.  We begin with an analysis of plane wave solutions to the 
+		CGLE, where long-wave stability results are derived.  These results are subsequently
+		complemented by the graphical results of numerical simulations, 
+		illustrating the instability
+		behaviour.  Finally, a range of other behaviours observed in the one-dimensional
+		CGLE are elucidated.
+		</p>
+		<div class="navfooter"><hr />
+		<table summary="Navigation footer" width="100%">
+			<tbody>
+				<tr>
+					<td align="left"><a accesskey="p" href="history.html">Previous</a></td>
+					<td align="center"></td>
+					<td align="right"><a accesskey="n" href="planewaves.html">Next</a></td>
+				</tr>
+				<tr>
+					<td class="leftlink">1.3 History</td>
+					<td class="centerlink"><a href="index.html">Home</a></td>
+					<td class="rightlink">2.1 Plane wave stability</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript"> 
+var pageTracker = _gat._getTracker("UA-3494213-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	</body>
+</html>

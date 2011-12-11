@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>The complex Ginzburg-Landau equation: summary</title>
+		<link rel="stylesheet" href="tutorial-styles.css" type="text/css" />
+		<link rel="home" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="up" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="previous" href="coupledCGL.html" title="Abstract" />
+		<link rel="next" href="references.html" title="Next page" />
+	</head>
+	<body>
+		<div class="navheader">
+			<table summary="Navigation header" width="100%">
+				<tbody>
+					<tr>
+						<th colspan="3" align="center">The Complex Ginzburg-Landau equation</th>
+					</tr>
+					<tr>
+						<td class="leftlink"><a accesskey="p" href="coupledCGL.html">Previous</a></td>
+						<td class="centerlink"></td>
+						<td class="rightlink"><a accesskey="n" href="references.html">Next</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+		</div>
+		<h2 class="title">
+			5 Summary
+		</h2>
+		<p>
+		In this tutorial, the basic properties of the complex Ginzburg-Landau
+		equation have been reviewed.  The Ginzburg-Landau equation is important
+		and worthwhile of study for two main reasons:
+		</p>
+		<ul>
+			<li>
+			It arises as the natural description of many physical situations, where
+			a Hopf bifurcation is taking place in a continuous medium.  Further, it is often
+			the core component or 'kernel' of many other amplitude descriptions.
+			</li>
+			<li>
+			Secondly, its solutions display a rich and exotic spectrum of behaviours,
+			reflecting the interplay of dissipation, dispersion and nonlinearity. 
+			A large family of coherent structures are admitted as solutions and it is
+			an ideal equation for the study of various aspects of spatiotemporal chaos</li> 
+		</ul>
+		<p>
+		This tutorial has only scratched the surface of the body of work available concerning
+		the CGLE.  The interested reader is encouraged to pursue the references listed
+		in the next section, in particular, the general review of 
+		<a class="ref" href="references.html#aranson02">Aranson and Kramer (2002)</a>. Also,
+		the complicated patterns and behaviours detailed here can easily be 
+		reproduced and examined by downloading the 
+		MATLAB code from the <a href="references.html#resources">resources</a> page.
+		</p>
+		<p>The study of the CGLE over the last few decades
+		have had an enormous impact on the study of non-equilibrium systems.
+		The insights gained from this analysis 
+		should be invaluable to future progress in the 
+		study of complex systems.
+		</p>
+		<div class="navfooter"><hr />
+		<table summary="Navigation footer" width="100%">
+			<tbody>
+				<tr>
+					<td align="left"><a accesskey="p" href="coupledCGL.html">Previous</a></td>
+					<td align="center"></td>
+					<td align="right"><a accesskey="n" href="references.html">Next</a></td>
+				</tr>
+				<tr>
+					<td class="leftlink">4 Coupled Ginzburg-Landau equations</td>
+					<td class="centerlink"><a href="index.html">Home</a></td>
+					<td class="rightlink">6 References</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3494213-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	</body>
+</html>

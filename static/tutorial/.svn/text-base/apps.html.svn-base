@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>The CGLE: applications</title>
+		<link rel="stylesheet" href="tutorial-styles.css" type="text/css" />
+		<link rel="home" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="previous" href="limitcases.html" title="Previous page" />
+		<link rel="next" href="history.html" title="Next page" />
+	</head>
+	<body>
+		<div class="navheader">
+			<table summary="Navigation header" width="100%">
+				<tbody>
+					<tr>
+						<th colspan="3" align="center">The Complex Ginzburg-Landau equation</th>
+					</tr>
+					<tr>
+						<td class="leftlink"><a accesskey="p" href="limitcases.html">Previous</a></td>
+						<td class="centerlink"></td>
+						<td class="rightlink"><a accesskey="n" href="history.html">Next</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+		</div>
+		<h2 class="title">
+			1.2 Applications
+		</h2>
+		<div class="toc">
+			<dl>
+				<dt>1.2.1 <a href="#rgl">The real Ginzburg-Landau equation</a></dt>
+				<dt>1.2.2 <a href="#cgl">The complex Ginzburg-Landau equation</a></dt>
+			</dl>
+		</div> 
+		<p>
+		Ginzburg-Landau equations have been used to model a wide variety of physical
+		systems.  This page simply lists a few of the possible applications, although no
+		details are given.  The interested reader is encouraged to consult
+		<a class="ref" href="references.html#">Aranson and Kramer (2002)</a> 
+		for the appropriate references.
+		</p>
+		<h4><a name="rgl">1.2.1 The Real Ginzburg-Landau equation</a></h4>
+		<p>
+		Physical systems which undergo an instability described by the RGLE include
+		</p>
+		<ul>
+			<li>Rayleigh-Ben&aacute;rd convection</li>
+			<li>Taylor-Couette flow</li>
+			<li>Flames stabilized on a burner</li>
+		</ul>
+		<p>
+		In more than one dimension, the system must be anisotropic (eg., electroconvection
+		and convection in an inclined layer) for the RGLE to be applicable.
+		On the other hand, in isotropic systems, the Laplacian operator must be replaced.
+		</p>
+		<h4><a name="rgl">1.2.2 The Complex Ginzburg-Landau equation</a></h4>
+		<p>
+		Physical systems which undergo an instability described by the CGLE include:
+		</p>
+		<ul>
+			<li>Rayleigh-Ben&aacute;rd convection in binary mixtures</li>
+			<li>The instability of rolls in low-Prandtl number Rayleigh-Ben&aacute;rd convection (this is 
+			a secondary instability)</li>
+			<li>Hydrothermal waves</li>
+			<li>Electroconvection in nematic liquid crystals</li>
+		</ul>
+		<div class="navfooter"><hr />
+		<table summary="Navigation footer" width="100%">
+			<tbody>
+				<tr>
+					<td align="left"><a accesskey="p" href="limitcases.html">Previous</a></td>
+					<td align="center"></td>
+					<td align="right"><a accesskey="n" href="history.html">Next</a></td>
+				</tr>
+				<tr>
+					<td class="leftlink">1.1 Limiting cases</td>
+					<td class="centerlink"><a href="index.html">Home</a></td>
+					<td class="rightlink">1.3 History</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3494213-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	</body>
+</html>

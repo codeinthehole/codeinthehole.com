@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>The CGL equation: other behaviours</title>
+		<link rel="stylesheet" href="tutorial-styles.css" type="text/css" />
+		<link rel="home" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="previous" href="pw-sims.html" title="Previous page" />
+		<link rel="next" href="2D.html" title="Next page" />
+	</head>
+	<body>
+		<div class="navheader">
+			<table summary="Navigation header" width="100%">
+				<tbody>
+					<tr>
+						<th colspan="3" align="center">The Complex Ginzburg-Landau equation</th>
+					</tr>
+					<tr>
+						<td class="leftlink"><a accesskey="p" href="pw-sims.html">Previous</a></td>
+						<td class="centerlink"></td>
+						<td class="rightlink"><a accesskey="n" href="2D.html">Next</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+		</div>
+		<h2 class="title">
+			2.3 Other behaviours
+		</h2>
+		<p>Aside from plane waves, a host of other exotic solutions have been observed in
+		the CGLE. In particular, several different forms of spatiotemporal chaotic or
+		disordered states have been found.  <a class="ref" href="references.html#shraiman92">Shraiman et al. (1992)</a> 
+		distinguished between two forms of chaotic behaviour found beyond the regime of
+		stable plane waves.  These are defect-mediated turbulence and
+		phase turbulence, an example of each is given below.  This picture was
+		extended by <a class="ref" href="references.html#chate94">Chat&eacute; (1994)</a> who
+		identified spatiotemporal intermittency in the regime where plane waves are stable.
+		</p>
+		<p>
+		These behaviours can be summarised in the following phase diagram.</p>
+		<div class="figure">
+			<img src="images/phasediagram.jpg" alt="phase diagram" />
+		</div>
+		<div class="caption">
+		The region labelled 'bichaos' can display either defect-mediated turbulence
+		or phase turbulence depending on the initial conditions.  The BF label indicates
+		the outer boundary of the Benjamin-Feir instability; above this line, all plane 
+		waves are unstable.
+		</div>
+		<p>
+		We now give a brief description of each of these behaviours.  (Click on the images
+		to see a larger version.)
+		</p>
+		<h4>Defect-mediated turbulence</h4>
+		<div class="simrow">
+			<a href="images/defturbabs.jpg"><img class="sims" src="images/defturbabs.jpg" alt="|A|" /></a>
+			<a href="images/defturbplot.jpg"><img class="high" src="images/defturbplot.jpg" alt="plot" /></a>
+		</div>
+		<div class="caption">
+			Parameter values: <img class="high" class="high" src="eqs/ab=2,-2.gif" alt="a=2,b=-2" />.	
+		</div>
+		<p>Turbulence in this region is characterised by 'defects' (i.e., points
+		in space-time where <img src="eqs/A=0.gif" alt="A=0" />).  At these points, 
+		the phase is not defined and can vary by multiples of <img class="high" src="eqs/2piL.gif" alt="2pi over L" /> when
+		going through them (<img src="eqs/L.gif" alt="L" /> is the container size).
+		<h4>
+		Phase turbulence
+		</h4>
+		<div class="simrow">
+			<a href="images/phaturbabs.jpg"><img class="sims" src="images/phaturbabs.jpg" alt="|A|" /></a>
+			<a href="images/phaturbplot.jpg"><img class="high" src="images/phaturbplot.jpg" alt="plot" /></a>
+		</div>
+		<div class="caption">
+			Parameter values: <img class="high" src="eqs/ab=2,-1.gif" alt="a=2,b=-1" />.	
+		</div>
+		<p>
+		In this form of chaotic behaviour, <img class="high" src="eqs/absA.gif" alt="|A|" /> never
+		reaches zero and the total phase is conserved.	This behaviour
+		occurs just above the BF line in the phase diagram where the amplitude 
+		<img class="high" src="eqs/absA.gif" alt="|A|" /> can be seen to be strongly slaved to the
+		marginal phase mode.  This allows a description of the dynamics to be
+		formulated based on a systematic expansion in gradients of the phase.  The
+		resulting equation is the Kuramoto-Sivashinsky equation.
+		</p>
+		<h4>
+		Spatio-temporal intermittency
+		</h4>
+		<div class="simrow">
+			<a href="images/holes2abs.jpg"><img class="sims" src="images/holes2abs.jpg" alt="|A|" /></a>
+			<a href="images/holes2plot.jpg"><img class="high" src="images/holes2plot.jpg" alt="plot" /></a>
+		</div>
+		<div class="caption">
+			Parameter values: <img class="high" src="eqs/ab=0,-3.gif" alt="a=0,b=-3" />.	 The intial condition
+			was composed of two localised pulses.
+		</div>
+		<p>In the region of the phase diagram below the Benjamin-Feir instability line, plane
+		waves attract most initial conditions.  However, using a suitably large and localised
+		initial condition, spatio-temporally intermittent states, such as the one above,
+		have been found.  These are characterised by localised structures (similar to 
+		holes - see below) which evolve in a complicated fashion and delimit regions of uniform
+		amplitude.  See <a class="ref" href="references.html#chate94">Chat&eacute; (1994)</a>
+		for further details.
+		</p>
+		<h4>
+			Coherent structures
+		</h4>
+		<div class="simrow">
+			<a href="images/holesabs.jpg"><img class="sims" src="images/holesabs.jpg" alt="|A|" /></a>
+			<a href="images/holesplot.jpg"><img class="high" src="images/holesplot.jpg" alt="plot" /></a>
+		</div>
+		<div class="caption">
+			Parameter values: <img class="high" src="eqs/ab=0,-1.5.gif" alt="a=0,b=-1.5" />. Here the 
+			initial condition was composed of two localised pulses.
+		</div>
+		<p>
+		Aside from plane waves, many other nonlinear solutions exist.  The best known are
+		Bekki-Nozaki holes (<a class="ref" href="references.html#bekki85">Bekki and Nozaki, 1985</a>),
+		which are illustrated above (the holes are the sharp dips in amplitude).  
+		These  structures asymptotically connect plane waves of different amplitude
+		and wavenumber (see <a class="ref" href="references.html#lega01">Lega, 2001</a> for
+		further details).  Holes are part of a family of solutions called
+		<span class="stress">coherent structures</span> which are comprised of fixed
+		spatial profiles that can vary through propagation and oscillation.  Other coherent
+		structures include sinks, fronts and shocks amongst others (the small 
+		peaks in the above figure are shocks). A comprehensive review of coherent structures in the 1D CGLE is
+		provided by 
+		<a class="ref" href="references.html#vansaarloos92">van Saarloos and Hohenberg (1992)</a>.
+		</p>	
+		<div class="navfooter"><hr />
+		<table summary="Navigation footer" width="100%">
+			<tbody>
+				<tr>
+					<td align="left"><a accesskey="p" href="pw-sims.html">Previous</a></td>
+					<td align="center"></td>
+					<td align="right"><a accesskey="n" href="2D.html">Next</a></td>
+				</tr>
+				<tr>
+					<td class="leftlink">2.2 Plane waves: simulations</td>
+					<td class="centerlink"><a href="index.html">Home</a></td>
+					<td class="rightlink">3 Two-dimensional behaviour</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3494213-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	</body>
+</html>

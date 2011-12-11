@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>The CGL equation: the equation</title>
+		<link rel="stylesheet" href="tutorial-styles.css" type="text/css" />
+		<link rel="home" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="up" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="previous" href="index.html" title="The Complex Ginzburg-Landau equation" />
+		<link rel="next" href="history.html" title="Next page" />
+	</head>
+	<body>
+		<div class="navheader">
+			<table summary="Navigation header" width="100%">
+				<tbody>
+					<tr>
+						<th colspan="3" align="center">The Complex Ginzburg-Landau equation</th>
+					</tr>
+					<tr>
+						<td class="leftlink"><a accesskey="p" href="index.html">Previous</a></td>
+						<td class="centerlink"></td>
+						<td class="rightlink"><a accesskey="n" href="history.html">Next</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+		</div>
+		<h2 class="title">
+			1 The equation
+		</h2>
+		<div class="toc">
+			<dl>
+				<dt>1.1 <a href="history">History</a></dt>
+			</dl>
+		 </div> 
+		<p>In its canonical form, the complex Ginzburg-Landau equation (CGL) is given by</p>
+		<div class="eq"><img src="eqs/CGL.gif" alt="CGL equation" /></div>
+		<p>where <img src="eqs/A.gif" alt="A" /> is a complex function of (rescaled)
+		time and space; the parameters <img src="eqs/alpha.gif" alt="alpha" /> and
+		<img src="eqs/beta.gif" alt="beta" /> characterise linear and nonlinear dispersion
+		respectively.
+		</p>
+		<p>
+		The equation arises in the study of <span class="stress">nonequilibrium</span> 
+		problems, and acts as an <span class="stress">amplitude</span>
+		(or envelope or modulational) equation.  It provides a universal description of
+		weakly nonlinear spatio-temporal phenomena in extended continous media whose
+		dispersion conforms to a very general type.  We also require that the system is 
+		<span class="stress">gauge-invariant</span>, that is, the dynamics remain invariant
+		to the transformation:</p>
+		<div class="eq"><img src="eqs/gauge-trans.gif" alt="gauge transformation" /></div>
+		<p>
+		Such a symmetry typically arises where <img src="eqs/A.gif" alt="A" /> is the
+		slowly-varying amplitude of a phenomenon that is periodic in at least one variable 
+		(space or time).
+		</p>
+		<p>
+		<a href="http://validator.w3.org/check?url=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+		</p>
+		<div class="navfooter"><hr />
+		<table summary="Navigation footer" width="100%">
+			<tbody>
+				<tr>
+					<td align="left"><a accesskey="p" href="index.html">Previous</a></td>
+					<td align="center"><a accesskey="u" href="index.html">Up</a></td>
+					<td align="right"><a accesskey="n" href="history.html">Next</a></td>
+				</tr>
+				<tr>
+					<td class="leftlink">Abstract</td>
+					<td class="centerlink"><a href="index.html">Home</a></td>
+					<td class="rightlink">1.1 History</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+        <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3494213-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+	</body>
+</html>
