@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, DetailView, ListView, RedirectView
 from django.core.urlresolvers import reverse
+from django.contrib.syndication.views import Feed
 from tagging.models import Tag
 import requests
 
@@ -28,6 +29,21 @@ class ArticleListView(ListView):
         ctx['title'] = "Writing"
         ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
         return ctx
+
+
+class ArticlesFeedView(Feed):
+    title = "David Winterbottom (@codeinthehole)"
+    link = "/writing/"
+    description = "Latest writing"
+
+    def items(self):
+        return Article.objects.all().order_by('-date_published')[:15]
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.summary
     
 
 class ArticleTagView(ListView):
