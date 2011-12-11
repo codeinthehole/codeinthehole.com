@@ -8,8 +8,6 @@ urlpatterns = patterns('',
     # Static pages
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^about/$', AboutView.as_view(), name='about'),
-    url(r'^projects/$', ProjectsView.as_view(), name='projects'),
-    url(r'^talks/$', TalksView.as_view(), name='talks'),
     # Blog pages
     url(r'^articles/$', ArticleListView.as_view(), name='articles'),
     url(r'^articles/feed/$', ArticlesFeedView(), name='articles-feed'),

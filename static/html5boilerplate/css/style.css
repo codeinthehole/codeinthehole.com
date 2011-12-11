@@ -334,6 +334,13 @@ footer #profile_photo {
     margin-right: 20px;
 }
 
+img.in_para {
+    float: right;
+    margin: 0 0 10px 10px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
 /* Articles */
 h1#title {
     font-family: 'Droid Serif', serif;
@@ -350,7 +357,7 @@ h1#title {
 #further-reading {
     background-color: #eee;
     padding: 0.1em 0 0.1em 20px;
-    margin-top: 3em;
+    margin-top: 80px;
     -moz-border-radius: 3px 0 3px 0;
     border-radius: 3px 0 3px 0;
 }
@@ -358,7 +365,7 @@ a, a:active, a.link, a:visited, a:hover {
     text-decoration: none;
     color: #8C0808;
 }
-p {
+p, li {
     width: 39em;
 }
 
@@ -370,6 +377,7 @@ p {
     color: #333;
     margin: 0 0 10px 0;
     padding: 0;
+    clear: left;
 }
 .home footer {
 	background-color: white;
@@ -456,7 +464,7 @@ tt.docutils {
     text-align: left;
 }
 .articles {
-    padding: 0 0 40px 0;
+    padding: 0 0 20px 0;
     font-size: 1.2em;
 }
 .articles .article {

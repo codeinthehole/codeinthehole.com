@@ -1,20 +1,53 @@
 {% extends 'base.html' %}
+{% block title %}About{{ block.super }}{% endblock %}
+{% block bodyclass %}home{% endblock %}
 
 {% block content %}
     <h1 id="title">About</h1>
+    <p>I'm a software developer working in London.  In the daytime, I'm head
+    of programming at <a href="http://www.tangentlabs.co.uk/">Tangent Labs</a>, a leading digital agency; while at night, I
+    hack on personal projects and open-source software.  To an outsider (like my wife), 
+    work and play appear identical.</p>
 
-    <h2>About me</h2>
-    <p>I'm a sofware developer working London and have an insatiable appetite for 
-    hacking, programming literature.  I'm head of programming at Tangent Labs, a leading
-    digital agency.</p>
-    <p>Most of my daytime work revolves around e-commerce projects.  I'm the lead author
-    of django-oscar, a domain-driven ecommerce framework for Django.</p>
+    <h2>Hacking</h2>
+    <p>I am a programming addict.</p>
+    <p>Most of work at Tangent revolves around e-commerce, using mainly Python
+    but sometimes also PHP.  To try and make my life easier, I wrote <a
+        href="http://github.com/tangentlabs/django-oscar/">django-oscar</a>, a
+    domain-driven ecommerce framework for Django.  My life temporarily got 34% easier
+    until other annoyances rose up to fill the void.</p>
 
-    <h2>About this website</h2>
-    <p>This site is written in a home-rolled blog software, restructured-blog, designed
-    to so that I can write articles in Vim on my laptop and push them up to a server using
-    a management.  Optimised to make my life easy.
-    </p>
+    <p>I wrote and maintain <a href="http://www.commandlinefu.com">commandlinefu.com</a>.</p>
+
+    <p>See <a href="http://github.com/codeinthehole/">Github</a> for other projects.</p>
+
+    <h2>Maths</h2>
+    <img src="{{ STATIC_URL }}images/vgl.jpg" class="in_para" />
+    <p>I have a PhD in Applied Mathematics from the University of Nottingham -
+    you can <a href="http://etheses.nottingham.ac.uk/archive/00000180/">read my thesis</a> 
+    if you like.</p>
+    <p>There are a few papers out there based on my research:</p>
+    <ul>
+        <li>Sqrt(5):2 mode interactions on a square lattice<br/>
+        <em>Int. J. Bif. and Chaos</em> 14 11 3883-3897<br/>
+        D.M. Winterbottom [not available online]
+        </li>
+        <li><a href="http://stacks.iop.org/0951-7715/18/1031">Oscillatory pattern formation with a conservation law</a><br/>
+        <em>Nonlinearity</em> 18 1031-1056<br/>
+        D.M. Winterbottom, P.C. Matthews, S.M. Cox
+        </li>
+        <li><a href="http://link.aip.org/link/?SJADAY/7/63/1">Pattern Formation in a Model of a Vibrated Granular Layer</a><br/>
+        <em>SIAM J. Appl. Dyn. Syst.</em> 7(1) 63-78<br/>
+        D.M. Winterbottom, S.M. Cox, P.C. Matthews
+        </li>
+    </ul>
+    <p>You may also be interested in an <a href="{{ STATIC_URL }}tutorial/index.html">online tutorial</a> I put together back in the 
+    dreamy days of 2004.</p>
+
+    <h2>Contact</h2>
+    <p>You can use <a href="http://www.twitter.com/codeinthehole">Twitter</a> 
+    or <a href="http://github.com/codeinthehole/">Github</a> if you're so
+    inclined, but <a href="mailto:david.winterbottom@gmail.com">email</a> is preferred.</p>
 
 {% endblock %}
 
