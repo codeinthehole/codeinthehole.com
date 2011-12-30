@@ -1,9 +1,18 @@
 Todo
 ====
 
-- Upload to github
+- Redirect to thesis page
+- Rewrite LAtex tutorial as an article
 - Don't show bio on non-article pages
+- Project logos oh homepage
+- Photo on homepage
+- Get CGL tutorial served staticaly
+- Sort out article dates
 
+
+
+Notes
+=====
 
 - Homepage
     * Photo
@@ -14,22 +23,10 @@ Todo
     * Stack Overflow 
     * Shelfari
     
-- Latex tutorial
-- CGL tutorial
-
-- Redirects from old site - give them the same PKs to make lookups easier
-
-- Write up latex tutorial as article
-
-* Single article page
-    - Related articles
-    
-* Show snippets on homepage
 * Get python highlighted correctly
 * Long code lines?
 * Next and prevoius articles
 TAgging articles
-RSS feeds
 
 * Split project into library and project
 

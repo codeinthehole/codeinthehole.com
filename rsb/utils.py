@@ -37,7 +37,7 @@ def _fetch_tweets(username='codeinthehole'):
     return processed_tweets
 
 
-urlfinder = re.compile(r"(http://[^ ]+)")
+urlfinder = re.compile(r"(https?://[^ ]+)")
 tweeterfinder = re.compile(r"@(\w+)")
 
 
