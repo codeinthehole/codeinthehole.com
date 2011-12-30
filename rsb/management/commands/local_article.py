@@ -67,7 +67,6 @@ class Command(BaseCommand):
         article.summary = summary
         article.body_html = parts['fragment']        
         article.body_rst = body_rst
-        article.date_published = datetime.datetime.now()
         article.save()
         
         if len(sections) > 1:
