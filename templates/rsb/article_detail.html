@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load url from future %}
 
+{% block bodyclass %}article{% endblock %}
+
 {% block extra_head %}
     {{ block.super }}
     <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
@@ -56,4 +58,20 @@
     </ul>
 </div>
 
+{% endblock %}
+
+{% block footer %}
+	<img id="profile_photo" src="{{ STATIC_URL }}/images/me.jpg" />
+	<p>I'm David Winterbottom, a 
+	web developer and programming addict.  I'm head of programming at Tangent, a digital agency
+	in London.  I'm also the creator of <a href="http://www.commandlinefu.com">commandlinefu.com</a>
+	and the e-commerce framework <a href="">django-oscar</a> amongst other things.</p>
+	</p>  
+	<p>If you've read this far, you should probably <a href="http://twitter.com/codeinthehole">follow me on Twitter</a>.</p>          
+	<p>
+	Contact me via 
+	<a href"mailto:david.winterbottom@gmail.com">email</a>,
+	<a href="http://twitter.com/codeinthehole">twitter</a>, or
+	<a href="http://github/codeinthehole">github</a>. 
+	</p>
 {% endblock %}

@@ -12,7 +12,7 @@ class HomeView(TemplateView):
     template_name = 'rsb/home.html'
 
     def get_context_data(self):
-        return {'articles': Article.objects.all().order_by('-date_created')[0:5],
+        return {'articles': Article.objects.all().order_by('-date_published')[0:5],
                 'tweets': fetch_tweets()}
     
         
