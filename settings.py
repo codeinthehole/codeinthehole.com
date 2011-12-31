@@ -61,11 +61,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = location('public/static/')
 STATICFILES_DIRS = (location('static/'),)
 
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
-
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'swf65^49=x&!lnu-0t8e!qqyr^z6-0+g5x3ci$&+3vfhjvwoo+'
 
@@ -108,16 +103,4 @@ INSTALLED_APPS = (
     'django_extensions',
     'tagging',
     'debug_toolbar',
-)
-
-DEVSERVER_MODULES = (
-    'devserver.modules.sql.SQLRealTimeModule',
-    'devserver.modules.sql.SQLSummaryModule',
-    'devserver.modules.profile.ProfileSummaryModule',
-
-    # Modules not enabled by default
-    'devserver.modules.ajax.AjaxDumpModule',
-    'devserver.modules.profile.MemoryUseModule',
-    'devserver.modules.cache.CacheSummaryModule',
-    'devserver.modules.profile.LineProfilerModule',
 )
