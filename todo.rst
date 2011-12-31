@@ -1,13 +1,13 @@
 Todo
 ====
 
+- Finish thesis page
 - Redirect to thesis page
-- Rewrite LAtex tutorial as an article
-- Don't show bio on non-article pages
-- Project logos oh homepage
-- Photo on homepage
+- Sort out bio on article pages
 - Get CGL tutorial served staticaly
 - Sort out article dates
+- Tidy up statics and folder structure
+- Deployment
 
 
 
