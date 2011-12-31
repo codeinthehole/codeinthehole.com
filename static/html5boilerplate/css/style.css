@@ -313,10 +313,11 @@ header a:hover {
     font-size: 1.1em;
 }
 
-/* Homepage */
-
 /* Footer */
 footer {
+	margin: 0 0 40px 0;
+}
+.article footer {
     background-color: #eee;
     padding: 10px 10px 50px 10px;
     overflow: hidden;
@@ -350,10 +351,6 @@ h1#title {
     margin: 0;
     padding: 0;
 }
-#article h1 {
-    font-family: 'Droid Serif', serif;
-    color: #8C0808;
-}
 #further-reading {
     background-color: #eee;
     padding: 0.1em 0 0.1em 20px;
@@ -379,8 +376,11 @@ p, li {
     padding: 0;
     clear: left;
 }
-.home footer {
-	background-color: white;
+.home a.read-more {
+	display: block;
+	text-align: right;
+	padding: 5px 0;
+	font-size: 10pt;
 }
 
 .twtr-widget {
@@ -413,6 +413,14 @@ p, li {
     font-family: 'Droid Serif', serif;
     font-weight: normal;
     padding-left: 20px;
+    color: #8C0808;
+}
+#article h2 {
+    font-family: 'Droid Serif', serif;
+    padding-left: 20px;
+    color: #8C0808;
+    font-weight: normal;
+    font-size: 14pt;
 }
 .article h3#article_date {
     font-family: 'Droid Serif', serif;
@@ -441,7 +449,7 @@ p, li {
 
 /* RST */
 div.highlight {
-    width: 820px;
+    width: 790px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     padding: 10px 10px 10px 20px ;
@@ -454,6 +462,13 @@ tt.docutils {
 .highlight pre {
     margin: 0px;
 }
+div.tip {
+    color: #aaa;
+    font-size: 8pt;
+}
+div.tip p.first {
+    display: none;
+}
 
 /* Article list styles */
 .article h1#title {
@@ -464,8 +479,9 @@ tt.docutils {
     text-align: left;
 }
 .articles {
-    padding: 0 0 20px 0;
+    padding: 0 0 0 0;
     font-size: 1.2em;
+    margin-top: 20px;
 }
 .articles .article {
     border-bottom: 1px dotted #ddd;
@@ -514,7 +530,6 @@ tt.docutils {
     font-size: 1em;
     margin: 0.1em 0 0 0;
 }
-
 
 /* Twitter widget */
 .twtr-hd, .twtr-ft {

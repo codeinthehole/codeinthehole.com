@@ -1,0 +1,89 @@
+% **************************
+% THESIS_WITHOUT_PDFCODE.tex
+% **************************
+% David.Winterbottom@gmail.com
+
+\documentclass[11pt,a4paper]{report}
+
+% Essential packages
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx,color}
+\usepackage[left=1.5in, right=1in, top=1in, bottom=1in, includefoot, headheight=13.6pt]{geometry}
+\usepackage[square, comma, numbers, sort&compress]{natbib}
+\usepackage[T1]{fontenc}
+
+% Optional customisation packages
+\usepackage{mathpazo}
+\usepackage[hang, small, bf, margin=20pt, tableposition=top]{caption} 
+\setlength{\abovecaptionskip}{0pt}
+
+% Page layout
+\parindent 0pt
+\parskip 1ex
+\renewcommand{\baselinestretch}{1.33}
+\numberwithin{equation}{section}
+\renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Contents}
+\pagenumbering{roman}
+\bibliographystyle{unsrtnat}
+
+% Customising headers (optional) - see fancyhdr.pdf
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{}
+\lhead{\nouppercase{\textsc{\leftmark}}}
+\renewcommand{\headrulewidth}{0pt}
+\makeatletter
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{\@chapapp}\ \thechapter:\ #1}{}}
+\makeatother
+
+% Customising chapter headings (optional) - see sectsty.pdf
+\usepackage{sectsty}
+\chapterfont{\large\sc\centering}
+\chaptertitlefont{\centering}
+\subsubsectionfont{\centering}
+
+% Set which chapters to include
+\includeonly{chapter1}
+
+% Actual document
+\begin{document}
+	
+	% Titlepage
+	\title{
+		\huge{\textbf{Collected studies in pseudoscience}} \\[1.2cm]
+		\Large{	Nathan P. Utah, MMath.} \\[1.2cm]
+		\Large{Thesis submitted to The University of Nottingham \\ for
+		the degree of Doctor of Philosophy} \\ \vspace{1cm}
+		\Large{November 2005} 
+	} 
+	\author{} \date{}
+	\maketitle
+	
+	% Dedication
+ 	\newpage \vspace*{8cm} 
+	\begin{center} 
+		\large Dedicated to the steel workers of America \\
+		\emph{keep reaching for that rainbow!}
+ 	\end{center}
+
+	% Abstract
+	\newpage 
+	\chapter*{Abstract}
+	\textsc{The celebrated number} -17 was discovered in Manchester
+	in 1989\dots 
+
+	% Acknowledgements
+ 	\chapter*{Acknowledgements}
+	I would like to thank Rambo, my pet fishfinger, \dots
+	
+	\tableofcontents 
+	\newpage	
+	\pagenumbering{arabic}
+ 	
+	% Include all chapter files
+	\include{chapter1}
+	
+	\addcontentsline{toc}{chapter}{References}
+	\bibliography{bibliography}
+\end{document}
