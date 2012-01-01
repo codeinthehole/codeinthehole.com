@@ -317,13 +317,6 @@ header a:hover {
 footer {
 	margin: 0 0 40px 0;
 }
-.article footer {
-    background-color: #eee;
-    padding: 10px 10px 50px 10px;
-    overflow: hidden;
-    margin: 0 0 0 0;
-    font-size: 1em;
-}
 footer p {
     width: auto;
 }
@@ -340,6 +333,8 @@ img.in_para {
     margin: 0 0 10px 10px;
     border: 1px solid #ccc;
     padding: 2px;
+	clear: right;
+	width: 140px;
 }
 
 /* Articles */
@@ -352,11 +347,28 @@ h1#title {
     padding: 0;
 }
 #further-reading {
-    background-color: #eee;
-    padding: 0.1em 0 0.1em 20px;
-    margin-top: 80px;
-    -moz-border-radius: 3px 0 3px 0;
-    border-radius: 3px 0 3px 0;
+	border-top: 1px dashed #ddd;
+	margin-top: 20px;
+}
+#further-reading .articles {
+	margin-left: 20px;
+}
+#article-about {
+	border-top: 1px dashed #ddd;
+	margin-top: 20px;
+}
+#article-nav {
+	margin-top: 50px;
+	padding-left: 20px;
+	border-top: 1px dashed #ddd;
+	padding-top: 15px;
+	overflow: hidden;
+}
+#article-nav div {
+	width: 300px;
+}
+#article-nav #previous {
+	text-align: right;
 }
 a, a:active, a.link, a:visited, a:hover {
     text-decoration: none;
@@ -376,7 +388,7 @@ p, li {
     padding: 0;
     clear: left;
 }
-.home a.read-more {
+a.read-more {
 	display: block;
 	text-align: right;
 	padding: 5px 0;
@@ -392,10 +404,11 @@ p, li {
 }
 
 #article,
-#further-reading {
+.article-meta {
     line-height: 1.8em;
 }
-#article p {
+#article p,
+.article-meta p {
     margin-left: 20px;
 }
 
@@ -415,7 +428,8 @@ p, li {
     padding-left: 20px;
     color: #8C0808;
 }
-#article h2 {
+#article h2,
+.article-meta h2 {
     font-family: 'Droid Serif', serif;
     padding-left: 20px;
     color: #8C0808;

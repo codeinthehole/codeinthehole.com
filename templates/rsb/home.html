@@ -23,10 +23,7 @@
     </div>
 
     <h2 id="home">About</h2>
-	<p>I'm Head of Programming at <a href="http://www.tangentlabs.co.uk">Tangent Labs</a>, a London-based digital agency.
-    I'm also the creator of <a href="http://www.commandlinefu.com">commandlinefu.com</a> and 
-	the e-commerce framework <a href="http://github.com/tangentlabs/django-oscar">django-oscar</a> amongst <a href="http://github.com/codeinthehole/">other things</a>.</p>
-	<a class="read-more" href="{% url 'about' %}">More &raquo;</a>
+	{% include 'rsb/includes/about.html' %}
 
 	{% if articles %}
 		<h2 id="writing">Writing</h2>
