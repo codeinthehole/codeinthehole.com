@@ -13,6 +13,7 @@ feedback on `joind.in`_.
 .. _`joind.in`: http://joind.in/talk/view/2896
 
 .. image:: /static/images/clf-presentation.png
+    :width: 800px
 
 The slides are written in `Eric Meyer's S5`_, which is a XHTML, CSS and Javascript
 based slide show format. I enjoyed using this as it was easy to port my styles

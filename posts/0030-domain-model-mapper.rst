@@ -43,7 +43,7 @@ to model your domain.
 
 .. _`README`: https://github.com/codeinthehole/domain-model-mapper
 
-.. sourcecode:: PHP
+.. sourcecode:: php
 
     // Create model class
     class Person extends \DMM\BaseDomainModel
@@ -138,6 +138,6 @@ Relationships between models are not a feature of the package at the moment.
 The best way to handle this is to use a "repository" object which composes
 several mappers.
 
-The `code is on github`_ if you are interested:
+The `code is on github`_ if you are interested.
 
 .. _`code is on github`: https://github.com/codeinthehole/domain-model-mapper
