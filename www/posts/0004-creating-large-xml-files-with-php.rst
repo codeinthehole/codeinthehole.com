@@ -15,8 +15,9 @@ then can create is memory-bound.
 For example, DOMDocument stores the XML tree in memory while it is being built
 - you then flush it out to file after all elements have been created:
 
-.. sourcecode:: PHP
+.. sourcecode:: php
 
+    <?php
     $dom = new DOMDocument('1.0');
     for ($i=0; $i<=10000; ++$i) {
         $root = $dom->createElement('message');
@@ -35,8 +36,9 @@ to periodically flush the XML in memory out to file. By doing so, you reclaim
 the memory so you can keep building the XML tree without exceeding memory
 limitations.
 
-.. sourcecode:: PHP
+.. sourcecode:: php
 
+    <?php
     $xmlWriter = new XMLWriter();
     $xmlWriter->openMemory();
     $xmlWriter->startDocument('1.0', 'UTF-8');

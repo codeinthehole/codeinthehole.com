@@ -2,7 +2,7 @@
 Domain-model-mapper - A PHP Data Mapper implementation
 ======================================================
 -----------------------------------------------------------------------------------
-A lightweight implementation of the Data Mapper for PHP 5.3 :: php, design_patterns
+A lightweight implementation of the Data Mapper for PHP 5.3 :: php, design patterns
 -----------------------------------------------------------------------------------
 
 At various PHP conferences and meetups over the last few weeks, I've seen
@@ -45,6 +45,7 @@ to model your domain.
 
 .. sourcecode:: php
 
+    <?php
     // Create model class
     class Person extends \DMM\BaseDomainModel
     {
@@ -103,6 +104,7 @@ These can then used as follows:
 
 .. sourcecode:: php
 
+    <?php
     // Create a new model
     $person = new Person;
     $person->first_name = 'Alan';
@@ -129,6 +131,7 @@ the ``__load`` method to populate it with data for testing.
 
 .. sourcecode:: php
 
+    <?php
     $model = new Person;
     $model->first_name = '  terry';
     $model->last_name = 'jones     ';

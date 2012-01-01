@@ -52,7 +52,9 @@ here's my script for MySQL:
 
 .. _docs: http://ganglia.wiki.sourceforge.net/ganglia_documents
 
-» gmetric-mysql.sh (3.1kb)
+» `gmetric-mysql.sh (3.1kb)`_
+
+.. _`gmetric-mysql.sh (3.1kb)`: /static/downloads/gmetric-mysql.sh
 
 It's written in Bash and uses a temporary file to read the MySQL stats into
 before parsing and submitting to gmetric. This is done as many of the MySQL

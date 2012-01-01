@@ -73,7 +73,7 @@ window object) to retrieve an array or properties or methods. For example,
 working at the Firebug console, we can examine the hash object of the Prototype
 Javascript library, and the native ``document.location`` object:
 
-.. image:: /static/images/screenshots/firebug-screenshot.jpg
+.. image:: /static/images/screenshots/firebug-screenshot.png
 
 Moreover, it can sometimes be useful to have a debug mode for an application
 where these methods are added to the supertype "object" which provides the

@@ -25,15 +25,15 @@ into a local file.
 
 This works but has two downsides:
 
-* First, running a shell command forces you to step outside the MySQL adapter of
-  your progamming language which means it is a new place where the database
-  credentials need to be passed. Shelling out commands always feels like you've
-  failed.
+1. First, running a shell command forces you to step outside the MySQL adapter of
+   your progamming language which means it is a new place where the database
+   credentials need to be passed. Shelling out commands always feels like you've
+   failed.
 
-* Further, as far as I can tell, you can't control the field separator or line
-  endings using this technique (in the same way as you can with ``SELECT ... INTO
-  OUTFILE ...``) and so the file includes an unwanted line with the field names
-  and tab-separates the fields.
+2. Further, as far as I can tell, you can't control the field separator or line
+   endings using this technique (in the same way as you can with ``SELECT ... INTO
+   OUTFILE ...``) and so the file includes an unwanted line with the field names
+   and tab-separates the fields.
 
 It's worth noting the ``mysqldump`` isn't much help here, as the ``--tab`` option
 that allows CSV output to be generated only works with a local database
@@ -59,6 +59,7 @@ Here's a quick and dirty PHP implementation:
 
 .. sourcecode:: php
 
+    <?php
     $tableName = 'some_table';
     $sql =
        "SELECT * 

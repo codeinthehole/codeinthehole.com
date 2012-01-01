@@ -368,14 +368,20 @@ h1#title {
 	width: 300px;
 }
 #article-nav #previous {
+	text-align: left;
+}
+#article-nav #next {
 	text-align: right;
 }
 a, a:active, a.link, a:visited, a:hover {
     text-decoration: none;
     color: #8C0808;
 }
-p, li {
+p, li, dd, dt {
     width: 39em;
+}
+dt {
+	margin-top: 10px;
 }
 
 /* Homepage styles */
@@ -408,7 +414,9 @@ a.read-more {
     line-height: 1.8em;
 }
 #article p,
-.article-meta p {
+.article-meta p,
+#article dl,
+#article table {
     margin-left: 20px;
 }
 
@@ -459,6 +467,18 @@ a.read-more {
     border: 1px dashed #aaa;
     margin-left: 20px;
     padding: 8px 12px;
+}
+.article table.docutils {
+	border: none;
+	font-size: 0.8em;
+}
+.article table.docutils td {
+	border: none;
+}
+.article table.docutils th {
+	border: none;
+	text-align: left;
+	border-bottom: 1px solid black;
 }
 
 /* RST */

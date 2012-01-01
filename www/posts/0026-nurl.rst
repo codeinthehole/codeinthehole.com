@@ -58,4 +58,4 @@ dynamically.
 .. image:: /static/images/screenshots/vows.png
     :alt: Screenshot of vows in action
 
-All feedback, forks and pull requests gratefull accepted.
+All feedback, forks and pull requests gratefully accepted.

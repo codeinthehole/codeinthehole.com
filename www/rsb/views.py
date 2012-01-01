@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView, DetailView, ListView, RedirectView
 from django.core.urlresolvers import reverse
 from django.contrib.syndication.views import Feed
+from django.shortcuts import get_object_or_404
 from tagging.models import Tag
 import requests
 
@@ -51,7 +52,7 @@ class ArticleTagView(ListView):
     context_object_name = 'articles'
     
     def get_queryset(self):
-        self.tag = Tag.objects.get(name=self.kwargs['name'])
+        self.tag = get_object_or_404(Tag, name=self.kwargs['name'])
         return Article.tagged.with_all([self.tag])
     
     def get_context_data(self, **kwargs):
@@ -80,14 +81,14 @@ class ArticleDetailView(DetailView):
         # We need to use a different date field for comparison depending on
         # if the article is published
         if article.is_published:
-            previous = Article.objects.filter(date_published__lt=article.date_published)
-            next = Article.objects.filter(date_published__gt=article.date_published)
+            previous_articles = Article.objects.filter(date_published__lt=article.date_published).order_by('-date_published')
+            next_articles = Article.objects.filter(date_published__gt=article.date_published).order_by('date_published')
         else:
-            previous = Article.objects.filter(date_created__lt=article.date_created)
-            next = Article.objects.filter(date_created__gt=article.date_created)
+            previous_articles = Article.objects.filter(date_created__lt=article.date_created)
+            next_articles = Article.objects.filter(date_created__gt=article.date_created)
         
-        ctx['previous_article'] = previous[0] if len(previous) > 0 else None
-        ctx['next_article'] = next[0] if len(next) > 0 else None
+        ctx['previous_article'] = previous_articles[0] if len(previous_articles) > 0 else None
+        ctx['next_article'] = next_articles[0] if len(next_articles) > 0 else None
 
         return ctx
     

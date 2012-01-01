@@ -36,7 +36,7 @@
 		</div>
 		{% endif %}
 		{% if next_article %}
-		<div style="float:right">
+		<div id="next" style="float:right">
 			next &raquo;</br>
 			<a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a>
 		</div>

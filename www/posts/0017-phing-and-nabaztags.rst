@@ -39,6 +39,7 @@ mirror those from the API docs.
 
 ==================  ==========  ==================================================  ==========      =========
 Name                Type        Description                                         Default         Required
+==================  ==========  ==================================================  ==========      =========
 serialNum           String      Serial number                                       n/a             Yes
 token               Integer     Token number                                        n/a             Yes
 leftEarPosition     String      Position of the left ear (0-16)                     n/a             No

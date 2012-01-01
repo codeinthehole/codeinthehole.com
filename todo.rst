@@ -1,15 +1,11 @@
 Todo
 ====
 
-- Finish thesis page
-- Redirect to thesis page
-- Sort out bio on article pages
-- Get CGL tutorial served staticaly
-- Sort out article dates
-- Tidy up statics and folder structure
+- Remote folder structure
+- mod WSGI
+- Create DB creds
 - Deployment
-
-
+- Update server - check linode
 
 Notes
 =====

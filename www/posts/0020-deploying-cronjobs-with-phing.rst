@@ -8,7 +8,9 @@ A phing pattern for deploying cron scripts :: phing, deployment
 Deploying applications that depend on cron-jobs can be a pain. However, Phing
 can be used to make such deployments easy - here's how...
 
-Consider an application folder structure as follows::
+Consider an application folder structure as follows:
+
+.. sourcecode:: bash
 
     /builds
         /development
@@ -101,7 +103,9 @@ namespace the files with "appname" to prevent accidentally removing a system
 file).
 Copies the new scripts into ``/etc/cron.d`` while replacing the token ``__BUILD__``
 with the build name in both the file contents and file names.
-After separate deployments for dev and stage, we should find the following::
+After separate deployments for dev and stage, we should find the following:
+
+.. sourcecode:: bash
 
     /etc
         /cron.d

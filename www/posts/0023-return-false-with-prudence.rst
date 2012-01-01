@@ -71,6 +71,7 @@ So use:
 
 .. sourcecode:: php
 
+    <?php
     try {
         // Place an order
         $orderNumber = $this->generateNewOrderNumber();
@@ -86,6 +87,7 @@ instead of
 
 .. sourcecode:: php
 
+    <?php
     $orderNumber = $this->generateNewOrderNumber();
     if (!$orderNumber) return false;
     $deliveryAddressSavedOk = $this->saveDeliveryAddress();
@@ -107,6 +109,7 @@ and then constructing an object:
 
 .. sourcecode:: php
 
+    <?php
     $book = Book::findByIsbn($isbn);
 
 In this case, when no book is found, FALSE is not the appropriate return value
@@ -117,6 +120,7 @@ you see the pipe:
 
 .. sourcecode:: php
 
+    <?php
     /**
     * @param string $isbn
     * @return Book|false
@@ -127,6 +131,7 @@ objects, which is simply empty when no object is found:
 
 .. sourcecode:: php
 
+    <?php
     class Book
     {
         ...
