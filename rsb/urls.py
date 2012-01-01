@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to
 
 from rsb.views import ArticleListView, ArticleDetailView, AboutView, \
-                      ProjectsView, TalksView, ArticleTagView, HomeView, \
+                      ArticleTagView, HomeView, \
                       ArticleRedirectView, ArticlesFeedView
 
 urlpatterns = patterns('',

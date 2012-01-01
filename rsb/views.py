@@ -107,12 +107,4 @@ class ArticleRedirectView(RedirectView):
     
     
 class AboutView(TemplateView):
-    template_name = 'about.html'
-
-
-class ProjectsView(TemplateView):
-    template_name = 'projects.html'
-
-    
-class TalksView(TemplateView):
-    template_name = 'talks.html'
+    template_name = 'rsb/about.html'
