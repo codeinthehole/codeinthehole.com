@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.views.generic.simple import redirect_to
 
 from rsb.views import ArticleListView, ArticleDetailView, AboutView, \
                       ProjectsView, TalksView, ArticleTagView, HomeView, \
@@ -15,4 +16,5 @@ urlpatterns = patterns('',
     url(r'^writing/tagged/(?P<name>[.\w-]+)/$', ArticleTagView.as_view(), name='tagged'),
     # Redirects from old site
     url(r'^archives/(?P<id>\d+)-.*$', ArticleRedirectView.as_view(), name='article-redirect'),
+    url(r'^tutorials/thesisfile/', redirect_to, {'url': '/writing/writing-a-thesis-in-latex/'}),
 )
