@@ -315,17 +315,21 @@ header a:hover {
 
 /* Footer */
 footer {
-	margin: 0 0 40px 0;
+	margin: 10px 0 40px 0;
+    font-size: 10pt;
+    color: #aaa;
 }
 footer p {
     width: auto;
 }
-footer #profile_photo {
-    float: left;
-    background-color: white;
-    padding: 3px 4px;
-    border: 1px solid #ccc;
-    margin-right: 20px;
+footer a:active,
+footer a:link,
+footer a:visited,
+footer a:hover {
+    color: #aaa;
+}
+footer a:hover {
+    text-decoration: underline;
 }
 
 img.in_para {
@@ -357,12 +361,16 @@ h1#title {
 	border-top: 1px dashed #ddd;
 	margin-top: 20px;
 }
+#article-about img {
+    margin-left: 20px;
+}
 #article-nav {
 	margin-top: 50px;
 	padding-left: 20px;
 	border-top: 1px dashed #ddd;
 	padding-top: 15px;
 	overflow: hidden;
+    text-align: center;
 }
 #article-nav div {
 	width: 300px;
@@ -400,6 +408,13 @@ a.read-more {
 	padding: 5px 0;
 	font-size: 10pt;
 }
+#about-photo {
+    float: left;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
 
 .twtr-widget {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;

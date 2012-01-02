@@ -41,6 +41,8 @@
 			<a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a>
 		</div>
 		{% endif %}
+        <a  href="{% url 'articles' %}">All writing</a><br/>
+        <a href="{% url 'articles-feed' %}">Feed</a>
 	</div>
 </div>
 
