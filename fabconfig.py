@@ -9,7 +9,7 @@ def prod():
     env.user = 'david'
     env.virtualenv = '/var/www/codeinthehole.com/virtualenvs/prod'
     env.code_dir = '/var/www/codeinthehole.com/builds/prod'
-    env.apache_conf = 'deploy/apache/codeinthehole'
+    env.apache_conf = 'deploy/apache2/codeinthehole'
     env.nginx_conf = 'deploy/nginx/codeinthehole'
     env.wsgi = 'deploy/wsgi/prod.wsgi'
 
