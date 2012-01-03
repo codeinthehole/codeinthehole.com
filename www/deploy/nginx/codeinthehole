@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name codeinthehole.com;
+    server_name codeinthehole.com www.codeinthehole.com;
 
     access_log /var/log/nginx/access.codeinthehole.com.log;
     error_log /var/log/nginx/error.codeinthehole.com.log;
@@ -15,6 +15,9 @@ server {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_read_timeout 120;
 
+    if ($host ~* ^www) {
+		rewrite ^(.*)$ http://codeinthehole.com$1 permanent;
+	}
     location ~* \.(jpg|png|gif|jpeg|js|css|htm|mp3|wav|swf|mov|doc|xls|ppt|docx|pptx|xlsx|swf|woff|otf|eot|ttf|ico|xml)$ {
         expires max;
         root /var/www/codeinthehole.com/builds/prod/public/;
