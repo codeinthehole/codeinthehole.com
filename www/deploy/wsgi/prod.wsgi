@@ -9,7 +9,7 @@ root = '/var/www/codeinthehole.com/builds/prod/'
 sys.path.insert(0, root)
 
 # Packages from virtualenv
-activate_this = '/var/www/codeinthehole/virtualenvs/prod/bin/activate_this.py'
+activate_this = '/var/www/codeinthehole.com/virtualenvs/prod/bin/activate_this.py'
 execfile(activate_this, dict(__file__=activate_this))
 
 # Set environmental variable for Django and fire WSGI handler 
