@@ -17,4 +17,8 @@ urlpatterns = patterns('',
     # Redirects from old site
     url(r'^archives/(?P<id>\d+)-.*$', ArticleRedirectView.as_view(), name='article-redirect'),
     url(r'^tutorials/thesisfile/', redirect_to, {'url': '/writing/writing-a-thesis-in-latex/'}),
+    url(r'^tutorials/cgl/(?P<file>\w+)$', redirect_to, {'url': '/static/tutorial/%(file)s'}),
+    url(r'^my/', redirect_to, {'url': '/about/'}),
+    url(r'^categories/', redirect_to, {'url': '/writing/'}),
+    url(r'^plugin/', redirect_to, {'url': '/writing/'}),
 )
