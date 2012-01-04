@@ -29,28 +29,52 @@
 <div id="article">
     {{ article.body_html|safe }}
 	<div id="article-nav">
-		{% if previous_article %}
 		<div id="previous" style="float:left">
+			{% if previous_article %}
 			&laquo; previous<br/>
 			<a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary|striptags }}">{{ previous_article.title|safe }}</a>
+			{% else %}
+			&nbsp;<br/>&nbsp;
+			{% endif %}
 		</div>
-		{% endif %}
-		{% if next_article %}
 		<div id="next" style="float:right">
+			{% if next_article %}
 			next &raquo;</br>
 			<a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a>
+			{% else %}
+			&nbsp;<br/>&nbsp;
+			{% endif %}
 		</div>
-		{% endif %}
         <a  href="{% url 'articles' %}">All writing</a><br/>
         <a href="{% url 'articles-feed' %}">Feed</a>
 	</div>
 </div>
 
+<div class="article-meta" id="article-comments"> 
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'codeinthehole'; // required: replace example with your forum shortname
+    var disqus_developer = 1;
+    var disqus_identifier = 'article-{{ article.id }}';
+    var disqus_title = '{{ article.title|escapejs }}';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
 {% if related_articles %}
 	<div class="article-meta" id="further-reading">
-			<h2>Related articles</h2>
-			{% include 'rsb/includes/articles.html' with articles=related_articles %} 
-			<a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
+        <h2>Related articles</h2>
+        {% include 'rsb/includes/articles.html' with articles=related_articles %} 
+        <a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
 	</div>
 {% endif %}
 

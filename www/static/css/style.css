@@ -402,6 +402,9 @@ dt {
     padding: 0;
     clear: left;
 }
+.home #bio p {
+	width: auto;
+}
 a.read-more {
 	display: block;
 	text-align: right;
@@ -431,7 +434,7 @@ a.read-more {
 #article p,
 .article-meta p,
 #article dl,
-#article table {
+#article table, {
     margin-left: 20px;
 }
 
