@@ -434,7 +434,7 @@ a.read-more {
 #article p,
 .article-meta p,
 #article dl,
-#article table, {
+#article table {
     margin-left: 20px;
 }
 
@@ -461,6 +461,12 @@ a.read-more {
     color: #8C0808;
     font-weight: normal;
     font-size: 14pt;
+}
+.article-meta h3 {
+    font-family: 'Droid Serif', serif;
+    color: #8C0808;
+    font-weight: normal;
+    font-size: 12pt;
 }
 .article h3#article_date {
     font-family: 'Droid Serif', serif;
@@ -498,6 +504,9 @@ a.read-more {
 	text-align: left;
 	border-bottom: 1px solid black;
 }
+#dsq-content #dsq-global-toolbar {
+    margin: 0;
+}
 
 /* RST */
 div.highlight {
@@ -508,8 +517,10 @@ div.highlight {
 }
 tt.docutils {
     background-color: #f8f8f8;
-    padding: 2px 5px;
+    padding: 2px 2px;
     white-space: nowrap;
+    font-size: 1.1em;
+    font-family: 'Inconsolata', sans-serif;
 }
 .highlight pre {
     margin: 0px;
