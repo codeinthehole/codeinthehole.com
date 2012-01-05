@@ -15,7 +15,7 @@ import rsb.rstcode
 
 
 class Command(BaseCommand):
-    args = '<path-to-article.rst>'
+    args = '<path-to-article.rst> [<path-to-article.rst>, ...]'
     output_transaction = True
     
     def handle(self, *args, **options):
@@ -27,6 +27,7 @@ class Command(BaseCommand):
 
     def process_file(self, filepath):
         self.logger.info("Processing article file %s", filepath)
+
         # We use the filename as the identifier of the article
         folder = os.path.dirname(filepath)
         filename = os.path.basename(filepath)
@@ -40,19 +41,23 @@ class Command(BaseCommand):
             try:
                 article = Article.objects.get(filename=filename)
             except Article.DoesNotExist:
-                article = Article(filename=filename)
+                article = Article(filename=filename, 
+                                  date_published=datetime.datetime.now())
                 self.logger.info("Creating a new article")
             else:
                 self.logger.info("Updating an existing article (id #%d)", article.id)
+                article.date_updated = datetime.datetime.now()
         else:
             id = int(m.group(1))
             try:
                 article = Article.objects.get(id=id)
             except Article.DoesNotExist:
                 self.logger.warning("Creating a new article, even though the file is numbered")
-                article = Article(id=id, filename=filename)
+                article = Article(id=id, filename=filename,
+                                  date_published=datetime.datetime.now())
             else:
                 self.logger.info("Updating an existing article (id #%d)", article.id)
+                article.date_updated = datetime.datetime.now()
 
         # Extract data from the RST file
         body_rst = open(filepath).read()
