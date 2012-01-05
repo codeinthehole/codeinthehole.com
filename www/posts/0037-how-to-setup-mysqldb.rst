@@ -1,6 +1,9 @@
 ========================================
 How to set-up MySQL for Python on Ubuntu
 ========================================
+----------------------------------------------
+This doesn't stick in my head :: python, mysql
+----------------------------------------------
 
 This is just for my own reference.
 

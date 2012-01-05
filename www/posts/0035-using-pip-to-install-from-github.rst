@@ -43,7 +43,13 @@ to
 
     -e git://github.com/tangentlabs/django-oscar.git#egg=django_oscar-dev
 
-This can be done by hand once you've used ``pip freeze > requirements.txt`` to create your requirements file, or by using sed:
+This can be done by hand once you've used 
+
+.. sourcecode:: bash
+
+    pip freeze > requirements.txt
+    
+to create your requirements file, or by using sed:
 
 .. sourcecode:: bash
 
