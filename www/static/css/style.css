@@ -364,6 +364,10 @@ h1#title {
 #article-about img {
     margin-left: 20px;
 }
+#article-about p {
+	width: auto;
+	margin: 5px 0;
+}
 #article-nav {
 	margin-top: 50px;
 	padding-left: 20px;
@@ -381,12 +385,17 @@ h1#title {
 #article-nav #next {
 	text-align: right;
 }
+#article-comments {
+	border-top: 1px dashed #ddd;
+	margin-top: 20px;
+}
 a, a:active, a.link, a:visited, a:hover {
     text-decoration: none;
     color: #8C0808;
 }
 p, li, dd, dt {
     width: 39em;
+	line-height: 1.4em;
 }
 dt {
 	margin-top: 10px;
@@ -404,6 +413,7 @@ dt {
 }
 .home #bio p {
 	width: auto;
+	margin: 5px 0;
 }
 a.read-more {
 	display: block;
