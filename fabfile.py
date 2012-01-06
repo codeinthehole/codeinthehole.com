@@ -61,6 +61,9 @@ def collect_static_files():
     with cd(env.code_dir):
         sudo('source %s/bin/activate && python manage.py collectstatic --noinput > /dev/null' % env.virtualenv)
 
+        # Copy a few into different places
+        sudo('cp -r static/html5boilerplate/* public')
+
 def reload_python_code():
     with cd(env.builds_dir):
         sudo('touch %(build)s/%(wsgi)s' % env)
@@ -80,3 +83,22 @@ def restart_services():
 def delete_old_builds():
     with cd(env.builds_dir):
         sudo('find . -maxdepth 1 -type d -name "%(build)s*" | sort -r | sed "1,3d" | xargs rm -rf' % env)
+
+# Publishing 
+
+def publish(rst_file):
+    import os
+    if not os.path.exists(rst_file):
+        print "File %s does not exist" % rst_file
+        return
+
+    # Upload file
+    local_path = os.path.realpath(rst_file)
+    filename = os.path.basename(local_path)
+    remote_path = os.path.join("/var/www/codeinthehole.com/builds/prod/posts/", filename)
+    put(local_path, remote_path, use_sudo=True)
+
+    with cd("/var/www/codeinthehole.com/builds/prod/"):
+        sudo("source /var/www/codeinthehole.com/virtualenvs/prod/bin/activate && ./manage.py rsb_article posts/%s" % filename)
+    
+
