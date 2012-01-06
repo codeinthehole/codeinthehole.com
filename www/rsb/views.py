@@ -76,7 +76,7 @@ class ArticleDetailView(DetailView):
         ctx = super(ArticleDetailView, self).get_context_data(**kwargs)
         
         article = self.object
-        ctx['related_articles'] = Article.tagged.related_to(article)
+        ctx['related_articles'] = Article.tagged.related_to(article)[:6]
         
         # We need to use a different date field for comparison depending on
         # if the article is published
