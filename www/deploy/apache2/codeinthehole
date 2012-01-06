@@ -2,6 +2,8 @@
     ServerName codeinthehole.com
     ServerAlias www.codeinthehole.com
     DocumentRoot /var/www/nginx-default
+    CustomLog /var/log/apache2/access.codeinthehole.com.log combined
+    ErrorLog /var/log/apache2/error.codeinthehole.com.log
 
     <Directory /var/www/codeinthehole.com/builds/prod/public/static>
         Order deny,allow
