@@ -1,9 +1,9 @@
 ==================================================
 Javascript cookie objects using Prototype and JSON
 ==================================================
--------------------------------------------
-Simple class-based wrapper to using cookies
--------------------------------------------
+--------------------------------------------------------------------
+Simple class-based wrapper to using cookies :: javascript, prototype
+--------------------------------------------------------------------
 
 It's sometime useful to interact with cookies directly on the client-side using
 javascript. This can be useful for a variety of situations, such as persisting
