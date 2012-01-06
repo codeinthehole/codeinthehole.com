@@ -12,3 +12,7 @@ urlpatterns = patterns('',
 )
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += patterns('',
+            (r'^500.html', 'django.views.generic.simple.direct_to_template', {'template': '500.html'}),
+            (r'^404.html', 'django.views.generic.simple.direct_to_template', {'template': '404.html'}),
+        )
