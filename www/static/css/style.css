@@ -245,6 +245,7 @@ dt {
     position: relative;
     width: 820px;
     overflow: hidden;
+	padding: 0px 40px;
 }
 
 /* Header */
