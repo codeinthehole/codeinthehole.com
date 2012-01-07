@@ -537,12 +537,22 @@ tt.docutils {
 .highlight pre {
     margin: 0px;
 }
+div.section {
+	clear: left;
+	overflow: hidden;
+}
 div.tip {
     color: #aaa;
     font-size: 8pt;
 }
-div.tip p.first {
+.admonition-title {
     display: none;
+}
+div.warning {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	width: 50em;
+	color: #555;
 }
 
 /* Article list styles */
