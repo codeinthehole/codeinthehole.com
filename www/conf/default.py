@@ -11,6 +11,8 @@ ADMINS = (
     ('David Winterbottom', 'david.winterbottom@gmail.com'),
 )
 
+SEND_BROKEN_LINK_EMAILS = True
+
 MANAGERS = ADMINS
 
 # Local time zone for this installation. Choices can be found here:
@@ -54,9 +56,13 @@ SECRET_KEY = 'swf65^49=x&!lnu-0t8e!qqyr^z6-0+g5x3ci$&+3vfhjvwoo+'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    ('django.template.loaders.cached.Loader',
+        (
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        ),
+
+    ),
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,8 +90,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
     'rsb',
     'south',
     'django_extensions',
