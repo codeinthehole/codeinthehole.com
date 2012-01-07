@@ -22,6 +22,11 @@ the latex code a mysterious (and messy) appearance in places. While I highly
 recommend the inclusion of the PDF-related commands, they are not strictly
 necessary and can be ignored - especially if you are new to Latex. 
 
+.. warning:: I wrote this article after finishing my PhD in 2005.  I haven't
+    done any Latex since and am thus very rusty.  Ultimately, these
+    days I'm unlikely to be able to answer many questions on this topic. Sorry about
+    that.
+
 Note for Windows users
 ======================
 
