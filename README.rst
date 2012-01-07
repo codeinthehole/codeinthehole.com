@@ -2,12 +2,17 @@
 codeinthehole.com
 =================
 
-Nothing special here, I just wanted to write my own blog so I could 
-optimise it for my own needs.  Basically, I wanted to write articles 
+Nothing special here - I just wanted to write my own blog so I could 
+optimise it for my own needs.  The aim was to write articles 
 in RST using vim, then have a simple preview and publish mechanism.
 
 The blog is a simple Django project which uses RST files as a source
-for creating a simple Article model.
+for creating a simple Article model. Fabric is used to publish articles 
+to the production site.
+
+See `Rewriting codeinthehole.com`_.
+
+.. _`Rewriting codeinthehole.com: http://codeinthehole.com/writing/rewriting-codeintheholecom/
 
 How to publish an article
 -------------------------

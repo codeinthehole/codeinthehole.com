@@ -31,8 +31,8 @@ some point, hence the "rsb" acronym used in the codebase.
 
 .. _`source is on github`: http://github.com/codeinthehole/codeinthehole.com
 
-Writing an post
----------------
+Writing a post
+--------------
 
 My ideal for writing a blog post is:
 
@@ -40,7 +40,7 @@ My ideal for writing a blog post is:
 2. Preview the article locally;
 3. Publish to the remote server
 
-This translates to the following:
+This translates to:
 
 Write
 ~~~~~
@@ -105,7 +105,7 @@ I'm pleased that:
 * Github is now my backup of both code and content.  For instance, 
   you can `view the source of this article`_.
 
-.. _`view the source of this article`: http://github.com/codeinthehole/codeinthehole.com/www/posts/0038-restructured-blog.rst
+.. _`view the source of this article`: https://raw.github.com/codeinthehole/codeinthehole.com/master/www/posts/0038-restructured-blog.rst
 
 Since I switched to Disqus for comments, I decided to drop all the old ones
 (not that were that many), since I wasn't sure it was possible to migrate
