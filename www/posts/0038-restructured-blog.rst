@@ -7,8 +7,7 @@ Yet another RST blog :: django
 
 I rewrote this blog recently with the following aims:
 
-* to make it as easy as possible to create a new article, using `reStructuredText`_ (RST)
-  as the base for each article; 
+* to make it as easy as possible to create a new article, using `reStructuredText`_ (RST); 
 
 .. _`reStructuredText`: http://docutils.sourceforge.net/rst.html
 
