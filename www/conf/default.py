@@ -66,12 +66,14 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'johnny.middleware.LocalStoreClearMiddleware',
+    'johnny.middleware.QueryCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
@@ -100,10 +102,12 @@ INSTALLED_APPS = (
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'BACKEND': 'johnny.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
+        'JOHNNY_CACHE': True
     }
 }
+JOHNNY_MIDDLEWARE_KEY_PREFIX = 'cith'
 
 LOGGING = {
     'version': 1,
