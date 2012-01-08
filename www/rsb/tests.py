@@ -38,6 +38,16 @@ class ArticleViewsTests(TestCase):
         response = self.client.get('/archives/45-Using-pip-and-requirements.txt-to-install-from-the-HEAD-of-a-Github-branch.html')
         self.assertEquals(httplib.MOVED_PERMANENTLY, response.status_code)
         
+
+class SitemapTests(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_sitemaps_xml_exists(self):
+        r = self.client.get('/sitemap.xml')
+        self.assertEquals(httplib.OK, r.status_code)
+
         
 class TwitterTests(TestCase):
     

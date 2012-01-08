@@ -16,9 +16,9 @@ server {
     proxy_read_timeout 120;
 
     if ($host ~* ^www) {
-		rewrite ^(.*)$ http://codeinthehole.com$1 permanent;
-	}
-    location ~* \.(jpg|png|gif|jpeg|js|css|htm|mp3|wav|swf|mov|doc|xls|ppt|docx|pptx|xlsx|swf|woff|otf|eot|ttf|ico|xml|txt)$ {
+        rewrite ^(.*)$ http://codeinthehole.com$1 permanent;
+    }
+    location ~* \.(jpg|png|gif|jpeg|js|css|htm|mp3|wav|swf|mov|doc|xls|ppt|docx|pptx|xlsx|swf|woff|otf|eot|ttf|ico|txt|pdf)$ {
         expires max;
         root /var/www/codeinthehole.com/builds/prod/public/;
     }
