@@ -48,6 +48,15 @@ class SitemapTests(TestCase):
         r = self.client.get('/sitemap.xml')
         self.assertEquals(httplib.OK, r.status_code)
 
+
+class FeedTests(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_sitemaps_xml_exists(self):
+        r = self.client.get('/writing/feed/')
+        self.assertEquals(httplib.OK, r.status_code)
         
 class TwitterTests(TestCase):
     

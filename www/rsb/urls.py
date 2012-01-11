@@ -28,10 +28,10 @@ urlpatterns = patterns('',
     url(r'^about/$', AboutView.as_view(), name='about'),
     # Blog pages
     url(r'^writing/$', ArticleListView.as_view(), name='articles'),
+    url(r'^writing/feed/$', ArticlesFeedView(), name='articles-feed'),
     url(r'^writing/(?P<slug>[\w-]+)/$', ArticleDetailView.as_view(), name='article'),
     url(r'^writing/tagged/(?P<name>[ .\w-]+)/$', ArticleTagView.as_view(), name='tagged'),
     # Feeds
-    url(r'^writing/feed/$', ArticlesFeedView(), name='articles-feed'),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     # Redirects from old site
     url(r'^archives/(?P<id>\d+)-.*$', ArticleRedirectView.as_view(), name='article-redirect'),
