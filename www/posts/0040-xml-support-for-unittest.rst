@@ -1,10 +1,29 @@
-================================
-Testing XML in python's unittest
-================================
+===============================================
+Introducing unittest-xml: testing XML in Python
+===============================================
+--------------------------------------------------------------
+A simple module for making XPath assertions :: python, testing
+--------------------------------------------------------------
 
-For testing XML:
+For some reason, I keep finding myself writing unit tests that need to make
+assertions about an XML document.  To avoid duplication, I've package up my
+custom assertion methods as a PyPi module: ``unittest-xml``.
 
-Assume that the expected XML is:
+Sample Usage
+------------
+
+Enable the additional assert methods using a mixin:
+
+.. sourcecode:: python
+
+    import unittest
+    from xmltest import XMLAssertions
+
+
+    class SampleTestCase(unittest.TestCase, XMLAssertions):
+        ...
+
+Now suppose that the expected XML from some SUT [#]_ is:
 
 .. sourcecode:: xml
 
@@ -13,10 +32,9 @@ Assume that the expected XML is:
         <CardTxn>
             <authcode>060642</authcode>
             <card_scheme>Switch</card_scheme>
-            <country>United Kingdom</country>
-            <issuer>HSBC</issuer>
+            <issuer country="UK">HSBC</issuer>
         </CardTxn>
-        <datacash_reference>3000000088888888</datacash_reference>
+        <reference>3000000088888888</reference>
         <merchantreference>1000001</merchantreference>
         <mode>LIVE</mode>
         <reason>ACCEPTED</reason>
@@ -24,31 +42,38 @@ Assume that the expected XML is:
         <time>1071567305</time>
     </Response>
 
-then you can now test the values of a element using:
+then you can make assertions about the document using 3 additional
+assertions methods.
 
 .. sourcecode:: python
 
-    class ResponseTests(TestCase, XmlAssertions):
+        self.assertXPathNodeCount(RESPONSE, 1, 'CardTxn/authcode')
+        self.assertXPathNodeText(RESPONSE, 'LIVE', 'mode')
+        self.assertXPathNodeAttributes(RESPONSE, {'country': 'UK'}, 'CardTxn/issuer')
 
-        def test_country_is_uk(self):
-            self.assertXmlElementEquals(RESPONSE, 'United Kingdom',
-                                        'Response.CardTxn.country')
+The first argument to each method is the XML string, the second is the expected value, while
+the third is the XPath query.
 
-The implementation of this mixin is simple:
+Installation
+------------
 
-.. sourcecode:: python
+The standard way:
 
-    class XmlAssertions(object):
+.. sourcecode:: bash
 
-        def assertXmlElementEquals(self, xml_str, value, element_path):
-            doc = parseString(xml_str)
-            elements = element_path.split('.')
-            parent = doc
-            for element_name in elements:
-                sub_elements = parent.getElementsByTagName(element_name)
-                if len(sub_elements) == 0:
-                    self.fail("No element matching '%s' found using XML string '%s'" % (element_name, element_path))
-                    return
-                parent = sub_elements[0]
-            self.assertEqual(value, parent.firstChild.data)
+    pip install unittest-xml
 
+Discussion
+----------
+
+Note, the implementation uses `ElementTree`_ and so only `a subset of the XPath specification`_
+is implemented.
+
+.. _`ElementTree`: http://docs.python.org/library/xml.etree.elementtree.html
+.. _`a subset of the XPath specification`: http://effbot.org/zone/element-xpath.htm
+
+The `code is on Github`_, as usual.
+
+.. _`code is on Github`: https://github.com/codeinthehole/unittest-xml
+
+.. [#] System under test
