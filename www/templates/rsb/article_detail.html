@@ -9,8 +9,12 @@
 {% endblock %}
 
 {% block title %}{{ article.title|striptags }} | 
-    {% for tag in article.tags.all %}{{ tag }}{% if not forloop.last %}, {% endif %}{% endfor %} |
-    codeinthehole.com by David Winterbottom
+    {% with tags=article.tags.all %}
+		{% if tags %}
+			{% for tag in tags %}{{ tag }}{% if not forloop.last %}, {% endif %}{% endfor %} |
+		{% endif %}
+		codeinthehole.com by David Winterbottom
+	{% endwith %}
 {% endblock %}
 
 {% block description %}{{ article.summary|striptags }}{% endblock %}
