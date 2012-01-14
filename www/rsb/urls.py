@@ -42,4 +42,5 @@ urlpatterns = patterns('',
     url(r'^my/', RedirectView.as_view(url='/about/')),
     url(r'^categories/', RedirectView.as_view(url='/writing/')),
     url(r'^plugin/', RedirectView.as_view(url='/writing/')),
+    url(r'^archive/', RedirectView.as_view(url='/writing/')),
 )

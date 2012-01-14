@@ -21,13 +21,21 @@ class ArticleListView(ListView):
     model = Article
     template_name = 'rsb/article_list.html'
     context_object_name = 'articles'
+    title = "All articles"
     
     def get_queryset(self):
-        return self.model.objects.all().exclude(date_published=None)
+        qs = self.model.objects.all().exclude(date_published=None)
+        order_by = self.request.GET.get('sort', 'date')
+        if order_by == 'popular':
+            qs = qs.order_by('-num_views')
+            self.title = "Popular articles"
+        else:
+            qs = qs.order_by('-date_published')
+        return qs
     
     def get_context_data(self, **kwargs):
         ctx = super(ArticleListView, self).get_context_data(**kwargs)
-        ctx['title'] = "Writing"
+        ctx['title'] = self.title
         ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
         return ctx
 
@@ -79,7 +87,8 @@ class ArticleDetailView(DetailView):
         ctx['related_articles'] = Article.tagged.related_to(article)[:6]
 
         # Popular
-        ids_to_ignore = [article.id for article in ctx['related_articles']]
+        ids_to_ignore = [a.id for a in ctx['related_articles']]
+        ids_to_ignore.append(article.id)
         ctx['popular_articles'] = Article.objects.all().exclude(id__in=ids_to_ignore).order_by('-num_views')[:6]
         
         # We need to use a different date field for comparison depending on
