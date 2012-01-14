@@ -77,6 +77,10 @@ class ArticleDetailView(DetailView):
         
         article = self.object
         ctx['related_articles'] = Article.tagged.related_to(article)[:6]
+
+        # Popular
+        ids_to_ignore = [article.id for article in ctx['related_articles']]
+        ctx['popular_articles'] = Article.objects.all().exclude(id__in=ids_to_ignore).order_by('-num_views')[:6]
         
         # We need to use a different date field for comparison depending on
         # if the article is published

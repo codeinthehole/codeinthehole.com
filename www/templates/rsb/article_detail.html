@@ -21,6 +21,7 @@
 
 
 {% block content %}
+
 <h3 id="article_date">
     {% if article.is_published %}
         {{ article.date_published|date:"l, j F Y" }}
@@ -74,8 +75,16 @@
 
 {% if related_articles %}
 	<div class="article-meta" id="further-reading">
-        <h2>Related articles</h2>
+        <h2>Related</h2>
         {% include 'rsb/includes/articles.html' with articles=related_articles %} 
+        <a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
+	</div>
+{% endif %}
+
+{% if popular_articles %}
+	<div class="article-meta" id="further-reading">
+        <h2>Popular</h2>
+        {% include 'rsb/includes/articles.html' with articles=popular_articles %} 
         <a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
 	</div>
 {% endif %}
