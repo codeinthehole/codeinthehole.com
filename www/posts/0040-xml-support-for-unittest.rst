@@ -6,8 +6,9 @@ A simple module for making XPath assertions :: python, testing
 --------------------------------------------------------------
 
 For some reason, I keep finding myself writing unit tests that need to make
-assertions about an XML document.  To avoid duplication, I've package up my
-custom assertion methods as a PyPi module: ``unittest-xml``.
+assertions about an XML document.  To keep things DRY, I've packaged up my
+custom assertion methods as a PyPi module: ``unittest-xml``.  There's a small
+chance it may be useful to others.
 
 Sample Usage
 ------------
@@ -52,7 +53,7 @@ assertions methods.
         self.assertXPathNodeAttributes(RESPONSE, {'country': 'UK'}, 'CardTxn/issuer')
 
 The first argument to each method is the XML string, the second is the expected value, while
-the third is the XPath query.
+the third is the XPath query.  
 
 Installation
 ------------
@@ -67,7 +68,7 @@ Discussion
 ----------
 
 Note, the implementation uses `ElementTree`_ and so only `a subset of the XPath specification`_
-is implemented.
+is implemented.  However the above three assertion methods are sufficient for most scenarios.
 
 .. _`ElementTree`: http://docs.python.org/library/xml.etree.elementtree.html
 .. _`a subset of the XPath specification`: http://effbot.org/zone/element-xpath.htm
