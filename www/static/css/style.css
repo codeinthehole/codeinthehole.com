@@ -366,7 +366,7 @@ h1#title {
 }
 #article-about p {
 	width: auto;
-	margin: 5px 0;
+	margin: 5px 0 0 20px;
 }
 #article-nav {
 	margin-top: 50px;
