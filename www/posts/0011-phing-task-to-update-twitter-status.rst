@@ -218,4 +218,8 @@ stripped out for brevity):
 The fully documented source and associated example build.xml file are available
 to download:
 
-» TwitterUpdateTask.zip (2.6kb)
+» `TwitterUpdateTask.zip (2.6kb)`_
+
+.. _`TwitterUpdateTask.zip (2.6kb)`: /static/downloads/TwitterUpdateTask.zip
+
+
