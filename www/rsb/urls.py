@@ -36,11 +36,12 @@ urlpatterns = patterns('',
     # Redirects from old site
     url(r'^archives/(?P<id>\d+)-.*$', ArticleRedirectView.as_view(), name='article-redirect'),
     url(r'^tutorials/thesisfile/', RedirectView.as_view(url='/writing/writing-a-thesis-in-latex/')),
-    url(r'^tutorials/cgl/(?P<file>\w+)$', RedirectView.as_view(url='/static/tutorial/%(file)s')),
+    url(r'^tutorials/cgl/(?P<file>[\w.]+)$', RedirectView.as_view(url='/static/tutorial/%(file)s')),
     url(r'^rss.php', RedirectView.as_view(url='/writing/feed/')),
     url(r'^feeds/', RedirectView.as_view(url='/writing/feed/')),
     url(r'^my/', RedirectView.as_view(url='/about/')),
     url(r'^categories/', RedirectView.as_view(url='/writing/')),
     url(r'^plugin/', RedirectView.as_view(url='/writing/')),
     url(r'^archive/', RedirectView.as_view(url='/writing/')),
+    url(r'^archives/', RedirectView.as_view(url='/writing/')),
 )
