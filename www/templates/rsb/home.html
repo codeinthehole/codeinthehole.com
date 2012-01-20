@@ -35,7 +35,7 @@
 
     <h2 id="thinking">Thinking</h2>
     <div class="tweets">
-    {% for tweet in tweets %}
+		{% for tweet in tweets %}
         <div class="tweet">
             <div class="meta">
                 {{ tweet.date_created|timesince }} ago
@@ -44,10 +44,30 @@
                 {{ tweet.text|safe }}
             </div>
         </div>
-	{% empty %}
-		<p>Nothing going on at the moment.</p>
-    {% endfor %}
+		{% empty %}
+			<p>Nothing going on at the moment.</p>
+		{% endfor %}
 		<a class="read-more" href="http://twitter.com/codeinthehole/">@codeinthehole &raquo;</a>
     </div>
+
+	<h2>Selected projects</h2>
+	<div class="projects">
+		<p>A few spare-time projects I've worked on:</p>
+		<ul>
+			<li><a href="http://www.commandlinefu.com">commandlinefu.com</a> - a mildly popular 
+			repository site for sharing linux one-liners.  Grown men have been known to weep with 
+			joy when they discover <a href="http://www.commandlinefu.com/commands/view/13/run-the-last-command-as-root">sudo !!</a></li>
+			<li><a href="https://github.com/tangentlabs/django-oscar">django-oscar</a> - an e-commerce framework built for Django.  This was 
+			written to solve for the day job.</li>
+			<li><a href="https://github.com/tangentlabs/django-oscar-datacash">django-oscar-datacash</a> - a django app for integrating with 
+			the DataCash payment gateway.</li>
+			<li><a href="https://github.com/codeinthehole/unittest-xml">unittest-xml</a> - a set of additional assertions for unit-testing XML
+			documents with python's unittest library.</li>
+			<li><a href="https://github.com/codeinthehole/django-rickroll">django-rickroll</a> - a comedy django app for rickrolling hacking attempts - useful
+			for when your applications get pen-tested.</li>
+			<li><a href="https://github.com/codeinthehole/nurl">nurl</a> - a simple URL library for node.js</li>
+		</ul>
+		<p>&nbsp;</p>
+	</div>
 
 {% endblock %}
