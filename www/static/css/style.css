@@ -411,6 +411,9 @@ dt {
     padding: 0;
     clear: left;
 }
+.home li {
+	margin: 8px 0;
+}
 .home #bio p {
 	width: auto;
 	margin: 5px 0;
