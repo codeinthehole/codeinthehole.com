@@ -5,9 +5,11 @@
         <div class="article">
             <div class="meta">
                 {{ article.date_published|date:"l, j F Y" }}<br/>
-                {% for tag in article.tags.all %}
-                    <a href="{% url 'tagged' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
-                {% endfor %}
+				<div class="tags">
+					{% for tag in article.tags.all %}
+						<a href="{% url 'tagged' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+					{% endfor %}
+				</div>
             </div>
             <div class="main">
                 <a href="{{ article.get_absolute_url }}">{{ article.title|safe }}</a>

@@ -654,10 +654,24 @@ div.warning {
 
 @media screen and (min-width:10px) and (max-width:480px) {
 	#logo h1 {
-		font-size: 3em;
+		font-size: 2em;
 	}
 	.home h2 {
 		font-size: 2em;
+	}
+	#about-photo {
+		display: none;
+	}
+	.articles .article .meta {
+		width: 100%;
+		text-align: left;
+	}
+	.articles .article .meta .tags {
+		display: none;
+	}
+	.tweets .tweet .meta {
+		width: 100%;
+		text-align: left;
 	}
 }
 
