@@ -243,7 +243,8 @@ dt {
 #container {
     margin: 0 auto;
     position: relative;
-    width: 820px;
+	width: 80%;
+    max-width: 820px;
     overflow: hidden;
 	padding: 0px 40px;
 }
@@ -394,7 +395,7 @@ a, a:active, a.link, a:visited, a:hover {
     color: #8C0808;
 }
 p, li, dd, dt {
-    width: 39em;
+    max-width: 39em;
 	line-height: 1.4em;
 }
 dt {
@@ -650,6 +651,15 @@ div.warning {
    These override the primary ('mobile first') styles
    Modify as content requires.
    ========================================================================== */
+
+@media screen and (min-width:10px) and (max-width:480px) {
+	#logo h1 {
+		font-size: 3em;
+	}
+	.home h2 {
+		font-size: 2em;
+	}
+}
 
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
