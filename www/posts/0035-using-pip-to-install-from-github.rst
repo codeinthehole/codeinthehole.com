@@ -1,9 +1,9 @@
 ==========================================================================
 Using pip and requirements.txt to install from the HEAD of a Github branch
 ==========================================================================
------------------------------------
-Always the latest version :: python
------------------------------------
+---------------------------------------
+Always get the latest version :: python
+---------------------------------------
 
 Problem
 =======
@@ -12,10 +12,10 @@ The python package installer pip can be used to install directly from Github, li
 
 .. sourcecode:: bash
 
-    $ pip install -e git+git://github.com/tangentlabs/django-oscar.git#egg=django-oscar
+    $ pip install git+git://github.com/tangentlabs/django-oscar.git#egg=django-oscar
 
-This will install from the HEAD of the master branch. However, when you use pip
-freeze to export your dependencies (usually to a ``requirements.txt`` file), pip
+This will install from the HEAD of the master branch. However, when you use ``pip
+freeze`` to export your dependencies (usually to a ``requirements.txt`` file), pip
 will fix the reference to a specific commit by including its ID within the URL:
 
 .. sourcecode:: bash
@@ -24,7 +24,7 @@ will fix the reference to a specific commit by including its ID within the URL:
     -e git://github.com/tangentlabs/django-oscar.git@d636b803d98cd1d3edd01821d4fb2a01ce215ee4#egg=django_oscar-dev
 
 Hence running ``pip install -r requirements.txt`` will not pick any commits after
-d636b803 until the requirements.txt is updated. 
+d636b803 until ``requirements.txt`` is updated.  
 
 This isn't always the desired behaviour; in some circumstances, you would
 prefer for ``pip install -r requirements.txt`` to always install the latest
@@ -60,8 +60,9 @@ to create your requirements file, or by using sed:
 Discussion
 ==========
 
-The text between ``@`` and ``#`` in the github URL specifies the commit to install from.  Rather than
-a commit ID, a branch or tag name can be used also.  Hence:
+The text between ``@`` and ``#`` in the github URL specifies the commit to
+install from.  Rather than a commit ID, a branch or tag name can be used also.
+Hence:
 
 .. sourcecode:: bash
 
@@ -74,3 +75,7 @@ will install the ``0.1`` tag, while:
     pip install -e git://github.com/tangentlabs/django-oscar.git@releases/0.1#egg=django-oscar
 
 will install from the HEAD of the ``releases/0.1`` branch.
+
+For further information, consult the `requirements file format documentation`_.
+
+.. _`requirements file format documentation`: http://www.pip-installer.org/en/latest/requirements.html#the-requirements-file-format
