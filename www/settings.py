@@ -45,3 +45,5 @@ if 'DISABLED_APPS' in locals():
     for x, m in enumerate(DATABASE_ROUTERS):
         if m.startswith(a):
             DATABASE_ROUTERS.pop(x)
+
+VERSION = '__version__'

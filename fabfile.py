@@ -41,10 +41,13 @@ def unpack(archive_path, git_ref):
         sudo('if [ -d "%(build_dir)s" ]; then rm -rf "%(build_dir)s"; fi' % env)
         sudo('mv %(web_dir)s %(build_dir)s' % env)
 
+        # Update version
+        sudo("sed -i 's/__version__/%s/' %s/settings.py" % (git_ref, env.build_dir))
+
         # Create new symlink
         sudo('if [ -h %(build)s ]; then unlink %(build)s; fi' % env)
         sudo('ln -s %(build_dir)s %(build)s' % env)
-
+        
         # Remove archive
         sudo('rm %s' % archive_path)
 
