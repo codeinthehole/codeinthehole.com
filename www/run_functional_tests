@@ -9,7 +9,7 @@ def start_selenium_server():
     print 'Starting Selenium server'
     selenium_server = pexpect.spawn(
         'java',
-        args=['-jar', 'tests/selenium-server-standalone-2.6.0.jar']
+        args=['-jar', '../selenium-server-standalone-2.6.0.jar']
     )
     try:
         selenium_server.expect(
