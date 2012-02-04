@@ -396,7 +396,7 @@ a, a:active, a.link, a:visited, a:hover {
 }
 p, li, dd, dt {
     max-width: 39em;
-	line-height: 1.4em;
+	line-height: 1.5em;
 }
 dt {
 	margin-top: 10px;
