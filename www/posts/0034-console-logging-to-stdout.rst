@@ -1,20 +1,21 @@
 ===================================
 Console logging to STDOUT in Django
 ===================================
-------------------------------------------------------
-Undocumented option required to avoid STDERR :: django
-------------------------------------------------------
+--------------------------------------------------------------
+Undocumented option required to avoid STDERR :: django, python
+--------------------------------------------------------------
 
 Problem
 =======
 
-By default in Django, the documented console handler emits to STDERR, but you
-want it to use STDOUT instead.
+By default in Python (and Django), the documented console handler emits to
+STDERR, but you want it to use STDOUT instead.  This is often desired for 
+management commands that run as cronjobs. 
 
 Solution
 ========
 
-Use the following LOGGING config in your settings to specify a different output stream:
+For Python 2.6, use the following LOGGING config in your settings to specify a different output stream:
 
 .. sourcecode:: python
 
@@ -29,6 +30,9 @@ Use the following LOGGING config in your settings to specify a different output 
             ...
         }
     }
+
+For Python 2.7+, the keyword argument to the constructor of ``logging.StreamHandler`` is 
+``stream`` rather than ``strm``.  Ensure you use the right version.
     
 Discussion
 ==========
@@ -55,5 +59,13 @@ however, the default output stream for ``logging.StreamHandler`` is STDERR. The
 extra keyword argument in the solution alter this behaviour to use STDOUT.
 
 Logging to STDERR means that any output from cron jobs is emailed to root. A
-more desirable behaviour is for only errors to trigger emails, while normal
-output can be logged to file.
+more desirable behaviour is for only genuine errors to trigger emails, while normal
+output can be logged to file.  Hence, a sensible cronjob file would look something like:
+
+.. sourcecode:: bash
+
+    SHELL=/bin/bash
+    MAILTO=alerts.someproject@yourcompany.co.uk
+
+    */10 * * * * app source /venv/bin/activate && /app/manage.py do_something > /dev/null  
+    
