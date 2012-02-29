@@ -25,6 +25,8 @@ def _fetch_tweets(username='codeinthehole'):
     url = "https://twitter.com/statuses/user_timeline.json?screen_name=%s" % username
     response = requests.get(url)
     raw_tweets = json.loads(response.content)
+    if 'error' in raw_tweets:
+        return []
     processed_tweets = []
     for tweet in raw_tweets:
         # Ignore replies
