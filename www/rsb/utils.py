@@ -13,8 +13,12 @@ def fetch_tweets(username='codeinthehole'):
     key = 'tweets_%s' % username
     tweets = cache.get(key)
     if tweets is None:
-        tweets = _fetch_tweets(username)
-        cache.set(key, tweets, 300)
+        try:
+            tweets = _fetch_tweets(username)
+        except Exception:
+            tweets = []
+        else:
+            cache.set(key, tweets, 300)
     return tweets
 
 

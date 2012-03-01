@@ -223,7 +223,7 @@ h1, h2, h3, h4 {
 }
 pre {
     font-size: 1.3em;
-    font-family: 'Inconsolata', sans-serif;
+    font-family: 'Inconsolata', monospace, sans-serif;
     line-height: 1.2em;
 }
 blockquote {
