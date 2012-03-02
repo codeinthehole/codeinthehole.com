@@ -98,8 +98,8 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul { margin: 1em 0; padding: 0 0 0 1em; }
-ol { margin: 1em 0; padding: 0 0 0 2em; }
+ul { margin: 1em 0; padding: 0 0 0 50px; }
+ol { margin: 1em 0; padding: 0 0 0 60px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -214,10 +214,10 @@ td { vertical-align: top; }
 
 /* Global */
 body {
-	font-family: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
 header, footer, p, h2, h3, th, td, li, dt, dd, blockquote {
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 h1, h2, h3, h4 {
 }
@@ -231,19 +231,12 @@ blockquote {
      -moz-border-radius: 0.4em;
     border-radius: 0.4em;
     margin: 0;
-    padding: 0.8em 1em;
+    padding: 0.8em 1.2em;
     font-style: italic;
-}
-blockquote p {
-	font-size: 1em;
-	margin: 0;
-	padding: 0.4em 0 0.4em 0;
+    width: 39em;
 }
 dt {
     font-weight: bold;
-}
-ul {
-	list-style-position: outside;
 }
 
 /* Layout */
@@ -353,7 +346,7 @@ img.in_para {
 
 /* Articles */
 h1#title {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     font-size: 4em;
     font-weight: normal;
     color: #333;
@@ -364,19 +357,21 @@ h1#title {
 	margin-top: 20px;
 }
 #further-reading .articles {
+	margin-left: 20px;
 }
 #article-about {
 	margin-top: 20px;
 }
 #article-about img {
+    margin-left: 20px;
 }
 #article-about p {
 	width: auto;
-	max-width: none;
-	margin: 5px 0 0 0;
+	margin: 5px 0 0 20px;
 }
 #article-nav {
 	margin-top: 50px;
+	padding-left: 20px;
 	border-top: 1px dashed #ddd;
 	padding-top: 15px;
 	overflow: hidden;
@@ -399,8 +394,8 @@ a, a:active, a.link, a:visited, a:hover {
     text-decoration: none;
     color: #8C0808;
 }
-p, li, dd, dt, blockquote {
-    max-width: 35em;
+p, li, dd, dt {
+    max-width: 39em;
 	line-height: 1.5em;
 }
 dt {
@@ -409,7 +404,7 @@ dt {
 
 /* Homepage styles */
 .home h2 {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     font-size: 2.4em;
     font-weight: normal;
     color: #333;
@@ -450,49 +445,51 @@ a.read-more {
 .article-meta {
     line-height: 1.8em;
 }
-
-/* Specialist */
-div.slidedeck {
-	width: 90%;
-	max-width: 45em;
+#article p,
+.article-meta p,
+#article dl,
+#article table {
+    margin-left: 20px;
 }
 
 /* Article styles */
 .article h1#article_title {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     font-size: 3.4em;
     font-weight: normal;
     color: #8C0808;
     margin: 0 0 0.4em 0;
+    padding-left: 20px;
 	text-align: left;
 }
 .article h1 {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     font-weight: normal;
+    padding-left: 20px;
     color: #8C0808;
-	font-size: 2em;
-	margin-top: 1em;
 }
 #article h2,
 .article-meta h2 {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
+    padding-left: 20px;
     color: #8C0808;
     font-weight: normal;
-	font-size: 1.8em;
+    font-size: 14pt;
 }
 .article-meta h3 {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     color: #8C0808;
     font-weight: normal;
     font-size: 12pt;
 }
 .article h3#article_date {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     color: #974747;
     font-weight: normal;
 	font-size: 1.2em;
 	text-align: left;
 	margin: 0 0 0 0;
+	padding-left: 20px;
 }
 .article p {
 }
@@ -506,6 +503,7 @@ div.slidedeck {
 .article .screenshot {
     background-color: white;
     border: 1px dashed #aaa;
+    margin-left: 20px;
     padding: 8px 12px;
 }
 .article table.docutils {
@@ -520,13 +518,8 @@ div.slidedeck {
 	text-align: left;
 	border-bottom: 1px solid black;
 }
-
-/* Disqus */
 #dsq-content #dsq-global-toolbar {
     margin: 0;
-}
-#dsq-comments p {
-	font-size: 1em;
 }
 
 /* RST */
@@ -538,10 +531,10 @@ div.highlight {
     padding: 10px 10px 10px 20px ;
 }
 tt.docutils {
-    background-color: #ddd;
-    padding: 2px 4px;
+    background-color: #f8f8f8;
+    padding: 2px 2px;
     white-space: nowrap;
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-family: 'Inconsolata', sans-serif;
 }
 .highlight pre {
@@ -563,7 +556,7 @@ div.warning {
 
 /* Article list styles */
 .article h1#title {
-    font-family: 'Signika Negative', serif;
+    font-family: 'Droid Serif', serif;
     font-size: 3.4em;
     font-weight: normal;
     margin: 0 0 0.4em 0;
@@ -571,7 +564,7 @@ div.warning {
 }
 .articles {
     padding: 0 0 0 0;
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-top: 20px;
 }
 .articles .article {
@@ -600,7 +593,7 @@ div.warning {
 /* Tweet styles */
 .tweets {
     padding: 0 0 40px 0;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 .tweets .tweet {
     border-bottom: 1px dotted #ddd;
@@ -734,9 +727,6 @@ div.warning {
 	}
 	#article-about p {
 		margin: 5px 0 0 0;
-	}
-	.article img.align-right {
-		display: none;
 	}
 }
 

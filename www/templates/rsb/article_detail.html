@@ -33,26 +33,6 @@
 
 <div id="article">
     {{ article.body_html|safe }}
-	<div id="article-nav">
-		<div id="previous" style="float:left">
-			{% if previous_article %}
-			&laquo; previous<br/>
-			<a href="{{ previous_article.get_absolute_url }}" title="{{ previous_article.summary|striptags }}">{{ previous_article.title|safe }}</a>
-			{% else %}
-			&nbsp;<br/>&nbsp;
-			{% endif %}
-		</div>
-		<div id="next" style="float:right">
-			{% if next_article %}
-			next &raquo;</br>
-			<a href="{{ next_article.get_absolute_url }}" title="{{ next_article.summary|striptags }}">{{ next_article.title|safe }}</a>
-			{% else %}
-			&nbsp;<br/>&nbsp;
-			{% endif %}
-		</div>
-        <a  href="{% url 'articles' %}">All writing</a><br/>
-        <a href="{% url 'articles-feed' %}">Feed</a>
-	</div>
 </div>
 
 <div class="article-meta" id="article-comments"> 
