@@ -64,7 +64,7 @@
 {% endif %}
 
 {% if popular_articles %}
-	<div class="article-meta" id="further-reading">
+	<div class="article-meta" id="popular-reading">
         <h2>Popular</h2>
         {% include 'rsb/includes/articles.html' with articles=popular_articles %} 
         <a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>

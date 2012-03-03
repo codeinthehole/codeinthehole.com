@@ -9,765 +9,923 @@
  * 
  * ==|== normalize ==========================================================
  */
-
-
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
-
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
-audio:not([controls]) { display: none; }
-[hidden] { display: none; }
-
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
 /* =============================================================================
    Base
    ========================================================================== */
-
 /*
  * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
  * 2. Force vertical scrollbar in non-IE
  * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
  */
-
-html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-
-body { margin: 0; font-size: 13px; line-height: 1.231; }
-
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
-
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+  color: #222;
+}
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate
  * Also: hot pink! (or customize the background color to match your design)
  */
-
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
-
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
 /* =============================================================================
    Links
    ========================================================================== */
-
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
-a:focus { outline: thin dotted; }
-
+a {
+  color: #00e;
+}
+a:visited {
+  color: #551a8b;
+}
+a:hover {
+  color: #06e;
+}
+a:focus {
+  outline: thin dotted;
+}
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-a:hover, a:active { outline: 0; }
-
-
+a:hover,
+a:active {
+  outline: 0;
+}
 /* =============================================================================
    Typography
    ========================================================================== */
-
-abbr[title] { border-bottom: 1px dotted; }
-
-b, strong { font-weight: bold; }
-
-blockquote { margin: 1em 40px; }
-
-dfn { font-style: italic; }
-
-hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-
-ins { background: #ff9; color: #000; text-decoration: none; }
-
-mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
 /* Redeclare monospace font family: h5bp.com/j */
-pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
-
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
 /* Improve readability of pre-formatted text in all browsers */
-pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
-q { quotes: none; }
-q:before, q:after { content: ""; content: none; }
-
-small { font-size: 85%; }
-
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+small {
+  font-size: 85%;
+}
 /* Position subscript and superscript content without affecting line-height: h5bp.com/k */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-
-
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 /* =============================================================================
    Lists
    ========================================================================== */
-
-ul { margin: 1em 0; padding: 0 0 0 1em; }
-ol { margin: 1em 0; padding: 0 0 0 2em; }
-dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-
-
+ul {
+  margin: 1em 0;
+  padding: 0 0 0 50px;
+}
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 60px;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
 /* =============================================================================
    Embedded content
    ========================================================================== */
-
 /*
  * 1. Improve image quality when scaled in IE7: h5bp.com/d
  * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
  */
-
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
 /*
  * Correct overflow not hidden in IE9 
  */
-
-svg:not(:root) { overflow: hidden; }
-
-
+svg:not(:root) {
+  overflow: hidden;
+}
 /* =============================================================================
    Figures
    ========================================================================== */
-
-figure { margin: 0; }
-
-
+figure {
+  margin: 0;
+}
 /* =============================================================================
    Forms
    ========================================================================== */
-
-form { margin: 0; }
-fieldset { border: 0; margin: 0; padding: 0; }
-
+form {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 /* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
-
+label {
+  cursor: pointer;
+}
 /* 
  * 1. Correct color not inheriting in IE6/7/8/9 
  * 2. Correct alignment displayed oddly in IE6/7 
  */
-
-legend { border: 0; *margin-left: -7px; padding: 0; }
-
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+}
 /*
  * 1. Correct font-size not inheriting in all browsers
  * 2. Remove margins in FF3/4 S5 Chrome
  * 3. Define consistent vertical alignment display in all browsers
  */
-
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
-
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
 /*
  * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
  * 2. Correct inner spacing displayed oddly in IE6/7
  */
-
-button, input { line-height: normal; *overflow: visible; }
-
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
 /*
  * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
  */
-
-table button, table input { *overflow: auto; }
-
+table button,
+table input {
+  *overflow: auto;
+}
 /*
  * 1. Display hand cursor for clickable form elements
  * 2. Allow styling of clickable form elements in iOS
  */
-
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
-
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
 /*
  * Consistent box sizing and appearance
  */
-
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
 /* 
  * Remove inner padding and border in FF3/4: h5bp.com/l 
  */
-
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
 /* 
  * 1. Remove default vertical scrollbar in IE6/7/8/9 
  * 2. Allow only vertical resizing
  */
-
-textarea { overflow: auto; vertical-align: top; resize: vertical; }
-
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
 /* Colors for form validity */
-input:valid, textarea:valid {  }
-input:invalid, textarea:invalid { background-color: #f0dddd; }
-
-
+input:invalid,
+textarea:invalid {
+  background-color: #f0dddd;
+}
 /* =============================================================================
    Tables
    ========================================================================== */
-
-table { border-collapse: collapse; border-spacing: 0; }
-td { vertical-align: top; }
-
-
-/* ===== primary styles =====================================================
-   Author: David Winerbottom
-   ========================================================================== */
-
-/* Global */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td {
+  vertical-align: top;
+}
+.title {
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+}
 body {
-	font-family: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif;
+  font-family: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif;
 }
-header, footer, p, h2, h3, th, td, li, dt, dd, blockquote {
-    font-size: 1.4em;
-}
-h1, h2, h3, h4 {
+header,
+footer,
+p,
+h2,
+h3,
+th,
+td,
+li,
+dt,
+dd,
+blockquote {
+  font-size: 1.4em;
 }
 pre {
-    font-size: 1.3em;
-    font-family: 'Inconsolata', monospace, sans-serif;
-    line-height: 1.2em;
+  font-size: 1.3em;
+  font-family: 'Inconsolata', monospace, sans-serif;
+  line-height: 1.2em;
 }
 blockquote {
-    background-color: #eee;
-     -moz-border-radius: 0.4em;
-    border-radius: 0.4em;
-    margin: 0;
-    padding: 0.8em 1em;
-    font-style: italic;
+  background-color: #eee;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 0.8em 1em;
+  font-style: italic;
+  margin: 0;
 }
 blockquote p {
-	font-size: 1em;
-	margin: 0;
-	padding: 0.4em 0 0.4em 0;
+  font-size: 1em;
+  margin: 0;
+  padding: 0.4em 0 0.4em 0;
 }
 dt {
-    font-weight: bold;
+  font-weight: bold;
 }
 ul {
-	list-style-position: outside;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
 }
-
+a,
+a:active,
+a.link,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: #8c0808;
+}
+p,
+li,
+dd,
+dt,
+blockquote {
+  max-width: 35em;
+  line-height: 1.5em;
+}
+dt {
+  margin-top: 10px;
+}
 /* Layout */
 #container {
-    margin: 0 auto;
-    position: relative;
-	width: 90%;
-    max-width: 820px;
-    overflow: hidden;
-	padding: 0px 40px;
+  margin: 0 auto;
+  position: relative;
+  width: 90%;
+  max-width: 820px;
+  overflow: hidden;
+  padding: 0px 2em;
 }
-
-/* Header */
 header {
-    overflow: hidden;
-    padding: 4px 0;
-    color: #aaa;
-    font-size: 10pt;
-}
-header h3 {
-    float: left;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    font-weight: normal;
-}
-header #nav {
-    float: right;
-    padding: 0;
-    margin: 0;
-    font-weight: normal;
-}
-header a, header a:active, header a:link, header a:visited {
-    color: #222;
+  overflow: hidden;
+  font-size: 1em;
 }
 header a:hover {
-    color: #222;
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 /* Logo */
 #logo {
-    color: #222;
+  color: #222222;
 }
-.article #logo {
-    float: right;
-}
-.home #logo {
-    text-align: center;
-}
-#logo h1, 
+#logo h1,
 #logo h2,
 #logo h3,
 #logo h4,
 #logo h5 {
-    font-family: 'Inconsolata', sans-serif;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
+  font-family: 'Inconsolata', monospace, sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 #logo h1 {
-    font-size: 4em;
-    margin-top: 0.2em;
+  font-size: 4em;
+  margin-top: 0.2em;
 }
 #logo h2 {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 #logo h3 {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 #logo h4 {
-    font-size: 2em;
-    text-align: right;
+  font-size: 2em;
+  text-align: right;
+}
+#logo h4 a {
+  color: #222222;
 }
 #logo h5 {
-    text-align: right;
-    font-size: 1.1em;
+  text-align: right;
+  font-size: 1.1em;
 }
-
-/* Footer */
+#logo h5 a {
+  color: #222222;
+}
+.article #logo {
+  float: right;
+}
+.home #logo {
+  text-align: center;
+}
 footer {
-	margin: 10px 0 40px 0;
-    font-size: 10pt;
-    color: #aaa;
-}
-footer p {
-    width: auto;
+  margin: 10px 0 40px 0;
+  color: #aaaaaa;
+  font-size: 1.1em;
 }
 footer a:active,
 footer a:link,
 footer a:visited,
 footer a:hover {
-    color: #aaa;
+  color: #aaaaaa;
 }
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 img.in_para {
-    float: right;
-    margin: 0 0 10px 10px;
-    border: 1px solid #ccc;
-    padding: 2px;
-	clear: right;
-	width: 140px;
+  float: right;
+  margin: 0 0 10px 10px;
+  border: 1px solid #ccc;
+  padding: 2px;
+  clear: right;
+  width: 140px;
 }
-
 /* Articles */
 h1#title {
-    font-family: 'Signika Negative', serif;
-    font-size: 4em;
-    font-weight: normal;
-    color: #333;
-    margin: 0;
-    padding: 0;
+  font-family: 'Signika Negative', serif;
+  font-size: 4em;
+  font-weight: normal;
+  color: #222222;
+  margin: 0;
+  padding: 0;
 }
-#further-reading {
-	margin-top: 20px;
-}
-#further-reading .articles {
-}
-#article-about {
-	margin-top: 20px;
-}
-#article-about img {
-}
-#article-about p {
-	width: auto;
-	max-width: none;
-	margin: 5px 0 0 0;
-}
-#article-nav {
-	margin-top: 50px;
-	border-top: 1px dashed #ddd;
-	padding-top: 15px;
-	overflow: hidden;
-    text-align: center;
-}
-#article-nav div {
-	width: 300px;
-}
-#article-nav #previous {
-	text-align: left;
-}
-#article-nav #next {
-	text-align: right;
-}
-#article-comments {
-	border-top: 1px dashed #ddd;
-	margin-top: 20px;
-}
-a, a:active, a.link, a:visited, a:hover {
-    text-decoration: none;
-    color: #8C0808;
-}
-p, li, dd, dt, blockquote {
-    max-width: 35em;
-	line-height: 1.5em;
-}
-dt {
-	margin-top: 10px;
-}
-
 /* Homepage styles */
 .home h2 {
-    font-family: 'Signika Negative', serif;
-    font-size: 2.4em;
-    font-weight: normal;
-    color: #333;
-    margin: 0 0 10px 0;
-    padding: 0;
-    clear: left;
+  font-family: 'Signika Negative', serif;
+  font-size: 2.4em;
+  font-weight: normal;
+  color: #222222;
+  margin: 0 0 10px 0;
+  padding: 0;
+  clear: left;
 }
 .home li {
-	margin: 8px 0;
+  margin: 8px 0;
 }
 .home #bio p {
-	width: auto;
-	margin: 5px 0;
+  width: auto;
+  margin: 5px 0;
 }
 a.read-more {
-	display: block;
-	text-align: right;
-	padding: 5px 0;
-	font-size: 10pt;
+  display: block;
+  text-align: right;
+  padding: 5px 0;
+  font-size: 10pt;
 }
 #about-photo {
-    float: left;
-    margin: 0 10px 10px 0;
-    border: 1px solid #ccc;
-    padding: 2px;
+  float: left;
+  margin: 0 10px 10px 0;
+  border: 1px solid #ccc;
+  padding: 2px;
 }
-
-
 .twtr-widget {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important;
+  font-family: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif;
 }
 .twtr-widget .twtr-tweet-wrap {
-    color: red;
-    padding: 0.5em 0 !important;
+  color: red;
+  padding: 0.5em 0 !important;
 }
-
 #article,
 .article-meta {
-    line-height: 1.8em;
+  line-height: 1.8em;
 }
-
 /* Specialist */
 div.slidedeck {
-	width: 90%;
-	max-width: 45em;
+  width: 90%;
+  max-width: 45em;
 }
-
 /* Article styles */
 .article h1#article_title {
-    font-family: 'Signika Negative', serif;
-    font-size: 3.4em;
-    font-weight: normal;
-    color: #8C0808;
-    margin: 0 0 0.4em 0;
-	text-align: left;
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  font-size: 4em;
+  margin: 0 0 0.4em 0;
+  text-align: left;
+}
+.article h1#title {
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  color: black;
+  font-size: 3.4em;
+  margin: 0 0 0.4em 0;
+  text-align: left;
 }
 .article h1 {
-    font-family: 'Signika Negative', serif;
-    font-weight: normal;
-    color: #8C0808;
-	font-size: 2em;
-	margin-top: 1em;
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  font-size: 2em;
+  margin-top: 1em;
 }
-#article h2,
-.article-meta h2 {
-    font-family: 'Signika Negative', serif;
-    color: #8C0808;
-    font-weight: normal;
-	font-size: 1.8em;
-}
-.article-meta h3 {
-    font-family: 'Signika Negative', serif;
-    color: #8C0808;
-    font-weight: normal;
-    font-size: 12pt;
+.article h2 {
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  font-size: 1.8em;
 }
 .article h3#article_date {
-    font-family: 'Signika Negative', serif;
-    color: #974747;
-    font-weight: normal;
-	font-size: 1.2em;
-	text-align: left;
-	margin: 0 0 0 0;
-}
-.article p {
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  color: #974747;
+  font-size: 1.2em;
+  text-align: left;
+  margin: 0;
 }
 .article img.align-right {
-    float: right;
-    padding: 2px;
-    margin: 0 0 2em 1em;
-    background-color: white;
-    border: 1px solid #aaa;
+  float: right;
+  padding: 2px;
+  margin: 0 0 2em 1em;
+  background-color: white;
+  border: 1px solid #aaaaaa;
 }
 .article .screenshot {
-    background-color: white;
-    border: 1px dashed #aaa;
-    padding: 8px 12px;
+  background-color: white;
+  border: 1px dashed #aaaaaa;
+  padding: 8px 12px;
 }
 .article table.docutils {
-	border: none;
-	font-size: 0.8em;
+  border: none;
+  font-size: 0.8em;
 }
 .article table.docutils td {
-	border: none;
+  border: none;
 }
 .article table.docutils th {
-	border: none;
-	text-align: left;
-	border-bottom: 1px solid black;
+  border: none;
+  text-align: left;
+  border-bottom: 1px solid black;
 }
-
-/* Disqus */
+.article-meta h2 {
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  font-size: 1.8em;
+}
+.article-meta h3 {
+  font-family: 'Signika Negative', serif;
+  color: #8c0808;
+  font-weight: normal;
+  font-size: 1.6em;
+}
+#further-reading,
+#popular-reading {
+  margin-top: 20px;
+}
+#article-about {
+  margin-top: 20px;
+}
+#article-about p {
+  width: auto;
+  max-width: none;
+  margin: 5px 0 0 0;
+}
+#article-comments {
+  margin-top: 20px;
+  border-top: 1px dashed #ddd;
+}
 #dsq-content #dsq-global-toolbar {
-    margin: 0;
+  margin: 0;
 }
 #dsq-comments p {
-	font-size: 1em;
+  font-size: 1em;
 }
-
-/* RST */
-div.highlight {
-    width: 95%;
-    max-width: 790px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    padding: 10px 10px 10px 20px ;
-}
-tt.docutils {
-    background-color: #ddd;
-    padding: 2px 4px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    font-family: 'Inconsolata', sans-serif;
+.highlight {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  width: 95%;
+  max-width: 790px;
+  padding: 10px 10px 10px 20px ;
 }
 .highlight pre {
-    margin: 0px;
+  margin: 0px;
+}
+tt.docutils {
+  background-color: #ddd;
+  padding: 2px 4px;
+  white-space: nowrap;
+  font-size: 0.9em;
+  font-family: 'Inconsolata', monospace, sans-serif;
 }
 div.tip {
-    color: #aaa;
-    font-size: 8pt;
+  color: #aaaaaa;
+  font-size: 8pt;
 }
 .admonition-title {
-    display: none;
+  display: none;
 }
 div.warning {
-	background-color: #eee;
-	border: 1px solid #ddd;
-	width: 50em;
-	color: #555;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  width: 50em;
+  color: #555;
+  padding: 1em;
 }
-
-/* Article list styles */
-.article h1#title {
-    font-family: 'Signika Negative', serif;
-    font-size: 3.4em;
-    font-weight: normal;
-    margin: 0 0 0.4em 0;
-    text-align: left;
+div.warning p {
+  margin: 0;
 }
 .articles {
-    padding: 0 0 0 0;
-    font-size: 1.4em;
-    margin-top: 20px;
+  padding: 0 0 0 0;
+  font-size: 1.4em;
+  margin-top: 20px;
 }
 .articles .article {
-    border-bottom: 1px dotted #ddd;
-    overflow: hidden;
-    padding: 0.5em 0;
+  border-bottom: 1px dotted #ddd;
+  overflow: hidden;
+  padding: 0.5em 0;
 }
 .articles .article .meta {
-    float: right;
-    width: 30%;
-    text-align: right;
-    color: #666;
-    font-size: 0.85em;
+  float: right;
+  width: 30%;
+  text-align: right;
+  color: #666;
+  font-size: 0.85em;
 }
 .articles .article .meta a {
-    color: #974747;
+  color: #974747;
 }
 .articles .article .main a {
-    display: block;
+  display: block;
 }
 .articles .article .main p {
-    font-size: 1em;
-    margin: 0.1em 0 0 0;
+  font-size: 1em;
+  margin: 0.1em 0 0 0;
 }
-
-/* Tweet styles */
 .tweets {
-    padding: 0 0 40px 0;
-    font-size: 1.4em;
+  padding: 0 0 40px 0;
+  font-size: 1.4em;
 }
 .tweets .tweet {
-    border-bottom: 1px dotted #ddd;
-    overflow: hidden;
-    padding: 0.5em 0;
+  border-bottom: 1px dotted #ddd;
+  overflow: hidden;
+  padding: 0.5em 0;
 }
 .tweets .tweet .meta {
-    float: right;
-    width: 30%;
-    text-align: right;
-    color: #666;
-    font-size: 0.85em;
+  float: right;
+  width: 30%;
+  text-align: right;
+  color: #666;
+  font-size: 0.85em;
 }
 .tweets .tweet .meta a {
-    color: #974747;
+  color: #974747;
 }
 .tweets .tweet .main p {
-    font-size: 1em;
-    margin: 0.1em 0 0 0;
+  font-size: 1em;
+  margin: 0.1em 0 0 0;
 }
-
-/* Twitter widget */
-.twtr-hd, .twtr-ft {
-    display: none;
+.twtr-hd,
+.twtr-ft {
+  display: none;
 }
-
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */
-
 /* For image replacement */
-.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
-.ir br { display: none; }
-
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+.ir br {
+  display: none;
+}
 /* Hide from both screenreaders and browsers: h5bp.com/u */
-.hidden { display: none !important; visibility: hidden; }
-
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
-
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
 /* Hide visually and from screenreaders, but maintain layout */
-.invisible { visibility: hidden; }
-
-/* Contain floats: h5bp.com/q */ 
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
-
-
-
+.invisible {
+  visibility: hidden;
+}
+/* Contain floats: h5bp.com/q */.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
 /* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.
    These override the primary ('mobile first') styles
    Modify as content requires.
    ========================================================================== */
-
-@media screen and (min-width:10px) and (max-width:480px) {
-	#container {
-		padding: 0px 10px;
-	}
-	#logo h1 {
-		font-size: 2.4em;
-	}
-	#logo h2 {
-		font-size: 1.6em;
-	}
-	.home h2 {
-		font-size: 1.6em;
-	}
-	#about-photo {
-		display: none;
-	}
-	.articles .article .meta {
-		width: 100%;
-		text-align: left;
-		padding-bottom: 5px;
-	}
-	.articles .article .meta .tags {
-		display: none;
-	}
-	.tweets .tweet .meta {
-		width: 100%;
-		text-align: left;
-		padding-bottom: 5px;
-	}
-	.projects ul {
-		padding: 0;
-		list-style: none;
-	}
-	.article h1#article_title {
-		font-size: 2em;
-		padding-left: 0px;
-	}
-	.article h1 {
-		font-size: 1.4em;
-		padding-left: 0px;
-	}
-	.article h3#article_date {
-		padding-left: 0px;
-	}
-	.article #logo {
-		float: none;
-	}
-	.article ul {
-		padding-left: 0px;
-		margin-left: 15px;
-	}
-	#article-nav {
-		display: none;
-	}
-	#logo h4 {
-		text-align: center;
-	}
-	#logo h5 {
-		text-align: center;
-		padding-bottom: 15px;
-	}
-	#article p,
-	.article-meta p,
-	#article dl,
-	.article-meta h2,
-	#article table {
-		margin-left: 0px;
-		padding-left: 0px;
-	}
-	#further-reading .articles {
-		margin-left: 0px;
-	}
-	#article-about p {
-		margin: 5px 0 0 0;
-	}
-	.article img.align-right {
-		display: none;
-	}
+@media screen and (min-width: 10px) and (max-width: 480px) {
+  #container {
+    padding: 0px 10px;
+  }
+  #logo h1 {
+    font-size: 2.4em;
+  }
+  #logo h2 {
+    font-size: 1.6em;
+  }
+  .home h2 {
+    font-size: 1.6em;
+  }
+  #about-photo {
+    display: none;
+  }
+  .articles .article .meta {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+  .articles .article .meta .tags {
+    display: none;
+  }
+  .tweets .tweet .meta {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+  .projects ul {
+    padding: 0;
+    list-style: none;
+  }
+  .article h1#article_title {
+    font-size: 2em;
+    padding-left: 0px;
+  }
+  .article h1 {
+    font-size: 1.4em;
+    padding-left: 0px;
+  }
+  .article h3#article_date {
+    padding-left: 0px;
+  }
+  .article #logo {
+    float: none;
+  }
+  .article ul {
+    padding-left: 0px;
+    margin-left: 15px;
+  }
+  #article-nav {
+    display: none;
+  }
+  #logo h4 {
+    text-align: center;
+  }
+  #logo h5 {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  #article p,
+  .article-meta p,
+  #article dl,
+  .article-meta h2,
+  #article table {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  #further-reading .articles {
+    margin-left: 0px;
+  }
+  #article-about p {
+    margin: 5px 0 0 0;
+  }
+  .article img.align-right {
+    display: none;
+  }
 }
-
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
-
 }
-
 @media only screen and (min-width: 768px) {
   /* Style adjustments for viewports 768px and over go here */
-
 }
-
-
-
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
- 
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  /* Black prints faster: h5bp.com/s */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  /* Don't show links for images, or javascript/internal links */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  /* h5bp.com/t */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
