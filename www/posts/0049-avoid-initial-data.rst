@@ -6,14 +6,14 @@ South provides a better way :: django, deployment
 -------------------------------------------------
 
 Django provides several mechanisms for `loading initial data for models`_, such
-as leveraging JSON fixture files or files of raw SQL - James Bennett offers a
+as leveraging JSON fixtures or files of raw SQL - James Bennett offers a
 `good overview`_.
 
 .. _`loading initial data for models`: https://docs.djangoproject.com/en/dev/howto/initial-data/
 .. _`good overview`: http://www.b-list.org/weblog/2007/nov/21/install-time/
 
 Each documented method involves initialising data as part of the syncdb event, either by
-loading a fixture file or by hooking into the syncdb event.  However, there is a
+loading a fixture file or by hooking into the syncdb signal.  However, there is a
 serious pitfall with these techniques, as described in the `Django docs`_:
 
 .. _`Django docs`: https://docs.djangoproject.com/en/dev/howto/initial-data/#automatically-loading-initial-data-fixtures
@@ -47,7 +47,7 @@ A better way to provide initial data is to use the database migration library
 * They will run automatically in all environments - no manual deployment steps
   required.
 
-The only disadvangtage is that you need to using South, which all sensible
+The only disadvantage is that you need to use South, which most sensible
 Django projects already do.
 
 Simple example
@@ -75,7 +75,7 @@ See the `worked example`_ in South's docs for further details on writing data mi
 Using fixture files
 -------------------
 
-It's possible to still use JSON fixture files with data migrations, by utilising
+It's possible to use JSON fixture files with data migrations, by utilising
 the ``call_command`` function.  
 
 .. sourcecode:: python
@@ -84,5 +84,5 @@ the ``call_command`` function.
         from django.core.management import call_command
         call_command('loaddata', 'countries.json')
 
-This is a very useful feature as you can use the ``dumpdata`` to produce your
+This is a very useful feature as you can use the ``dumpdata`` command to produce your
 initial fixtures, and you will have them available to be used by unit tests.
