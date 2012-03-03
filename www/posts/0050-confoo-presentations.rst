@@ -1,9 +1,9 @@
 =========================
 Confoo 2012 presentations
 =========================
------------------------------------------
-Two talks from the Python stream :: talks
------------------------------------------
+-----------------------------------------------------------------------
+Two talks from the Python stream :: talks, python, django-oscar, django
+-----------------------------------------------------------------------
 
 .. image:: /static/images/confoo2012.gif
    :align: right

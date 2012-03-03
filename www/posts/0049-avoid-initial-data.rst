@@ -1,9 +1,9 @@
 ======================================
 Prefer data migrations to initial data
 ======================================
--------------------------------------------------
-South provides a better way :: django, deployment
--------------------------------------------------
+---------------------------------------------------------
+South provides a better way :: django, deployment, python
+---------------------------------------------------------
 
 Django provides several mechanisms for `loading initial data for models`_, such
 as leveraging JSON fixtures or files of raw SQL - James Bennett offers a
