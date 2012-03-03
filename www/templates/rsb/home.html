@@ -33,22 +33,35 @@
 		<a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
 	{% endif %}
 
-    <h2 id="thinking">Thinking</h2>
-    <div class="tweets">
-		{% for tweet in tweets %}
-        <div class="tweet">
-            <div class="meta">
-                {{ tweet.date_created|timesince }} ago
-            </div>
-            <div class="main">
-                {{ tweet.text|safe }}
-            </div>
-        </div>
-		{% empty %}
-			<p>Nothing going on at the moment.</p>
-		{% endfor %}
-		<a class="read-more" href="http://twitter.com/codeinthehole/">@codeinthehole &raquo;</a>
-    </div>
+	{% if tweets %}
+		<h2 id="thinking">Thinking</h2>
+		<div class="tweets">
+			{% for tweet in tweets %}
+			<div class="tweet">
+				<div class="meta">
+					{{ tweet.date_created|timesince }} ago
+				</div>
+				<div class="main">
+					{{ tweet.text|safe }}
+				</div>
+			</div>
+			{% endfor %}
+			<a class="read-more" href="http://twitter.com/codeinthehole/">@codeinthehole &raquo;</a>
+		</div>
+	{% endif %}
+
+	{% if github_activity %}
+		<h2>Hacking</h2>
+		<div class="github">
+			{% for entry in github_activity %}
+				<div class="event">
+					<div class="meta">{{ entry.date_updated|timesince }} ago</div>
+					{{ entry.summary|safe }}
+				</div>
+			{% endfor %}
+			<a class="read-more" href="https://github.com/codeinthehole">github.com/codeinthehole &raquo;</a>
+		</div>
+	{% endif %}
 
 	<h2>Selected projects</h2>
 	<div class="projects">

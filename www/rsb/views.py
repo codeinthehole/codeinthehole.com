@@ -6,15 +6,17 @@ from tagging.models import Tag
 import requests
 
 from rsb.models import Article
-from rsb.utils import fetch_tweets
+from rsb.twitter import fetch_tweets
+from rsb.github import fetch_activity
 
 
 class HomeView(TemplateView):
     template_name = 'rsb/home.html'
 
     def get_context_data(self):
-        return {'articles': Article.objects.all().order_by('-date_published')[0:5],
-                'tweets': fetch_tweets()}
+        return {'articles': Article.objects.all().order_by('-date_published')[:5],
+                'tweets': fetch_tweets(),
+                'github_activity': fetch_activity()[:8]}
     
         
 class ArticleListView(ListView):

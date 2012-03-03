@@ -16,7 +16,7 @@
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
 }
-.title {
+.title-block {
     font-family: @san-serif;
     color: @dark-red;
     font-weight: normal;
@@ -36,23 +36,11 @@ pre {
     font-family: @fixed-width;
     line-height: 1.2em;
 }
-blockquote {
-    background-color: #eee;
-    .rounded-corners; 
-    padding: 0.8em 1em;
-    font-style: italic;
-	margin: 0;
-}
-blockquote p {
-	font-size: 1em;
-	margin: 0;
-	padding: 0.4em 0 0.4em 0;
-}
 dt {
     font-weight: bold;
 }
 ul {
-	list-style-position: inside;
+	list-style-position: outside;
 	margin: 0;
 	padding: 0;
 }
@@ -196,6 +184,50 @@ a.read-more {
     padding: 2px;
 }
 
+// Github
+.github {
+	font-size: 1.4em;
+	padding: 0 0 40px 0;
+	.event {
+		border-bottom: 1px dotted #ddd;
+		padding: 0.5em 0;
+		li {
+			font-size: 0.9em;
+			overflow: hidden;
+			.message {
+				display: inline;
+			}
+			margin-left: 1.4em;
+		}
+		blockquote {
+			display: inline;
+			font-size: 1em;
+			margin: 0;
+			p {
+				font-size: 1em;
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+	.message {
+		font-style: italic;
+	}
+	time {
+		display: none;
+	}
+	.meta {
+		float: right;
+		width: 30%;
+		text-align: right;
+		color: #666;
+		font-size: 0.85em;
+		a {
+			color: #974747;
+		}
+	}
+}
+
 
 .twtr-widget {
     font-family: @serif;
@@ -219,33 +251,45 @@ div.slidedeck {
 /* Article styles */
 .article {
 	h1#article_title {
-		.title;
+		.title-block;
 		font-size: 4em;
 		margin: 0 0 0.4em 0;
 		text-align: left;
 	}
 	h1#title {
-		.title;
+		.title-block;
 		color: black;
 		font-size: 3.4em;
 		margin: 0 0 0.4em 0;
 		text-align: left;
 	}
 	h1 {
-		.title;
+		.title-block;
 		font-size: 2em;
 		margin-top: 1em;
 	}
 	h2 {
-		.title;
+		.title-block;
 		font-size: 1.8em;
 	}
 	h3#article_date {
-		.title;
+		.title-block;
 		color: #974747;
 		font-size: 1.2em;
 		text-align: left;
 		margin: 0;
+	}
+	blockquote {
+		background-color: #eee;
+		.rounded-corners; 
+		padding: 0.8em 1em;
+		font-style: italic;
+		margin: 0;
+	}
+	blockquote p {
+		font-size: 1em;
+		margin: 0;
+		padding: 0.4em 0 0.4em 0;
 	}
 	img.align-right {
 		float: right;
@@ -275,11 +319,11 @@ div.slidedeck {
 
 .article-meta {
 	h2 {
-		.title;
+		.title-block;
 		font-size: 1.8em;
 	}
 	h3 {
-		.title;
+		.title-block;
 		font-size: 1.6em;
 	}
 }

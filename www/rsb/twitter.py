@@ -2,13 +2,11 @@ import re
 import datetime
 import requests
 import simplejson as json
-import feedparser
-from time import mktime
 
 from django.core.cache import cache
 
 
-def fetch_tweets(username='codeinthehole'):
+def fetch_tweets(username='codeinthehole', cache_lifetime=3600):
     """
     Return tweets but with caching
     """
@@ -20,7 +18,7 @@ def fetch_tweets(username='codeinthehole'):
         except Exception:
             tweets = []
         else:
-            cache.set(key, tweets, 300)
+            cache.set(key, tweets, cache_lifetime)
     return tweets
 
 
@@ -57,6 +55,7 @@ def anchorise_urls(text):
 def anchorise_twitter_user_refs(text):
     return tweeterfinder.sub(r'<a href="http://twitter.com/\1">@\1</a>', text)
 
+
 def anchorise_twitter_hashtags(text):
     return hashtagfinder.sub(r'<a href="http://twitter.com/#!/search/%23\1">#\1</a>', text)
     
@@ -69,28 +68,3 @@ def htmlify(text):
     for fn in filters:
         output = fn(output)
     return output
-
-
-def fetch_github_activity(username='codeinthehole'):
-    key = 'github_%s' % username
-    activity = cache.get(key)
-    if activity is None:
-        activity = _fetch_github_activity(username)
-        cache.set(key, activity, 3600)
-    return activity
-
-def _fetch_github_activity(username):
-    url = 'https://github.com/%s.atom' % username
-    feed = feedparser.parse(url)
-    items = []
-    for entry in feed.entries:
-        timestamp = mktime(entry['updated_parsed'])
-        item = {'date_updated': datetime.datetime.fromtimestamp(timestamp),
-                'summary': anchorise_github_links(entry['summary'])}
-        items.append(item)
-    return items
-
-linkfinder = re.compile(r"\"/")
-
-def anchorise_github_links(text):
-    return linkfinder.sub(r'"https://github.com/', text)
