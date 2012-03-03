@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load url from future %}
 
+{% if feedurl %}
+{% block feedurl %}{{ feedurl }}{% endblock %}
+{% endif %}
+
 {% block title %}{{ title }}{{ block.super }}{% endblock %}
 {% block description %}View all the articles I've ever written.{% endblock %}
 

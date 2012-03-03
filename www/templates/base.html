@@ -8,7 +8,7 @@
 {% block extra_head %}
     <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-	<link rel="alternate" type="application/rss+xml" title="RSS feed" href="http://feeds2.feedburner.com/codeintheholecom" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed" href="{% block feedurl %}http://feeds2.feedburner.com/codeintheholecom{% endblock %}" />
 {% endblock %}
 
 {% block bodyclass %}{% endblock %}

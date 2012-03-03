@@ -65,8 +65,24 @@ class ArticleTagView(ListView):
     
     def get_context_data(self, **kwargs):
         ctx = super(ArticleTagView, self).get_context_data(**kwargs)
-        ctx['title'] = "Writing on %s" % self.tag.name
+        ctx['title'] = self.tag.name.title()
+        ctx['feedurl'] = reverse('tagged-feed', kwargs={'name': self.tag.name})
         return ctx
+
+
+class ArticleTagFeed(Feed):
+
+    def get_object(self, request, name):
+        return get_object_or_404(Tag, name=name)
+
+    def title(self, obj):
+        return 'Writing on %s' % obj.name
+    
+    def link(self, obj):
+        return reverse('tagged-feed', kwargs={'name': obj.name})
+
+    def items(self, obj):
+        return Article.tagged.with_all([obj])
 
 
 class ArticleDetailView(DetailView):
