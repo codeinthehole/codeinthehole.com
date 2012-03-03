@@ -67,6 +67,8 @@ def collect_static_files():
         # Copy a few into different places
         sudo('cp -r static/html5boilerplate/* public')
 
+        sudo('source %s/bin/activate && python manage.py compress' % env.virtualenv)
+
 def reload_python_code():
     with cd(env.builds_dir):
         sudo('touch %(build)s/%(wsgi)s' % env)

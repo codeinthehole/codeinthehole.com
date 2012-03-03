@@ -51,6 +51,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = location('public/static/')
 STATICFILES_DIRS = (location('static/'),)
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'swf65^49=x&!lnu-0t8e!qqyr^z6-0+g5x3ci$&+3vfhjvwoo+'
 
@@ -93,6 +99,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'tagging',
     'debug_toolbar',
+    'compressor',
 )
 
 CACHES = {
@@ -133,3 +140,6 @@ LOGGING = {
         },
     }
 }
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True

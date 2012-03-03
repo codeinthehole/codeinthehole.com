@@ -1,3 +1,4 @@
+{% load compress %}
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -19,10 +20,10 @@
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
 	<!-- CSS: implied media=all -->
-	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css?v=1">
+	{% compress css %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+	{% endcompress %}
 	<!-- end CSS-->
 
 	<link rel="openid.server" href="http://www.myopenid.com/server">
