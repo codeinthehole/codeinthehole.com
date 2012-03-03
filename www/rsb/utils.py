@@ -45,6 +45,7 @@ def _fetch_tweets(username='codeinthehole'):
 
 urlfinder = re.compile(r"(https?://[^ ]+)")
 tweeterfinder = re.compile(r"@(\w+)")
+hashtagfinder = re.compile(r"#(\w+)")
 
 
 def anchorise_urls(text):
@@ -53,8 +54,17 @@ def anchorise_urls(text):
 
 def anchorise_twitter_user_refs(text):
     return tweeterfinder.sub(r'<a href="http://twitter.com/\1">@\1</a>', text)
+
+def anchorise_twitter_hashtags(text):
+    return hashtagfinder.sub(r'<a href="http://twitter.com/#!/search/%23\1">#\1</a>', text)
     
 
 def htmlify(text):
-    return anchorise_twitter_user_refs(anchorise_urls(text))
+    filters = [anchorise_urls,
+               anchorise_twitter_user_refs,
+               anchorise_twitter_hashtags]
+    output = text
+    for fn in filters:
+        output = fn(output)
+    return output
     
