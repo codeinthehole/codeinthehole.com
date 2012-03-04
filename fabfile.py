@@ -15,7 +15,7 @@ def deploy():
     archive_file = '/tmp/build.tar.gz'
     prepare_build(archive_file)
     upload(archive_file)
-    unpack(archive_file, env.version)
+    unpack(archive_file)
     update_virtualenv()
     migrate_schema()
     collect_static_files()
@@ -31,7 +31,7 @@ def prepare_build(archive_file, reference='master'):
 def upload(local_path):
     local('scp %s jupiter:/tmp' % local_path)
 
-def unpack(archive_path, git_ref):
+def unpack(archive_path):
     now = datetime.datetime.now()
     env.build_dir = '%s-%s' % (env.build, now.strftime('%Y-%m-%d-%H-%M'))
     with cd(env.builds_dir):
@@ -40,9 +40,6 @@ def unpack(archive_path, git_ref):
         # Create new build folder
         sudo('if [ -d "%(build_dir)s" ]; then rm -rf "%(build_dir)s"; fi' % env)
         sudo('mv %(web_dir)s %(build_dir)s' % env)
-
-        # Update version
-        sudo("sed -i 's/__version__/%s/' %s/settings.py" % (git_ref, env.build_dir))
 
         # Create new symlink
         sudo('if [ -h %(build)s ]; then unlink %(build)s; fi' % env)
