@@ -64,9 +64,8 @@ then implement the ``forward`` method to create the appropriate initial data:
 .. sourcecode:: python
 
     def forwards(self, orm):
-        from myapp.models import Frob
         for name in ('Foo', 'Bar'):
-            Frob.objects.create(name=name)
+            orm.Frob.objects.create(name=name)
 
 See the `worked example`_ in South's docs for further details on writing data migrations.
 
