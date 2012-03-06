@@ -425,6 +425,9 @@ header a:hover {
 #logo h3 {
   margin: 1em 0;
 }
+#logo h3#mobile_nav {
+  display: none;
+}
 #logo h4 {
   font-size: 2em;
   text-align: right;
@@ -842,6 +845,12 @@ div.warning p {
   }
   #about-photo {
     display: none;
+  }
+  h3#screen_nav {
+    display: none;
+  }
+  h3#mobile_nav {
+    display: block;
   }
   .articles .article .meta {
     width: 100%;

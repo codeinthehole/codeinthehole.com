@@ -11,7 +11,7 @@
     <div id="logo">
         <h1>codeinthehole.com</h1>
         <h2>David Winterbottom</h2>
-		<h3>
+		<h3 id="screen_nav">
 			&laquo;
 			<a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
 			<a href="http://feeds2.feedburner.com/codeintheholecom" title="RSS">RSS</a> | 
@@ -19,6 +19,11 @@
 			<a href="http://github.com/codeinthehole" title="See my source code">github</a> |
 			<a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
 			&raquo;
+        </h3>
+		<h3 id="mobile_nav">
+			<a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
+			<a href="http://github.com/codeinthehole" title="See my source code">github</a> |
+			<a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
         </h3>
     </div>
 
