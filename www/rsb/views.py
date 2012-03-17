@@ -24,11 +24,11 @@ class ArticleListView(ListView):
     template_name = 'rsb/article_list.html'
     context_object_name = 'articles'
     title = "All articles"
+    popular = False
     
     def get_queryset(self):
         qs = self.model.objects.all().exclude(date_published=None)
-        order_by = self.request.GET.get('sort', 'date')
-        if order_by == 'popular':
+        if self.popular:
             qs = qs.order_by('-num_views')
             self.title = "Popular articles"
         else:

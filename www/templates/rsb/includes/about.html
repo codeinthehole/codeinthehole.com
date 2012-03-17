@@ -9,4 +9,14 @@ the e-commerce framework <a href="http://github.com/tangentlabs/django-oscar">dj
 <p>I used to be a mathematician; I have a PhD in Mathematics from the
 University of Nottingham and an associated interest in cryptic crosswords,
 chess and playing devil's advocate.</p>
+
+{% if include_twitter %}
+<p>
+If you've read this far, you should probably follow me on Twitter:
+</p>
+<p>
+	<a href="https://twitter.com/codeinthehole" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @codeinthehole</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</p>
+{% endif %}
 <a class="read-more" href="{% url 'about' %}">More &raquo;</a>
