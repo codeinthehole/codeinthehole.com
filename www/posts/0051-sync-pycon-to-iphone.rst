@@ -5,6 +5,7 @@ How to sync PyCon videos to your iPhone
 Using Python to fetch and convert YouTube videos for syncing to iPhone :: python
 --------------------------------------------------------------------------------
 
+
 Problem
 -------
 
@@ -21,6 +22,13 @@ M4V format so they can be imported to iTunes.
 .. raw:: html
 
     <script src="https://gist.github.com/2018487.js"> </script>
+
+.. warning::
+
+    This gist is stale now - the code for downloading videos has been
+    expanding into a `Github repository`_.
+
+.. _`Github repository`: https://github.com/codeinthehole/pyvideo2quicktime
 
 To run the script:
 
