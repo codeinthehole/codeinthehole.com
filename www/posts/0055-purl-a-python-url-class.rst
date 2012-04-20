@@ -100,7 +100,7 @@ There's a full range of inspection methods:
     u.scheme()      # 'https'
     u.host()        # 'www.google.com' 
     u.domain()      # 'www.google.com' - alias of host
-    u.port()        # 80 - the default if not set explicitly
+    u.port()        # None (only returns something if explicitly set)
     u.path()        # '/search'
     u.query()       # 'q=testing'
     u.fragment()    # 'q=testing'
@@ -163,3 +163,12 @@ exact API I was looking for.
   subjective thing. 
 
 .. _URLObject: https://github.com/zacharyvoase/urlobject/
+
+Discussion
+----------
+
+There is a `discussion of this post`_ on `/r/Python`_.
+
+.. _`discussion of this post`: http://www.reddit.com/r/Python/comments/sjkab/purl_an_immutable_url_class/
+.. _`/r/python`: http://www.reddit.com/r/Python/
+
