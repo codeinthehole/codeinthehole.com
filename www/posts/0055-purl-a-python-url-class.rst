@@ -113,8 +113,8 @@ There's a full range of inspection methods:
     u.query_param('lang', default='GB') # 'GB'
     u.query_params()                    # {'q': 'testing'}
     u.has_query_param('q')              # True
-    u.subdmains()                       # ['www', 'google', 'com']
-    u.subdmain(0)                       # 'www'
+    u.subdomains()                       # ['www', 'google', 'com']
+    u.subdomain(0)                       # 'www'
 
 Each accessor method is overloaded to be a mutator method too, similar
 to the jQuery API.  Since the URL class is immutable, any mutation will return a
