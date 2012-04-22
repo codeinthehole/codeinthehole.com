@@ -10,36 +10,41 @@ The blog is a simple Django project which uses RST files as a source
 for creating a simple Article model. Fabric is used to publish articles 
 to the production site.
 
-See `Rewriting codeinthehole.com`_.
+See `Rewriting codeinthehole.com`_ for more details.
 
-.. _`Rewriting codeinthehole.com: http://codeinthehole.com/writing/rewriting-codeintheholecom/
+.. _`Rewriting codeinthehole.com`: http://codeinthehole.com/writing/rewriting-codeintheholecom/
+
+Usage
+=====
 
 How to publish an article
 -------------------------
 
-1.  Create an RST article file within the ``articles`` folder::
+Create an RST article file within the ``articles`` folder::
 
     vim posts/my-new-article.rst
 
-2.  Preview locally using::
+Preview locally using::
 
     ./manage.py rsb_article posts/my-new-article.rst
     ./manage.py runserver
 
-    Note this renames the file to include the PK, which is helpful when
-    article files are renamed, but annoying if you still have it open in vim.
+Note this renames the file to include the PK, which is helpful when article
+files are renamed, but annoying if you still have it open in vim. You have been
+warned.
 
-3.  Repeat the above steps until you are ready to publish. 
-
-4.  Publish article using::
+Repeat the above steps until you are ready to publish, then run::
 
     fab prod publish:posts/0034-my-new-article.rst
+
+Push it to Github so you've got a backup.
 
 How to update the site
 ----------------------
 
-Simple::
+If you have changes to the django project or the static assets, you'll need to
+run::
 
     fab prod deploy
 
-
+to deploy.
