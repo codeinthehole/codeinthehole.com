@@ -63,6 +63,13 @@ URLs.
 purl 
 ----
 
+.. warning::
+
+    Warning - the code examples below are from version 0.2 of purl - please
+    consult the `Github documentation`_ for the latest reference.
+
+.. _`Github documentation`: https://github.com/codeinthehole/purl
+
 So I wrote a utility class to scratch this itch.  It's a simple immutable
 ``URL`` class that uses jQuery-style overloading of the attribute methods to be
 both accessors and mutators.
@@ -72,6 +79,7 @@ Install with:
 .. sourcecode:: python
 
     pip install purl
+
 
 Construct URL instances as follows:
 
@@ -103,7 +111,7 @@ There's a full range of inspection methods:
     u.port()        # None (only returns something if explicitly set)
     u.path()        # '/search'
     u.query()       # 'q=testing'
-    u.fragment()    # 'q=testing'
+    u.fragment()    # ''
 
     # Convenience methods for inspecing path, query and host
     u.path_segment(0)                   # 'search'
