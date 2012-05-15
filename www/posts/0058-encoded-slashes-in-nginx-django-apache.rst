@@ -101,5 +101,5 @@ Further reading
 * This `StackOverflow answer`_ describes a similar technique to solve this problem for Google App Engine.
 * A `Google Groups discussion`_ of the issue.
 
-.. _`StackOverflow answer`: kkk
+.. _`StackOverflow answer`: http://stackoverflow.com/questions/3040659/how-can-i-receive-percent-encoded-slashes-with-django-on-app-engine
 .. _`Google Groups discussion`: https://groups.google.com/forum/?fromgroups#!topic/django-users/31oV1WhuAZ4
