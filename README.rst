@@ -14,13 +14,16 @@ See `Rewriting codeinthehole.com`_ for more details.
 
 .. _`Rewriting codeinthehole.com`: http://codeinthehole.com/writing/rewriting-codeintheholecom/
 
+It's on my to-do list to package this up (name ReStructured Blog) and put it on
+PyPI.
+
 Usage
 =====
 
 How to publish an article
 -------------------------
 
-Create an RST article file within the ``articles`` folder::
+Create an RST article file within the ``posts`` folder::
 
     vim posts/my-new-article.rst
 
@@ -46,5 +49,3 @@ If you have changes to the django project or the static assets, you'll need to
 run::
 
     fab prod deploy
-
-to deploy.
