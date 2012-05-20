@@ -1,12 +1,8 @@
 import datetime
-import os
-import glob
-import re
 
-from fabric.api import local, run, sudo, env, settings
-from fabric.colors import green, red, white, _wrap_with
-from fabric.context_managers import cd, lcd
-from fabric.operations import put, prompt
+from fabric.api import local, sudo, env
+from fabric.context_managers import cd
+from fabric.operations import put
 
 from fabconfig import *
 
@@ -44,6 +40,9 @@ def unpack(archive_path):
         # Create new symlink
         sudo('if [ -h %(build)s ]; then unlink %(build)s; fi' % env)
         sudo('ln -s %(build_dir)s %(build)s' % env)
+
+        # Copy in config files
+        sudo('cp ../conf/* %(build)s/conf' % env)
         
         # Remove archive
         sudo('rm %s' % archive_path)
