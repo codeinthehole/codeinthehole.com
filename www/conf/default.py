@@ -11,7 +11,7 @@ ADMINS = (
     ('David Winterbottom', 'david.winterbottom@gmail.com'),
 )
 
-SEND_BROKEN_LINK_EMAILS = True
+SEND_BROKEN_LINK_EMAILS = False
 
 MANAGERS = ADMINS
 
@@ -140,3 +140,5 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_SUBJECT_PREFIX = '[codeinthehole] '
