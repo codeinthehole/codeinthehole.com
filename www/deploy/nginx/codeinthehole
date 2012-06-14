@@ -18,6 +18,9 @@ server {
     if ($host ~* ^www) {
         rewrite ^(.*)$ http://codeinthehole.com$1 permanent;
     }
+    location ~* /archives/.*\.html {
+        rewrite ^(.*)\.html$ http://codeinthehole.com$1 permanent;
+    }
     location ~* \.(avi|m|html|sh|tex|zip|jpg|png|gif|jpeg|js|css|htm|mp3|wav|swf|mov|doc|xls|ppt|docx|pptx|xlsx|swf|woff|otf|eot|ttf|ico|txt|pdf)$ {
         expires max;
         root /var/www/codeinthehole.com/builds/prod/public/;
