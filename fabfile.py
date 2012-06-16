@@ -31,7 +31,7 @@ def unpack(archive_path):
     now = datetime.datetime.now()
     env.build_dir = '%s-%s' % (env.build, now.strftime('%Y-%m-%d-%H-%M'))
     with cd(env.builds_dir):
-        sudo('tar xzf %s' % archive_path)
+        sudo('tar xzf %s 2> /dev/null' % archive_path)
 
         # Create new build folder
         sudo('if [ -d "%(build_dir)s" ]; then rm -rf "%(build_dir)s"; fi' % env)
