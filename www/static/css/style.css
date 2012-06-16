@@ -770,6 +770,9 @@ div.warning p {
 .twtr-ft {
   display: none;
 }
+iframe.twitter-share-button {
+	margin-top: 10px;
+}
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */
