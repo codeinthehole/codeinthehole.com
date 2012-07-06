@@ -1,11 +1,11 @@
 =========================================
 A data migration for every Django project
 =========================================
------------------------------------------------------
-No more embarassing emails from example.com :: django
------------------------------------------------------
+-------------------------------------------------------------
+No more embarassing emails from example.com :: django, python
+-------------------------------------------------------------
 
-How to use a South data migration to avoid sending emails from example.com.
+How to use a South data migration to avoid accidentally sending emails from example.com.
 
 Problem
 =======
@@ -28,7 +28,7 @@ Consider the following snippet from Django's docs [#]_ for sending a confirmatio
 
 Here the domain for the email sender is taken from the 'current site' instance,
 which is controlled by `Django's 'Sites' framework`_ and accessible by a custom
-manager method on the ``Site`` model.
+method on the manager of the  ``Site`` model.
 
 By default, a ``Site`` instance is created with domain and display name
 'example.com' and you have to correct these values.  This is often done by hand
@@ -45,7 +45,7 @@ Solution
 Automation, of course!  We can use a South data migration to set the domain and
 display name correctly in each environment.  
 
-First, ensure that each environment sets variables for the domain
+First, ensure that each environment has settings for the domain
 and site name.  
 
 .. sourcecode:: bash
@@ -60,18 +60,23 @@ and site name.
     DOMAIN_NAME = 'stage.project.client.tangentlabs.co.uk'
     SITE_NAME = 'project - client (stage)'
 
-This snippet assumes you are using a set-up similar to that outlined
-by `David Cramer`_, where an environmental specifies an additional settings file
-to import.  Using a ``settings_local.py`` file works just as well. 
+This snippet assumes you are using a set-up similar to that outlined by `David
+Cramer`_, where an environmental variable specifies an additional settings file
+to import.  You don't have to use this method; employing a ``settings_local.py``
+file for each environment works just as well. 
 
 .. _`David Cramer`: http://justcramer.com/2011/01/13/settings-in-django/
 
 Next, create a data migration to set the domain and display name correctly in each
 environment.  This migration sits most naturally in the ``django.contrib.sites``
-app, but since that's in Django's core, it's not an option.  You could use an existing app
-within your project to house the migration or perhaps create a simple 'core' app.  Since
-we're not using the actual app where the ``Site`` model is defined, we must employ the
-``--freeze`` option to ensure the ``Site`` model is available to the migration.
+app, but since that's in Django's core, it's not an option.  
+You could use an existing app within your project to house the migration or
+perhaps create a simple 'core' or 'data' app to house data migrations that alter
+3rd party apps.  
+
+Since we're not using the actual app where the ``Site`` model
+is defined, we must employ South's ``--freeze`` option to ensure the ``Site`` model
+is available to the migration.
 
 .. sourcecode:: bash
 
