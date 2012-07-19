@@ -77,10 +77,10 @@ Skip the pre-commit hook sometimes
 ----------------------------------
 
 Be aware of the ``--no-verify`` option to ``git commit``.  This bypasses the 
-pre-commit hook when committing, which is useful is you have just manually 
+pre-commit hook when committing, which is useful if you have just manually 
 run your test suite and don't need to see it run again when committing.
 
-I use a git aliases to make this easy:
+I use git aliases to make this easy:
 
 .. sourcecode:: bash
 
@@ -98,7 +98,7 @@ At some point, someone will try and commit a file containing
     import pdb; pdb.set_trace()
 
 or some other debugging code.  This can be easily avoided using the ``pre-commit.sh`` file 
-to grep the staged codebase and abort the commit if forbiden strings are found.
+to grep the staged codebase and abort the commit if forbidden strings are found.
 
 Here's an example that looks for ``console.log``:
 
