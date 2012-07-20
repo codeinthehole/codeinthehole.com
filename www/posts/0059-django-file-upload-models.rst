@@ -143,6 +143,22 @@ filepath generation is removed from the view:
         upload = StockUpload.objects.create_from_stream(user, f)
         upload.process()
 
+where ``create_from_stream`` could be implemented as:
+
+.. sourcecode:: python
+
+    class StockUploadManager(models.Manager):
+
+        def create_from_stream(self, user, f):
+            filepath = self.generate_filename()
+            with open(filepath, 'wb+') as dest:
+                for chunk in f.chunks:
+                    dest.write(chunk)
+            return self.create(
+                filepath=filepath,
+                uploaded_by=user
+            )
+
 and, if processing takes a while, push the work into Celery:
 
 .. sourcecode:: python
