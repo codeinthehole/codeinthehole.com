@@ -81,7 +81,7 @@ class ArticleTagFeed(Feed):
         return 'Writing on %s | David Winterbottom' % obj.name
 
     def link(self, obj):
-        return reverse('tagged-feed', kwargs={'name': obj.name})
+        return reverse('tagged', kwargs={'name': obj.name})
 
     def items(self, obj):
         return Article.tagged.with_all([obj])
