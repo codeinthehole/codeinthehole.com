@@ -38,23 +38,9 @@ class ArticleListView(ListView):
     def get_context_data(self, **kwargs):
         ctx = super(ArticleListView, self).get_context_data(**kwargs)
         ctx['title'] = self.title
+        ctx['feedurl'] = 'http://feeds2.feedburner.com/codeintheholecom'
         ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
         return ctx
-
-
-class ArticlesFeedView(Feed):
-    title = "David Winterbottom (@codeinthehole)"
-    link = "/writing/"
-    description = "Latest writing"
-
-    def items(self):
-        return Article.objects.all().order_by('-date_published')[:15]
-
-    def item_title(self, item):
-        return item.title
-
-    def item_description(self, item):
-        return item.summary
 
 
 class ArticleTagView(ListView):
@@ -72,7 +58,25 @@ class ArticleTagView(ListView):
         return ctx
 
 
-class ArticleTagFeed(Feed):
+class ArticleFeed(Feed):
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return text.truncate_html_words(item.body_html, 120)
+
+
+class AllArticlesFeed(ArticleFeed):
+    title = "David Winterbottom (@codeinthehole)"
+    link = "/writing/"
+    description = "Latest writing"
+
+    def items(self):
+        return Article.objects.all().order_by('-date_published')[:15]
+
+
+class TaggedArticlesFeed(ArticleFeed):
 
     def get_object(self, request, name):
         return get_object_or_404(Tag, name=name)
@@ -85,9 +89,6 @@ class ArticleTagFeed(Feed):
 
     def items(self, obj):
         return Article.tagged.with_all([obj])
-
-    def item_description(self, item):
-        return text.truncate_html_words(item.body_html, 120)
 
 
 class ArticleDetailView(DetailView):

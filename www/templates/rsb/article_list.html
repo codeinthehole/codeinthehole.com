@@ -11,4 +11,5 @@
 {% block content %}
     <h1 id="title">{{ title|default:"Writing" }}</h1>
     {% include "rsb/includes/articles.html" %}
+	<a class="read-more" href="{{ feedurl }}">RSS feed</a>
 {% endblock %}

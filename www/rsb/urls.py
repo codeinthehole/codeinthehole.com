@@ -4,7 +4,7 @@ from django.contrib.sitemaps import Sitemap
 
 from rsb.views import ArticleListView, ArticleDetailView, AboutView, \
                       ArticleTagView, HomeView, \
-                      ArticleRedirectView, ArticlesFeedView, ArticleTagFeed
+                      ArticleRedirectView, AllArticlesFeed, TaggedArticlesFeed
 from rsb.models import Article
 
 
@@ -29,10 +29,10 @@ urlpatterns = patterns('',
     # Blog pages
     url(r'^writing/$', ArticleListView.as_view(), name='articles'),
     url(r'^writing/popular/$', ArticleListView.as_view(popular=True), name='popular-articles'),
-    url(r'^writing/feed/$', ArticlesFeedView(), name='articles-feed'),
+    url(r'^writing/feed/$', AllArticlesFeed(), name='articles-feed'),
     url(r'^writing/(?P<slug>[\w-]+)/$', ArticleDetailView.as_view(), name='article'),
     url(r'^writing/tagged/(?P<name>[ .\w-]+)/$', ArticleTagView.as_view(), name='tagged'),
-    url(r'^writing/tagged/(?P<name>[ .\w-]+)/feed/$', ArticleTagFeed(), name='tagged-feed'),
+    url(r'^writing/tagged/(?P<name>[ .\w-]+)/feed/$', TaggedArticlesFeed(), name='tagged-feed'),
     # Feeds
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     # Redirects from old site
