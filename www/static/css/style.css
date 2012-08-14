@@ -62,7 +62,7 @@ input,
 select,
 textarea {
   font-family: sans-serif;
-  color: #222;
+  color: #222020;
 }
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -363,7 +363,7 @@ dt {
 }
 ul {
   list-style-position: outside;
-  margin: 0;
+  margin: 0 0 0 3em;
   padding: 0;
 }
 a,
@@ -574,7 +574,7 @@ div.slidedeck {
   font-family: 'Signika Negative', serif;
   color: #8c0808;
   font-weight: normal;
-  font-size: 4em;
+  font-size: 3.4em;
   margin: 0 0 0.4em 0;
   text-align: left;
 }
