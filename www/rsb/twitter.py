@@ -3,26 +3,11 @@ import datetime
 import requests
 import simplejson as json
 
-from django.core.cache import cache
+from cacheback import cacheback
 
 
-def fetch_tweets(username='codeinthehole', cache_lifetime=3600):
-    """
-    Return tweets but with caching
-    """
-    key = 'tweets_%s' % username
-    tweets = cache.get(key)
-    if tweets is None:
-        try:
-            tweets = _fetch_tweets(username)
-        except Exception:
-            tweets = []
-        else:
-            cache.set(key, tweets, cache_lifetime)
-    return tweets
-
-
-def _fetch_tweets(username='codeinthehole'):
+@cacheback(10*60, fetch_on_miss=False)
+def fetch_tweets(username='codeinthehole'):
     """
     Return a list of tweets for a given user
     """
@@ -58,7 +43,7 @@ def anchorise_twitter_user_refs(text):
 
 def anchorise_twitter_hashtags(text):
     return hashtagfinder.sub(r'<a href="http://twitter.com/#!/search/%23\1">#\1</a>', text)
-    
+
 
 def htmlify(text):
     filters = [anchorise_urls,

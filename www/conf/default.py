@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     'tagging',
     'debug_toolbar',
     'compressor',
+    'djcelery',
 )
 
 CACHES = {
@@ -131,6 +132,11 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
         },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
     },
     'loggers': {
         'django.request': {
@@ -138,7 +144,16 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
+        'cacheback': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
     }
 }
 
 EMAIL_SUBJECT_PREFIX = '[codeinthehole] '
+
+import djcelery
+djcelery.setup_loader()
+CELERY_ALWAYS_EAGER = True
