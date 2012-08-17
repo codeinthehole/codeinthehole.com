@@ -16,7 +16,7 @@ class HomeView(TemplateView):
     def get_context_data(self):
         return {'articles': Article.objects.all().order_by('-date_published')[:5],
                 'tweets': fetch_tweets(),
-                'github_activity': fetch_activity()[:8]}
+                'github_activity': fetch_activity('codeinthehole', num_items=8)}
 
 
 class ArticleListView(ListView):

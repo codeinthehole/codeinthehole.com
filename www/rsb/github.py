@@ -3,22 +3,11 @@ import datetime
 import feedparser
 from time import mktime
 
-from django.core.cache import cache
+from cacheback import cacheback
 
 
-def fetch_activity(username='codeinthehole', cache_lifetime=3600):
-    """
-    Fetch latest activity from Github using the ATOM 
-    feed for a user.
-    """
-    key = 'github_%s' % username
-    activity = cache.get(key)
-    if activity is None:
-        activity = _fetch_github_activity(username)
-        cache.set(key, activity, cache_lifetime)
-    return activity
-
-def _fetch_github_activity(username):
+@cacheback(60*15, fetch_on_miss=False)
+def fetch_activity(username, num_items=None):
     url = 'https://github.com/%s.atom' % username
     feed = feedparser.parse(url)
     items = []
@@ -27,6 +16,9 @@ def _fetch_github_activity(username):
         item = {'date_updated': datetime.datetime.fromtimestamp(timestamp),
                 'summary': _anchorise_github_links(entry['summary'])}
         items.append(item)
+
+    if num_items is not None:
+        return items[:num_items]
     return items
 
 _linkfinder = re.compile(r"\"/")
