@@ -1,0 +1,20 @@
+# VARIABLE EXPANSION
+# ==================
+#
+# The following abbreviations will be expanded
+#
+# * %n -> node name
+# * %h -> host name
+
+# Set virtualenv variable to we can pick up the correct settings
+VIRTUALENV=/var/www/codeinthehole.com/virtualenvs/prod/
+
+CELERYD_NODES=
+CELERYD_OPTS=
+CELERYD_CHDIR="/var/www/codeinthehole.com/builds/prod"
+CELERYD_MULTI="$CELERYD_CHDIR/manage.py celeryd_multi"
+CELERYD_PIDFILE=
+CELERYD_LOGFILE=
+CELERYD_LOG_LEVEL=INFO
+CELERYD_USER=
+CELERYD_GROUP=

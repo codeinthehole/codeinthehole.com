@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'compressor',
     'djcelery',
+    'cacheback',
 )
 
 CACHES = {
@@ -162,4 +163,3 @@ EMAIL_SUBJECT_PREFIX = '[codeinthehole] '
 
 import djcelery
 djcelery.setup_loader()
-CELERY_ALWAYS_EAGER = True
