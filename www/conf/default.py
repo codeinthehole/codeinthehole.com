@@ -137,6 +137,12 @@ LOGGING = {
             'class':'logging.StreamHandler',
             'formatter': 'verbose'
         },
+        'cacheback_file':{
+            'level':'INFO',
+            'class':'logging.FileHandler',
+            'formatter': 'verbose',
+            'filename': 'logs/cacheback.log',
+        },
     },
     'loggers': {
         'django.request': {
@@ -145,7 +151,7 @@ LOGGING = {
             'propagate': False,
         },
         'cacheback': {
-            'handlers': ['console'],
+            'handlers': ['cacheback_file'],
             'level': 'INFO',
             'propagate': False,
         },

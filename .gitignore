@@ -6,3 +6,4 @@ notes.rst
 *.sqlite3
 fabconfig.py
 www/public/*
+www/logs/*
