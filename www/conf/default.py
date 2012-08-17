@@ -141,7 +141,7 @@ LOGGING = {
             'level':'INFO',
             'class':'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': 'logs/cacheback.log',
+            'filename': os.path.join(os.path.dirname(__file__), '../logs/cacheback.log'),
         },
     },
     'loggers': {
