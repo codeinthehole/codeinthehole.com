@@ -20,7 +20,7 @@ def deploy():
     restart_services()
     reload_python_code()
     delete_old_builds()
-    
+
 def prepare_build(archive_file, reference='master'):
     local('git archive --format tar %s %s | gzip > %s' % (reference, env.web_dir, archive_file))
 
@@ -41,9 +41,12 @@ def unpack(archive_path):
         sudo('if [ -h %(build)s ]; then unlink %(build)s; fi' % env)
         sudo('ln -s %(build_dir)s %(build)s' % env)
 
+        # Create symlink for log folder
+        sudo('ln -s ../../logs %(build)s/logs' % env)
+
         # Copy in config files
         sudo('cp ../conf/* %(build)s/conf' % env)
-        
+
         # Remove archive
         sudo('rm %s' % archive_path)
 
@@ -80,12 +83,13 @@ def deploy_nginx_config():
 def restart_services():
     sudo('/etc/init.d/apache2 restart')
     sudo('/etc/init.d/nginx restart')
+    sudo('/etc/init.d/celeryd restart')
 
 def delete_old_builds():
     with cd(env.builds_dir):
         sudo('find . -maxdepth 1 -type d -name "%(build)s*" | sort -r | sed "1,3d" | xargs rm -rf' % env)
 
-# Publishing 
+# Publishing
 
 def publish(rst_file):
     import os
@@ -101,5 +105,5 @@ def publish(rst_file):
 
     with cd("/var/www/codeinthehole.com/builds/prod/"):
         sudo("source /var/www/codeinthehole.com/virtualenvs/prod/bin/activate && ./manage.py rsb_article posts/%s" % filename)
-    
+
 
