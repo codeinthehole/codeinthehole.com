@@ -353,6 +353,9 @@ dd,
 blockquote {
   font-size: 1.4em;
 }
+li li {
+  font-size: 1em;
+}
 pre {
   font-size: 1.3em;
   font-family: 'Inconsolata', monospace, sans-serif;
@@ -361,7 +364,8 @@ pre {
 dt {
   font-weight: bold;
 }
-ul {
+ul,
+ol {
   list-style-position: outside;
   margin: 0 0 0 3em;
   padding: 0;
@@ -574,7 +578,7 @@ div.slidedeck {
   font-family: 'Signika Negative', serif;
   color: #8c0808;
   font-weight: normal;
-  font-size: 3.4em;
+  font-size: 3em;
   margin: 0 0 0.4em 0;
   text-align: left;
 }
@@ -771,7 +775,7 @@ div.warning p {
   display: none;
 }
 iframe.twitter-share-button {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

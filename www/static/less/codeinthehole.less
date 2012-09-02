@@ -29,6 +29,9 @@ body {
 header, footer, p, h2, h3, th, td, li, dt, dd, blockquote {
     font-size: 1.4em;
 }
+li li {
+	font-size: 1em;
+}
 h1, h2, h3, h4 {
 }
 pre {
@@ -39,9 +42,9 @@ pre {
 dt {
     font-weight: bold;
 }
-ul {
+ul, ol {
 	list-style-position: outside;
-	margin: 0;
+	margin: 0 0 0 3em;
 	padding: 0;
 }
 a, a:active, a.link, a:visited, a:hover {
@@ -258,7 +261,7 @@ div.slidedeck {
 .article {
 	h1#article_title {
 		.title-block;
-		font-size: 4em;
+		font-size: 3em;
 		margin: 0 0 0.4em 0;
 		text-align: left;
 	}
@@ -454,8 +457,9 @@ div.warning {
 .twtr-hd, .twtr-ft {
     display: none;
 }
-
-
+iframe.twitter-share-button {
+	margin-top: 10px;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
