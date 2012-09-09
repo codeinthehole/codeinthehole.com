@@ -166,19 +166,21 @@ Here's the same functionality implemented using the ``cacheback`` function:
     from cacheback.decorators import cacheback
 
     def show_tweets(request, username):
+        fetch_cached_tweets = cacheback(60*15, fetch_on_miss=False)(fetch_tweets)
         return render(request, 'tweets.html', 
-                      {'tweets': cacheback(60*15, fetch_on_miss=False)(fetch_tweets(username))})
+                      {'tweets': fetch_cached_tweets(username)})
 
-The ``cacheback`` function will generate a cache key based on the module path of
-the wrapped function and the passed args and kwargs.  It then checks the cache
-and if there isn't a valid result it will serialise the function and its args so
-it can be executed asynchronously by a Celery task.
+The ``cacheback`` function provides a wrapper function for the ``fetch_tweets``
+function.  When called, the wrapper will generate a cache key based on the
+module path of the wrapped function and the passed args and kwargs.  It then
+checks the cache and if there isn't a valid result it will serialise the
+function and its args so it can be executed asynchronously by a Celery task.
 
 The ``cacheback`` function can also be used as a decorator:
 
 .. sourcecode:: python
 
-    from cacheback import cacheback
+    from cacheback.decorators import cacheback
 
     @cacheback(15*60)
     def fetch_tweets(username):
@@ -211,7 +213,14 @@ Interested?
 ===========
 
 Check-out the `documentation`_ for more information.  Comments and feedback
-welcome.
+welcome.  
+
+If you're interested in an example, this site uses cacheback to cache the Github
+and Twitter data rendered on the homepage_: 
+
+* https://github.com/codeinthehole/codeinthehole.com/blob/master/www/rsb/twitter.py#L9
+* https://github.com/codeinthehole/codeinthehole.com/blob/master/www/rsb/github.py#L9
 
 .. _`documentation`: http://django-cacheback.readthedocs.org/en/latest/
-        
+.. _homepage: http://codeinthehole.com/
+       
