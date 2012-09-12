@@ -604,7 +604,7 @@ div.slidedeck {
   font-weight: normal;
   font-size: 1.8em;
 }
-.article h3#article_date {
+.article time#article_date {
   font-family: 'Signika Negative', serif;
   color: #8c0808;
   font-weight: normal;
