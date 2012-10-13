@@ -22,11 +22,11 @@ Several reasons - here's a few:
 * WebTest allows you to model a user's experience much more closely as it is
   smart about mark-up.  Instead of hand-crafting GET and POST requests, you can
   use the WebTest API to follow links and submit forms - this is what users
-  actually do.  As a result, your tests more accurately capture user stories.
+  actually do.  As a result, your tests accurately capture user stories.
 
 * A corollary to the last point is that writing functional tests with WebTest is
   both easier and quicker than using Django's test client.  It's much simpler to
-  fill in forms that contruct complicated arrays of POST data - this is
+  fill in forms that construct complicated arrays of POST data - this is
   particularly noticable with formsets.
 
 * The WebTest response object supports `several ways of parsing the response
@@ -76,7 +76,7 @@ Here's a WebTest for this:
             self.assertEqual(250, api.balance(customer))
             self.assertEqual(1, api.allocations(customer).count())
 
-As you can see, using WebTest allows the story to captured in a simple and
+As you can see, using WebTest allows the story to be captured in a simple and
 readable test.  This is based on a real functional test from a current project
 of mine.  Writing the above test took about 2 minutes.
 
