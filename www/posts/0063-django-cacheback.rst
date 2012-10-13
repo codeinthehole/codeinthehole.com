@@ -114,7 +114,7 @@ cache.
             tweets = None
         else:
             tweets, expiry = item
-            if expiry > datetime.datetime.now():
+            if expiry < datetime.datetime.now():
                 # Scenario 2: Cached item is stale - return it but trigger a refresh
                 update_tweets.delay(username, lifetime)
         return tweets
