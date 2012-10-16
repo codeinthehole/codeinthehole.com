@@ -48,6 +48,7 @@ This was achieved in the following way, where the setting
 
     import sys
     from django.conf import settings
+    from django.utils.importlib import import_module
 
     ...
 
