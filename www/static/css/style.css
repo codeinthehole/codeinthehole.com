@@ -519,6 +519,9 @@ a.read-more {
   font-size: 1.4em;
   padding: 0 0 40px 0;
 }
+.github .gravatar {
+  display: none;
+}
 .github .event {
   border-bottom: 1px dotted #ddd;
   padding: 0.5em 0;
@@ -540,6 +543,9 @@ a.read-more {
   font-size: 1em;
   padding: 0;
   margin: 0;
+}
+.github .commits ul {
+  margin: 0 0 0 0;
 }
 .github .message {
   font-style: italic;
