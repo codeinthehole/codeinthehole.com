@@ -3,16 +3,18 @@ import datetime
 import requests
 import simplejson as json
 
-from cacheback import cacheback
+from cacheback.decorators import cacheback
 
 
-@cacheback(10*60, fetch_on_miss=False)
+@cacheback(10 * 60, fetch_on_miss=False)
 def fetch_tweets(username='codeinthehole'):
     """
     Return a list of tweets for a given user
     """
-    url = "https://twitter.com/statuses/user_timeline.json?screen_name=%s" % username
-    response = requests.get(url)
+    url = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%s"
+    response = requests.get(url % username)
+    if response.status_code != 200:
+        raise RuntimeError("Unable to fetch tweets")
     raw_tweets = json.loads(response.content)
     if 'error' in raw_tweets:
         return []
@@ -23,7 +25,8 @@ def fetch_tweets(username='codeinthehole'):
             continue
         data = {
             'text': htmlify(tweet['text']),
-            'date_created': datetime.datetime.strptime(tweet['created_at'], "%a %b %d %H:%M:%S +0000 %Y")}
+            'date_created': datetime.datetime.strptime(
+                tweet['created_at'], "%a %b %d %H:%M:%S +0000 %Y")}
         processed_tweets.append(data)
     return processed_tweets
 
@@ -42,7 +45,8 @@ def anchorise_twitter_user_refs(text):
 
 
 def anchorise_twitter_hashtags(text):
-    return hashtagfinder.sub(r'<a href="http://twitter.com/#!/search/%23\1">#\1</a>', text)
+    return hashtagfinder.sub(
+        r'<a href="http://twitter.com/#!/search/%23\1">#\1</a>', text)
 
 
 def htmlify(text):
