@@ -1,11 +1,14 @@
-==============================
-Git aliases for fun and profit
-==============================
+==============
+My git aliases
+==============
 ---------------------------------
 Saving valuable keystrokes :: git
 ---------------------------------
 
-Git aliases are fun.  Here's a selection from my ``.gitconfig``:
+Git aliases are fun time-savers.  If you use execute more than 10 git commands a
+day, you should use them.  
+
+Here's a selection from my ``.gitconfig``:
 
 .. sourcecode:: bash
     # ~/.gitconfig
