@@ -15,4 +15,4 @@ johnny-cache==0.3.3
 django-compressor==1.1.2
 feedparser==5.1
 django-celery==3.0.4
-django-cacheback==0.2.1
+django-cacheback
