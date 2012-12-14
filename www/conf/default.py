@@ -126,28 +126,34 @@ LOGGING = {
     },
     'handlers': {
         'null': {
-            'level':'DEBUG',
-            'class':'django.utils.log.NullHandler',
+            'level': 'DEBUG',
+            'class': 'django.utils.log.NullHandler',
         },
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
         },
-        'console':{
-            'level':'DEBUG',
-            'class':'logging.StreamHandler',
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
-        'cacheback_file':{
-            'level':'INFO',
-            'class':'logging.FileHandler',
+        'error_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'verbose',
+            'filename': os.path.join(os.path.dirname(__file__), '../logs/errors.log'),
+        },
+        'cacheback_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
             'formatter': 'verbose',
             'filename': os.path.join(os.path.dirname(__file__), '../logs/cacheback.log'),
         },
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['mail_admins', 'error_file'],
             'level': 'ERROR',
             'propagate': False,
         },
