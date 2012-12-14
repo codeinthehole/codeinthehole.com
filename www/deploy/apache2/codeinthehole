@@ -10,7 +10,7 @@
         Allow from all
     </Directory>
     
-    WSGIDaemonProcess codeinthehole processes=2 threads=5 display-name=codeinthehole maximum-requests=10000
+    WSGIDaemonProcess codeinthehole processes=1 threads=4 display-name=codeinthehole maximum-requests=10000
     WSGIProcessGroup codeinthehole
     WSGIApplicationGroup %{GLOBAL}
     WSGIScriptAlias / /var/www/codeinthehole.com/builds/prod/deploy/wsgi/prod.wsgi
