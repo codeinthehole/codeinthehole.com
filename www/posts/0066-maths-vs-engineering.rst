@@ -22,3 +22,5 @@ footnotes.  Here's a good one about the Fermat test for prime numbers:
     an error in carrying out a correct algorithm.  Considering an algorithm to
     be inadequate for the first reason but not for the second illustrates the
     difference between mathematics and engineering.
+
+Taken from page 53.
