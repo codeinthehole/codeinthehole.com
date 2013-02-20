@@ -62,7 +62,7 @@ function record_value_rate
         # Need to pipe to bc to perform floating point operations
         DELTA_RATE=`echo "scale=4; $DELTA_VALUE/$DELTA_TIMESTAMP" | bc -l`
         printf " * $GANGLIA_NAME -- Previous value: $PREVIOUS_VALUE, new value: $NEW_VALUE, delta: $DELTA_VALUE, previous timestamp: $PREVIOUS_TIMESTAMP, new timestamp: $NEW_TIMESTAMP, delta: $DELTA_TIMESTAMP, $DELTA_RATE per second\n"
-        $GMETRIC --type "$GANGLIA_TYPE" --name "$GANGLIA_NAME" --value $DELTA_VALUE --unit "$GANGLIA_UNITS"
+        $GMETRIC --type "$GANGLIA_TYPE" --name "$GANGLIA_NAME" --value $DELTA_RATE --unit "$GANGLIA_UNITS"
     fi
 }
 
