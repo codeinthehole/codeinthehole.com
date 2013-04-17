@@ -82,9 +82,9 @@ remote for others to review:
 
     (feature/masquerading) $ git push -u origin feature/masquerading
 
-The ``-u`` option sets up the remote branch as a 'tracking' branch, meaning that
+The ``-u`` option adds an upstream tracking reference to your local branch, meaning that
 you can run push subsequent commits using ``git push`` without having to specify
-the remote and branch names.
+the remote and branch names (and run ``git pull`` without additional arguments).
 
 Now ask for feedback on your project mailing list by circulating either a link
 to the branch, or a compare view URL.  You can use the excellent `hub`_ to
