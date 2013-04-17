@@ -7,3 +7,4 @@ notes.rst
 fabconfig.py
 www/public/*
 www/logs/*
+www/drafts/*
