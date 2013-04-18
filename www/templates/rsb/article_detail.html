@@ -32,6 +32,16 @@
 <h1 id="article_title" class="entry-title">{{ article.title|safe }}</h1>
 <p class="byline author vcard" style="display:none">David Winterbottom</p>
 
+{% if article.is_old %}
+    <div class="warning">
+        <p>
+            Note, this article was published over {{ article.age_in_years }}
+            years ago and hence the content may be stale.  Consume with a pinch
+            of salt.
+        </p>
+    </div>
+{% endif %}
+
 <div id="article" class="entry-content">
     {{ article.body_html|safe }}
 	<a href="https://twitter.com/share" class="twitter-share-button" data-via="codeinthehole" data-size="large">Tweet</a>
