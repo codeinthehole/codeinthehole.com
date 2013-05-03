@@ -905,6 +905,10 @@ iframe.twitter-share-button {
   .article #logo {
     float: none;
   }
+  .caption {
+    margin: 0;
+    color: red;
+  }
   .article ul {
     padding-left: 0px;
     margin-left: 15px;
