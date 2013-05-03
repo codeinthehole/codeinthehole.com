@@ -1,11 +1,14 @@
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include
+from django.views import generic
 from django.contrib import admin
 
 admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
+    (r'^cv/', generic.TemplateView.as_view(
+        template_name='cv.html')),
     (r'', include('rsb.urls')),
 )
 
