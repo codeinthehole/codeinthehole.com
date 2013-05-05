@@ -47,7 +47,7 @@
 					{{ tweet.date_created|timesince }} ago
 				</div>
 				<div class="main">
-					{{ tweet.text|linebreaks|safe }}
+					{{ tweet.text|safe }}
 				</div>
 			</div>
 			{% endfor %}

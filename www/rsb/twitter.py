@@ -36,6 +36,10 @@ tweeterfinder = re.compile(r"@(\w+)")
 hashtagfinder = re.compile(r"#(\w+)")
 
 
+def linebreaks(text):
+    return text.replace('\n', '<br />');
+
+
 def anchorise_urls(text):
     return urlfinder.sub(r'<a href="\1">\1</a>', text)
 
@@ -52,7 +56,8 @@ def anchorise_twitter_hashtags(text):
 def htmlify(text):
     filters = [anchorise_urls,
                anchorise_twitter_user_refs,
-               anchorise_twitter_hashtags]
+               anchorise_twitter_hashtags,
+               linebreaks]
     output = text
     for fn in filters:
         output = fn(output)
