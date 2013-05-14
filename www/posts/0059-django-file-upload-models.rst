@@ -48,7 +48,7 @@ For example:
     def handle_uploaded_file(f):
         filepath = '/tmp/somefile.txt'
         with open(filepath, 'wb+') as dest:
-            for chunk in f.chunks:
+            for chunk in f.chunks():
                 dest.write(chunk)
         process_file(filepath)
 
@@ -68,7 +68,7 @@ to use a simple audit model as well.  Consider an alternative implementation of
     def handle_uploaded_file(user, f):
         filepath = '/tmp/somefile.txt'
         with open(filepath, 'wb+') as dest:
-            for chunk in f.chunks:
+            for chunk in f.chunks():
                 dest.write(chunk)
         upload = StockUpload.objects.create(
             filepath=filepath,
@@ -84,13 +84,14 @@ The model definition for ``StockUpload`` may look like:
 
     import datetime
     from django.db import models
+    from django.utils.translation import ugettext_lazy as _
 
     class StockUpload(models.Model):
         filepath = models.CharField(max_length=255)
         
         # Upload audit information
-        uploaded_by = model.ForeignKey('auth.User')
-        date_uploaded = model.DateTimeField(auto_now_add=True)
+        uploaded_by = models.ForeignKey('auth.User')
+        date_uploaded = models.DateTimeField(auto_now_add=True)
 
         # Processing audit information
         PENDING, PROCESSED, FAILED = 'Pending', 'Processed', 'Failed'
@@ -99,8 +100,8 @@ The model definition for ``StockUpload`` may look like:
             (PROCESSED, _(PROCESSED)),
             (FAILED, _(FAILED)),
         )
-        status = model.CharField(max_length=64, choices=STATUSES, default=PENDING)
-        processing_description = model.TextField(blank=True, null=True)
+        status = models.CharField(max_length=64, choices=STATUSES, default=PENDING)
+        processing_description = models.TextField(blank=True, null=True)
         num_records = models.PositiveIntegerField()
         date_start_processing = models.DateTimeField(null=True)
         date_end_processing = models.DateTimeField(null=True)
@@ -152,7 +153,7 @@ where ``create_from_stream`` could be implemented as:
         def create_from_stream(self, user, f):
             filepath = self.generate_filename()
             with open(filepath, 'wb+') as dest:
-                for chunk in f.chunks:
+                for chunk in f.chunks():
                     dest.write(chunk)
             return self.create(
                 filepath=filepath,
@@ -169,7 +170,7 @@ and, if processing takes a while, push the work into Celery:
         upload.process()
 
     def handle_uploaded_file(user, f):
-        upload = StockUpload.create_from_stream(user, f)
+        upload = StockUpload.objects.create_from_stream(user, f)
         process_upload.delay(upload.id)
 
 Here's a more complete implementation that uses a library of mine,
@@ -204,13 +205,15 @@ Here's a more complete implementation that uses a library of mine,
         if request.method == 'POST':
             form = UploadFileForm(request.POST, request.FILES)
             if form.is_valid():
-                upload = StockUpload.create_from_stream(request.user, 
-                                                        request.FILES['file'])
+                upload = StockUpload.objects.create_from_stream(
+                    request.user, request.FILES['file'])
                 process_upload.delay(upload.id)
                 return HttpResponseRedirect('/success/url/')
         else:
             form = UploadFileForm()
-        return render_to_response('upload.html', {'form': form})
+        return render_to_response(
+            'upload.html', {'form': form}, 
+            context_instance=RequestContext(request))
 
 
 Discussion
