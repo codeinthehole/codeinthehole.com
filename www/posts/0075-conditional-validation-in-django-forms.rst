@@ -1,9 +1,9 @@
 =================================
 Conditional logic in Django forms
 =================================
-------------------------------------
-Radio buttons can be tamed :: django
-------------------------------------
+--------------------------------------------
+Radio buttons can be tamed :: django, python
+--------------------------------------------
 
 The problem
 -----------
@@ -127,4 +127,4 @@ Related links:
 
 * `Advanced Django Form Usage`_ - A decent overview of various issues around forms from DjangoCon 2011.
   
-.. _`Advanced Django Form Usage`: http://www.slideshare.net/pydanny/advanced-django-forms-usage Decent overview
+.. _`Advanced Django Form Usage`: http://www.slideshare.net/pydanny/advanced-django-forms-usage
