@@ -7,7 +7,7 @@ from tagging.models import Tag
 
 from rsb.github import fetch_activity
 from rsb.models import Article
-from rsb.twitter import fetch_tweets
+from rsb.tweets import fetch_tweets
 
 
 class HomeView(TemplateView):

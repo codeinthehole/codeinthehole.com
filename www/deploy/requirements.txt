@@ -16,3 +16,4 @@ django-compressor==1.1.2
 feedparser==5.1.3
 django-celery==3.0.11
 django-cacheback==0.4
+python-twitter==1.0

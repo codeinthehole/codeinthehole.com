@@ -158,7 +158,7 @@ LOGGING = {
             'propagate': False,
         },
         'cacheback': {
-            'handlers': ['cacheback_file'],
+            'handlers': ['console', 'cacheback_file'],
             'level': 'INFO',
             'propagate': False,
         },
@@ -169,3 +169,8 @@ EMAIL_SUBJECT_PREFIX = '[codeinthehole] '
 
 import djcelery
 djcelery.setup_loader()
+
+TWITTER_CONSUMER_KEY = 'RPgKZKkT7bqjWZwNPZM3w'
+TWITTER_CONSUMER_SECRET = 'trj98mvymPI5hfS5gi26STXj4mR5PgaFZeZPGsrzc'
+TWITTER_ACCESS_TOKEN_KEY = '18729346-GTcnweRGfva61UBsMGLeGr2UC6AuPyZbq18G77jsk'
+TWITTER_ACCESS_TOKEN_SECRET = 'zsXe4YHY3M422mihj8D8Zt6nZZWpk1VCh4ebByByDIk'

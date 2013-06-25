@@ -1,8 +1,10 @@
 import re
 import datetime
-import requests
 import simplejson as json
 
+import requests
+import twitter
+from django.conf import settings
 from cacheback.decorators import cacheback
 
 
@@ -11,22 +13,22 @@ def fetch_tweets(username='codeinthehole'):
     """
     Return a list of tweets for a given user
     """
-    url = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%s"
-    response = requests.get(url % username)
-    if response.status_code != 200:
-        raise RuntimeError("Unable to fetch tweets")
-    raw_tweets = json.loads(response.content)
-    if 'error' in raw_tweets:
-        return []
+    api = twitter.Api(
+        consumer_key=settings.TWITTER_CONSUMER_KEY,
+        consumer_secret=settings.TWITTER_CONSUMER_SECRET,
+        access_token_key=settings.TWITTER_ACCESS_TOKEN_KEY,
+        access_token_secret=settings.TWITTER_ACCESS_TOKEN_SECRET)
+    statuses = api.GetUserTimeline()
+
     processed_tweets = []
-    for tweet in raw_tweets:
+    for tweet in statuses:
         # Ignore replies
-        if tweet['text'].startswith('@'):
+        if tweet.text.startswith('@'):
             continue
         data = {
-            'text': htmlify(tweet['text']),
+            'text': htmlify(tweet.text),
             'date_created': datetime.datetime.strptime(
-                tweet['created_at'], "%a %b %d %H:%M:%S +0000 %Y")}
+                tweet.created_at, "%a %b %d %H:%M:%S +0000 %Y")}
         processed_tweets.append(data)
     return processed_tweets
 
