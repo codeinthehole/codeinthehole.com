@@ -33,9 +33,9 @@ def fetch_tweets(username='codeinthehole'):
     return processed_tweets
 
 
-urlfinder = re.compile(r"(https?://[^ )]+)")
-tweeterfinder = re.compile(r"@(\w+)")
-hashtagfinder = re.compile(r"#(\w+)")
+urlfinder = re.compile(r"(https?://[^ )\n]+)", re.MULTILINE)
+tweeterfinder = re.compile(r"@(\w+)", re.MULTILINE)
+hashtagfinder = re.compile(r"#(\w+)", re.MULTILINE)
 
 
 def linebreaks(text):
@@ -43,7 +43,7 @@ def linebreaks(text):
 
 
 def anchorise_urls(text):
-    return urlfinder.sub(r'<a href="\1">\1</a>', text)
+    return urlfinder.sub(r'<a class="tweet_url" href="\1">\1</a>', text)
 
 
 def anchorise_twitter_user_refs(text):
