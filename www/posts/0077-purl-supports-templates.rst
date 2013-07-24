@@ -1,9 +1,9 @@
 =======================================
 purl, URI templates and generated tests
 =======================================
--------------------------------------------------------
-Matching the RFC using Nose's test generators :: python
--------------------------------------------------------
+----------------------------------------------------------------
+Matching the RFC using Nose's test generators :: python, testing
+----------------------------------------------------------------
 
 *TLDR*: Parameterised tests are a useful testing technique.  Both Nose and
 py.test support them.
