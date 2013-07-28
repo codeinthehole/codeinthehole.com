@@ -11,102 +11,102 @@
     <div id="logo">
         <h1>codeinthehole.com</h1>
         <h2>David Winterbottom</h2>
-		<h3 id="screen_nav">
-			&laquo;
-			<a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
-			<a href="http://feeds2.feedburner.com/codeintheholecom" title="RSS">RSS</a> | 
+        <h3 id="screen_nav">
+            &laquo;
+            <a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
+            <a href="http://feeds2.feedburner.com/codeintheholecom" title="RSS">RSS</a> | 
             <a href="http://twitter.com/codeinthehole" title="Once I made a funny on the Twitter">twitter</a> | 
-			<a href="http://github.com/codeinthehole" title="See my source code">github</a> |
-			<a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
-			&raquo;
+            <a href="http://github.com/codeinthehole" title="See my source code">github</a> |
+            <a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
+            &raquo;
         </h3>
-		<h3 id="mobile_nav">
-			<a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
-			<a href="http://github.com/codeinthehole" title="See my source code">github</a> |
-			<a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
+        <h3 id="mobile_nav">
+            <a href="{% url 'articles' %}" title="Read what's in my brain">writing</a> | 
+            <a href="http://github.com/codeinthehole" title="See my source code">github</a> |
+            <a href="{% url 'about' %}" title="Read what's in my brain">about</a> 
         </h3>
     </div>
 
     <h2 id="home">Hello</h2>
-	<div id="bio">
-		{% include 'rsb/includes/about.html' %}
-	</div>
+    <div id="bio">
+        {% include 'rsb/includes/about.html' %}
+    </div>
 
-	{% if articles %}
-		<h2 id="writing">Latest writing</h2>
-		{% include "rsb/includes/articles.html" %}
-		<a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
-	{% endif %}
+    {% if articles %}
+        <h2 id="writing">Latest writing</h2>
+        {% include "rsb/includes/articles.html" %}
+        <a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
+    {% endif %}
 
-	{% if tweets %}
-		<h2 id="thinking">Thinking</h2>
-		<div class="tweets">
-			{% for tweet in tweets %}
-			<div class="tweet">
-				<div class="meta">
-					{{ tweet.date_created|timesince }} ago
-				</div>
-				<div class="main">
-					{{ tweet.text|safe }}
-				</div>
-			</div>
-			{% endfor %}
-			<a class="read-more" href="http://twitter.com/codeinthehole/">@codeinthehole &raquo;</a>
-		</div>
-	{% endif %}
+    {% if tweets %}
+        <h2 id="thinking">Thinking</h2>
+        <div class="tweets">
+            {% for tweet in tweets %}
+                <div class="tweet">
+                    <div class="meta">
+                        {{ tweet.date_created|timesince }} ago
+                    </div>
+                    <div class="main">
+                        {{ tweet.text|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+            <a class="read-more" href="http://twitter.com/codeinthehole/">@codeinthehole &raquo;</a>
+        </div>
+    {% endif %}
 
-	{% if github_activity %}
-		<h2>Hacking</h2>
-		<div class="github">
-			{% for entry in github_activity %}
-				<div class="event">
-					<div class="meta">{{ entry.date_updated|timesince }} ago</div>
-					{{ entry.summary|safe }}
-				</div>
-			{% endfor %}
-			<a class="read-more" href="https://github.com/codeinthehole">github.com/codeinthehole &raquo;</a>
-		</div>
-	{% endif %}
+    {% if github_activity %}
+        <h2>Hacking</h2>
+        <div class="github">
+            {% for entry in github_activity %}
+                <div class="event">
+                    <div class="meta">{{ entry.date_updated|timesince }} ago</div>
+                    {{ entry.summary|safe }}
+                </div>
+            {% endfor %}
+            <a class="read-more" href="https://github.com/codeinthehole">github.com/codeinthehole &raquo;</a>
+        </div>
+    {% endif %}
 
-	<h2>Selected projects</h2>
-	<div class="projects">
-		<p>A few spare-time projects I've worked on:</p>
-		<ul>
-			<li><a href="http://www.commandlinefu.com">commandlinefu.com</a> - a mildly popular 
-			repository site for sharing linux one-liners.  Grown men have been known to weep with 
-			joy when they discover <a href="http://www.commandlinefu.com/commands/view/13/run-the-last-command-as-root">sudo !!</a></li>
-		</ul>
-		<p>Python packages on PyPI:</p>
-		<ul>
-			<li><a href="https://github.com/codeinthehole/purl">purl</a> - an immutable URL class for python</li>
-			<li><a href="https://github.com/codeinthehole/foiegras">foiegras</a> - simple CSV loading for Postgres</li>
-			<li><a href="https://github.com/codeinthehole/csvfilter">csvfilter</a> - like <code>cut</code> but for CSVs</li>
-			<li><a href="https://github.com/codeinthehole/pyvideo2quicktime">pyvideo2quicktime</a> - for downloading PyCon videos to your iPhone</li>
-			<li><a href="https://github.com/codeinthehole/unittest-xml">unittest-xml</a> - additional assertions for unit-testing XML
-			documents with python's unittest library.</li>
-		</ul>
-		<p>Oscar and related packages:</p>
-		<ul>
-			<li><a href="https://github.com/tangentlabs/django-oscar">django-oscar</a> - domain-driven e-commerce for Django</li>
-			<li><a href="https://github.com/tangentlabs/django-oscar-accounts">django-oscar-accounts</a> - managed accounts using double-entry bookkeeping</li>
-			<li><a href="https://github.com/tangentlabs/django-oscar-datacash">django-oscar-datacash</a> - a Django app for integrating with the DataCash payment gateway</li>
-			<li><a href="https://github.com/tangentlabs/django-oscar-paypal">django-oscar-paypal</a> - Oscar integration with PayPal</li>
-			<li><a href="https://github.com/tangentlabs/django-oscar-gocardless">django-oscar-gocardless</a> - Oscar integration with <a href="https://gocardless.com/">GoCardless</a>.</li>
-			<li><a href="https://github.com/tangentlabs/django-oscar-stores">django-oscar-stores</a> - Stores functionality for Oscar</li>
-			<li><a href="https://github.com/tangentlabs/django-oscar-api">django-oscar-api</a> - REST APIs for Oscar</li>
-        </ul>
-		<p>Other Django packages on PyPI</p>
+    <h2>Selected projects</h2>
+    <div class="projects">
+        <p>A few spare-time projects I've worked on:</p>
         <ul>
-			<li><a href="https://github.com/codeinthehole/django-cacheback">django-cacheback</a> - asynchronous cache refreshing using Celery</li>
-			<li><a href="https://github.com/codeinthehole/django-async-messages">django-async-messages</a> - asynchronous user messaging</li>
-			<li><a href="https://github.com/codeinthehole/django-rickroll">django-rickroll</a> - a comedy django app for rickrolling hacking attempts - useful
-			for when your applications get pen-tested.</li>
-		</ul>
-		<p>node.js packages on npm:</p>
-		<ul>
-			<li><a href="https://github.com/codeinthehole/nurl">nurl</a> - a simple URL library for node.js</li>
-		</ul>
-		<p>&nbsp;</p>
-	</div>
+            <li><a href="http://www.commandlinefu.com">commandlinefu.com</a> - a mildly popular 
+                repository site for sharing linux one-liners.  Grown men have been known to weep with 
+                joy when they discover <a href="http://www.commandlinefu.com/commands/view/13/run-the-last-command-as-root">sudo !!</a></li>
+        </ul>
+        <p>Python packages on PyPI:</p>
+        <ul>
+            <li><a href="https://github.com/codeinthehole/purl">purl</a> - an immutable URL class for python</li>
+            <li><a href="https://github.com/codeinthehole/foiegras">foiegras</a> - simple CSV loading for Postgres</li>
+            <li><a href="https://github.com/codeinthehole/csvfilter">csvfilter</a> - like <code>cut</code> but for CSVs</li>
+            <li><a href="https://github.com/codeinthehole/pyvideo2quicktime">pyvideo2quicktime</a> - for downloading PyCon videos to your iPhone</li>
+            <li><a href="https://github.com/codeinthehole/unittest-xml">unittest-xml</a> - additional assertions for unit-testing XML
+                documents with python's unittest library.</li>
+        </ul>
+        <p>Oscar and related packages:</p>
+        <ul>
+            <li><a href="https://github.com/tangentlabs/django-oscar">django-oscar</a> - domain-driven e-commerce for Django</li>
+            <li><a href="https://github.com/tangentlabs/django-oscar-accounts">django-oscar-accounts</a> - managed accounts using double-entry bookkeeping</li>
+            <li><a href="https://github.com/tangentlabs/django-oscar-datacash">django-oscar-datacash</a> - a Django app for integrating with the DataCash payment gateway</li>
+            <li><a href="https://github.com/tangentlabs/django-oscar-paypal">django-oscar-paypal</a> - Oscar integration with PayPal</li>
+            <li><a href="https://github.com/tangentlabs/django-oscar-gocardless">django-oscar-gocardless</a> - Oscar integration with <a href="https://gocardless.com/">GoCardless</a>.</li>
+            <li><a href="https://github.com/tangentlabs/django-oscar-stores">django-oscar-stores</a> - Stores functionality for Oscar</li>
+            <li><a href="https://github.com/tangentlabs/django-oscar-api">django-oscar-api</a> - REST APIs for Oscar</li>
+        </ul>
+        <p>Other Django packages on PyPI</p>
+        <ul>
+            <li><a href="https://github.com/codeinthehole/django-cacheback">django-cacheback</a> - asynchronous cache refreshing using Celery</li>
+            <li><a href="https://github.com/codeinthehole/django-async-messages">django-async-messages</a> - asynchronous user messaging</li>
+            <li><a href="https://github.com/codeinthehole/django-rickroll">django-rickroll</a> - a comedy django app for rickrolling hacking attempts - useful
+                for when your applications get pen-tested.</li>
+        </ul>
+        <p>node.js packages on npm:</p>
+        <ul>
+            <li><a href="https://github.com/codeinthehole/nurl">nurl</a> - a simple URL library for node.js</li>
+        </ul>
+        <p>&nbsp;</p>
+    </div>
 
 {% endblock %}

@@ -8,36 +8,36 @@
 {% block extra_head %}
     <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-	{% if feedurl %}
-	<link rel="alternate" type="application/rss+xml" title="RSS feed" href="{{ feedurl }}" />
-	{% endif %}
+    {% if feedurl %}
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="{{ feedurl }}" />
+    {% endif %}
 {% endblock %}
 
 {% block bodyclass %}{% endblock %}
-    
+
 {% block body %}    
-<article class="hentry" id="container">
-    <header>
-        {% block header %}
-        <div id="logo">
-            <h4><a href="/" title="David Winterbottom">codeinthehole.com</a></h4>
-            <h5><a href="{% url 'articles' %}">writing</a> | 
-                <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">twitter</a> | 
-                <a href="http://github.com/codeinthehole">github</a> |
-                <a href="{% url 'about' %}">about</a></h5>
+    <article class="hentry" id="container">
+        <header>
+            {% block header %}
+                <div id="logo">
+                    <h4><a href="/" title="David Winterbottom">codeinthehole.com</a></h4>
+                    <h5><a href="{% url 'articles' %}">writing</a> | 
+                        <a href="http://twitter.com/codeinthehole" title="Occasionally I say something interesting">twitter</a> | 
+                        <a href="http://github.com/codeinthehole">github</a> |
+                        <a href="{% url 'about' %}">about</a></h5>
+                </div>
+            {% endblock header %}
+        </header>
+        <div id="main" role="main">
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
         </div>
-        {% endblock header %}
-    </header>
-    <div id="main" role="main">
-        <div id="content">
-            {% block content %}{% endblock %}
-        </div>
-    </div>
-    <footer>
-		{% block footer %}
-        &copy; <a href="{% url 'about' %}">David Winterbottom</a> | 
-		Powered by <a href="/writing/rewriting-codeintheholecom/">home-rolled blog software</a> 
-		{% endblock footer %}
-    </footer>
-</article>
+        <footer>
+            {% block footer %}
+                &copy; <a href="{% url 'about' %}">David Winterbottom</a> | 
+                Powered by <a href="/writing/rewriting-codeintheholecom/">home-rolled blog software</a> 
+            {% endblock footer %}
+        </footer>
+    </article>
 {% endblock %}
