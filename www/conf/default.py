@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'compressor',
     'djcelery',
+    'kombu.transport.django',
     'cacheback',
 )
 
