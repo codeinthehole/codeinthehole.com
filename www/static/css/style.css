@@ -585,7 +585,7 @@ div.slidedeck {
   color: #8c0808;
   font-weight: normal;
   font-size: 3em;
-  margin: 0 0 0.4em 0;
+  margin: 0.3em 0 0.2em 0;
   text-align: left;
 }
 .article h1#title {
@@ -616,7 +616,7 @@ div.slidedeck {
   font-weight: normal;
   font-size: 1.4em;
 }
-.article time#article_date {
+.article .byline {
   font-family: 'Signika Negative', serif;
   color: #8c0808;
   font-weight: normal;
@@ -730,6 +730,17 @@ div.warning {
   padding: 1em;
 }
 div.warning p {
+  margin: 0;
+}
+div.note {
+  margin-top: 1em;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  width: 50em;
+  color: #555;
+  padding: 1em;
+}
+div.note p {
   margin: 0;
 }
 .articles {
@@ -906,8 +917,7 @@ iframe.twitter-share-button {
     float: none;
   }
   .caption {
-    margin: 0;
-    color: red;
+    margin: 0px;
   }
   .article ul {
     padding-left: 0px;
