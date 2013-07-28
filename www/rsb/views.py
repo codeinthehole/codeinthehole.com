@@ -8,6 +8,7 @@ from tagging.models import Tag
 from rsb.github import fetch_activity
 from rsb.models import Article
 from rsb.tweets import fetch_tweets
+from . import tasks
 
 
 class HomeView(TemplateView):
@@ -39,7 +40,6 @@ class ArticleListView(ListView):
         ctx = super(ArticleListView, self).get_context_data(**kwargs)
         ctx['title'] = self.title
         ctx['feedurl'] = 'http://feeds2.feedburner.com/codeintheholecom'
-        ctx['unpublished_articles'] = self.model.objects.filter(date_published=None)
         return ctx
 
 
@@ -99,7 +99,7 @@ class ArticleDetailView(DetailView):
     def get(self, request, **kwargs):
         response = super(ArticleDetailView, self).get(request, **kwargs)
         # Track the view
-        self.object.record_view()
+        tasks.record_view.delay(self.object)
         return response
 
     def get_context_data(self, **kwargs):
@@ -108,22 +108,11 @@ class ArticleDetailView(DetailView):
         article = self.object
         ctx['related_articles'] = Article.tagged.related_to(article)[:6]
 
-        # Popular
+        # Popular articles (ignoring duples from related)
         ids_to_ignore = [a.id for a in ctx['related_articles']]
         ids_to_ignore.append(article.id)
-        ctx['popular_articles'] = Article.objects.all().exclude(id__in=ids_to_ignore).order_by('-num_views')[:6]
-
-        # We need to use a different date field for comparison depending on
-        # if the article is published
-        if article.is_published:
-            previous_articles = Article.objects.filter(date_published__lt=article.date_published).order_by('-date_published')
-            next_articles = Article.objects.filter(date_published__gt=article.date_published).order_by('date_published')
-        else:
-            previous_articles = Article.objects.filter(date_created__lt=article.date_created)
-            next_articles = Article.objects.filter(date_created__gt=article.date_created)
-
-        ctx['previous_article'] = previous_articles[0] if len(previous_articles) > 0 else None
-        ctx['next_article'] = next_articles[0] if len(next_articles) > 0 else None
+        ctx['popular_articles'] = Article.objects.all().exclude(
+            id__in=ids_to_ignore).order_by('-num_views')[:6]
 
         return ctx
 

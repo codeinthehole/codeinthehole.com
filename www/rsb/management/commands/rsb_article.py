@@ -17,9 +17,9 @@ import rsb.rstcode
 class Command(BaseCommand):
     args = '<path-to-article.rst> [<path-to-article.rst>, ...]'
     output_transaction = True
-    
+
     def handle(self, *args, **options):
-        self.logger = self.create_logger() 
+        self.logger = self.create_logger()
         if not len(args):
             raise CommandError("Please specify the article file(s) to process")
         for filepath in args:
@@ -41,7 +41,7 @@ class Command(BaseCommand):
             try:
                 article = Article.objects.get(filename=filename)
             except Article.DoesNotExist:
-                article = Article(filename=filename, 
+                article = Article(filename=filename,
                                   date_published=datetime.datetime.now())
                 self.logger.info("Creating a new article")
             else:
@@ -70,19 +70,19 @@ class Command(BaseCommand):
         # Update model
         article.title = parts['title']
         article.summary = summary
-        article.body_html = parts['fragment']        
+        article.body_html = parts['fragment']
         article.body_rst = body_rst
         article.save()
-        
+
         if len(sections) > 1:
             article.tags = sections[1].strip()
-        
+
         if rename_file:
             new_filename = "%04d-%s" % (article.id, filename.replace('_', '-'))
             self.logger.info("Renaming %s to %s", filename, new_filename)
             new_path = os.path.join(folder, new_filename)
             os.rename(filepath, new_path)
-        
+
         self.logger.info("Title:   %s", article.title)
         self.logger.info("Summary: %s", article.summary)
         self.logger.info("Tags:    %s", ", ".join([tag.name for tag in article.tags.all()]))
@@ -92,4 +92,4 @@ class Command(BaseCommand):
         logger.addHandler(logging.StreamHandler(self.stdout))
         logger.setLevel(logging.DEBUG)
         return logger
-            
+

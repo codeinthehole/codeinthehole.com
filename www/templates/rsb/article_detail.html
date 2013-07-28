@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% load url from future %}
+{% load compress %}
 
 {% block bodyclass %}article{% endblock %}
 
 {% block extra_head %}
     {{ block.super }}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
+    {% compress css %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css">
+    {% endcompress %}
 {% endblock %}
 
 {% block title %}{{ article.title|striptags }} | 

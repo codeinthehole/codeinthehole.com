@@ -8,9 +8,6 @@ from django.core.urlresolvers import reverse
 
 
 class Article(models.Model):
-    """
-    Blog article
-    """
 
     # This is used to identify the article
     filename = models.CharField(max_length=255, unique=True)
