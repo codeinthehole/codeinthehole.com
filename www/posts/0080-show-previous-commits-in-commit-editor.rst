@@ -12,7 +12,7 @@ I often find myself writing very similar commit messages (like "Bump version to
 `@LuRsT`_, I learnt how to employ git's prepare-commit-msg_ hook to display
 the last 5 commit messages when I'm editing a commit message.
 
-Use the following ``.git/hooks/prepre-commit-msg`` hook:
+Use the following ``.git/hooks/prepare-commit-msg`` hook:
 
 .. sourcecode:: bash
 
