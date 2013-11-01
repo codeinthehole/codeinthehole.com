@@ -83,5 +83,5 @@ the ``call_command`` function.
         from django.core.management import call_command
         call_command('loaddata', 'countries.json')
 
-This is a very useful feature as you can use the ``dumpdata`` command to produce your
-initial fixtures, and you will have them available to be used by unit tests.
+I had thought this was very useful feature as you can use the ``dumpdata`` command to produce your
+initial fixtures, and you will have them available to be used by unit tests.  

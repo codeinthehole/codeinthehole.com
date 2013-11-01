@@ -34,7 +34,7 @@ then your default commit template looks like this:
 
 Note, using ``echo "${COMMITS}"`` (instead of ``echo $COMMITS``) ensures newlines are preserved (which I learnt in
 `this Stack Overflow answer`_).  Also we don't echo commit messages while
-rebasing as it has `strange side-effects`.
+rebasing as it has `strange side-effects`_.
 
 .. _`@LuRsT`: https://twitter.com/LuRsT
 .. _prepare-commit-msg: http://git-scm.com/book/en/Customizing-Git-Git-Hooks#Client-Side-Hooks
