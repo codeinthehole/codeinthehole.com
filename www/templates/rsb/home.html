@@ -27,19 +27,19 @@
         </h3>
     </div>
 
-    <h2 id="home">Hello</h2>
+    <h2 id="home">What ho!</h2>
     <div id="bio">
         {% include 'rsb/includes/about.html' %}
     </div>
 
     {% if articles %}
-        <h2 id="writing">Latest writing</h2>
+        <h2 id="writing">Words</h2>
         {% include "rsb/includes/articles.html" %}
         <a class="read-more" href="{% url 'articles' %}">All writing &raquo;</a>
     {% endif %}
 
     {% if tweets %}
-        <h2 id="thinking">Thinking</h2>
+        <h2 id="thinking">Toots</h2>
         <div class="tweets">
             {% for tweet in tweets %}
                 <div class="tweet">
@@ -56,7 +56,7 @@
     {% endif %}
 
     {% if github_activity %}
-        <h2>Hacking</h2>
+        <h2>Hacks</h2>
         <div class="github">
             {% for entry in github_activity %}
                 <div class="event">
