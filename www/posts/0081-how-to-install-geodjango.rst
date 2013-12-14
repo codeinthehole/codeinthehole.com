@@ -71,12 +71,10 @@ can use to create a database for our GeoDjango project.
    psql (9.1.9)
    Type "help" for help.
    
-   postgres=# CREATE DATABASE sample_db TEMPLATE template_postgis;
-   CREATE DATABASE
    postgres=# CREATE ROLE sample_role WITH PASSWORD 'sample_password' LOGIN;
    CREATE ROLE
-   postgres=# GRANT ALL PRIVILEGES ON DATABASE sample_db to sample_role;
-   GRANT
+   postgres=# CREATE DATABASE sample_db OWNER sample_role TEMPLATE template_postgis;
+   CREATE DATABASE
 
 This is the tricky bit over: you can now ``pip install psycopg2`` and you're
 basically done.  Remember to use the PostGIS database engine in your
