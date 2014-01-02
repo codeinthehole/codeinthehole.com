@@ -21,7 +21,7 @@ Use the following ``.git/hooks/prepare-commit-msg`` hook:
     BRANCH_NAME=$(git branch | grep '*' | sed 's/* //')
     if [ $BRANCH_NAME != '(no branch)' ]
     then
-        echo "#"
+        echo "#" >> $1
         echo "# Last 5 commit messages" >> $1
         echo "# ----------------------" >> $1
         COMMITS=`git log --pretty=format:"# %h %s [%an]" -5`
