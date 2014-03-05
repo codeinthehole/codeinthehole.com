@@ -98,8 +98,10 @@ class ArticleDetailView(DetailView):
 
     def get(self, request, **kwargs):
         response = super(ArticleDetailView, self).get(request, **kwargs)
+
         # Track the view
-        tasks.record_view.delay(self.object)
+        tasks.record_view.delay(self.object.id)
+
         return response
 
     def get_context_data(self, **kwargs):
