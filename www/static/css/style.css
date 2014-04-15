@@ -728,6 +728,8 @@ div.warning {
   width: 50em;
   color: #555;
   padding: 1em;
+  margin-top: 20px;
+  font-size: 10px;
 }
 div.warning p {
   margin: 0;
@@ -847,7 +849,8 @@ iframe.twitter-share-button {
 .invisible {
   visibility: hidden;
 }
-/* Contain floats: h5bp.com/q */.clearfix:before,
+/* Contain floats: h5bp.com/q */
+.clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
@@ -1002,7 +1005,7 @@ iframe.twitter-share-button {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,
