@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
