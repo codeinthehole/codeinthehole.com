@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 
 admin.autodiscover()
@@ -11,8 +10,11 @@ urlpatterns = patterns('',
 )
 
 if settings.DEBUG:
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
     urlpatterns += staticfiles_urlpatterns()
+
+    from django.views import generic
     urlpatterns += patterns('',
-        (r'^500.html', 'django.views.generic.simple.direct_to_template', {'template': '500.html'}),
-        (r'^404.html', 'django.views.generic.simple.direct_to_template', {'template': '404.html'}),
+        (r'^404.html', generic.TemplateView.as_view(template_name='404.html')),
+        (r'^500.html', generic.TemplateView.as_view(template_name='500.html')),
     )
