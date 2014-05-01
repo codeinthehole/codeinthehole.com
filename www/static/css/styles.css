@@ -597,6 +597,10 @@ div.slidedeck {
   margin: 0 0 0.4em 0;
   text-align: left;
 }
+.article img.title-image {
+  margin: 20px 0 0 0;
+  width: 100%;
+}
 .article h1 {
   font-family: 'Signika Negative', serif;
   color: #8c0808;
@@ -645,6 +649,9 @@ div.slidedeck {
   margin: 0 0 2em 1em;
   background-color: white;
   border: 1px solid #aaaaaa;
+}
+.article img.noborder {
+  border: none;
 }
 .article .screenshot {
   background-color: white;

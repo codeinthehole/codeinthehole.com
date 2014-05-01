@@ -21,3 +21,6 @@ create_db:
 
 load_fixtures:
 	python www/manage.py loaddata fixtures/*
+
+css:
+	lessc www/static/less/styles.less > www/static/css/styles.css
