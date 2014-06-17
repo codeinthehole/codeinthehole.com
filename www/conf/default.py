@@ -125,14 +125,6 @@ LOGGING = {
             'format': '%(levelname)s %(message)s'
         },
     },
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse',
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        }
-    },
     'handlers': {
         'null': {
             'level': 'DEBUG',
@@ -141,27 +133,23 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
-            'filters': ['require_debug_false'],
         },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
-            'filters': ['require_debug_true'],
             'stream': sys.stdout,
         },
         'error_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filters': ['require_debug_false'],
             'filename': os.path.join(os.path.dirname(__file__), '../logs/errors.log'),
         },
         'cacheback_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filters': ['require_debug_false'],
             'filename': os.path.join(os.path.dirname(__file__), '../logs/cacheback.log'),
         },
     },
