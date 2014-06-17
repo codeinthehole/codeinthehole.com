@@ -19,3 +19,4 @@ django-celery==3.1.10
 django-cacheback==0.4
 python-twitter==1.0
 flake8==2.1.0
+newrelic==2.20.1.18
