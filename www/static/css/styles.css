@@ -459,6 +459,7 @@ footer {
   margin: 10px 0 40px 0;
   color: #aaaaaa;
   font-size: 1.1em;
+  line-height: 1.5em;
 }
 footer a:active,
 footer a:link,
@@ -682,6 +683,10 @@ div.slidedeck {
   color: #8c0808;
   font-weight: normal;
   font-size: 1.6em;
+}
+.oscar img.logo {
+  float: right;
+  padding-left: 20px;
 }
 #further-reading,
 #popular-reading {

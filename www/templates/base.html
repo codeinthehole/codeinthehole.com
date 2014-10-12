@@ -35,7 +35,8 @@
         </div>
         <footer>
             {% block footer %}
-                &copy; <a href="{% url 'about' %}">David Winterbottom</a> 
+                &copy; Copyright {% now "Y" %} <a href="{% url 'about' %}">David Winterbottom</a> <br/>
+                All content is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/"><strong>CC Attribution-NonCommercial-ShareAlike</strong></a> License.
             {% endblock footer %}
         </footer>
     </article>

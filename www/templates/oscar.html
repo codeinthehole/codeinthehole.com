@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Oscar consulting{{ block.super }}{% endblock %}
+
+{% block bodyclass %}oscar{% endblock %}
+
+{% block content %}
+    <h1 id="title">Oscar consulating</h1>
+
+    <img class="logo" src="{{ STATIC_URL }}/images/oscar.png" />
+
+    <p>I am available to hire for Oscar consulting work. I have a day-job and small children to look after 
+        but I'm happy to do freelance work in my evenings and weekends. I'll happily do anything Oscar or Django related: 
+        implementing features, reviewing Oscar codebases, even advising on how to pitch Oscar.
+    </p>
+
+    <p>Email me at <a href="mailto:david.winterbottom@gmail.com">david.winterbottom@gmail.com</a> if 
+       you'd like to talk details. I can provide references by previous clients if so desired.</p>
+
+{% endblock %}
+
+
