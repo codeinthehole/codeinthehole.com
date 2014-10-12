@@ -3,6 +3,7 @@
 *.DS_Store
 draft/
 notes.rst
+TODO
 *.sqlite3
 fabconfig.py
 www/public/*
