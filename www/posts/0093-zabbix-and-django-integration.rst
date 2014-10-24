@@ -30,7 +30,7 @@ suffices:
             method_name = 'fetch_%s' % args[0]
             if not hasattr(self, method_name):
                 raise CommandError("No method found with name '%s'" % method_name)
-            print getattr(self, method_name)(args[1:])
+            print getattr(self, method_name)(*args[1:])
 
         def usage(self):
             fetchers = [m for m in dir(self) if m.startswith('fetch')]
@@ -42,7 +42,7 @@ suffices:
                     fetcher.split("_")[1], docstring))
             return "Available fetchers:\n%s" % "\n".join(descriptions)
 
-This uses dynamic dispatch to call "fetcher" methods with name "fetch_%s" where
+This uses dynamic dispatch to call "fetcher" methods with name ``fetch_%s`` where
 the first argument defines the format variable. Eg, a method:
 
 .. sourcecode:: python
@@ -58,6 +58,14 @@ is called via:
 .. sourcecode:: bash
 
    $ ./manage.py application_metric num_users
+
+Without arguments, a list of fetchers is shown:
+
+.. sourcecode:: bash
+
+   $ ./manage.py application_metric
+   Available fetchers:
+    - num_users : Fetch number of users
 
 It's trivial to add more ``fetch_*`` methods to emit additional metrics.
 
