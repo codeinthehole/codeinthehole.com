@@ -18,7 +18,7 @@ bootstrap your virtual environments. Here's a useful implementation:
     NAME=$(basename $VIRTUAL_ENV)
 
     # Set terminal title on postactivate
-    echo "title $PROJECT" > $VIRTUAL_ENV/bin/postactivate
+    echo "title $NAME" > $VIRTUAL_ENV/bin/postactivate
 
     # Change directory to root of project on postactivate. We assume the
     # mkvirtualenv is being run from the root of the project. This line 
@@ -26,7 +26,7 @@ bootstrap your virtual environments. Here's a useful implementation:
     echo "cd $PWD" >> $VIRTUAL_ENV/bin/postactivate
 
     # Run postactivate now to get the title set
-    source $POSTACTIVATE
+    source $VIRTUAL_ENV/bin/postactivate
 
 This ensures that a new virtualenv has a ``postactivate`` script which:
 
