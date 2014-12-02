@@ -172,6 +172,8 @@ EMAIL_SUBJECT_PREFIX = '[codeinthehole] '
 import djcelery
 djcelery.setup_loader()
 
+CELERY_TASK_SERIALIZER = "json"
+
 TWITTER_CONSUMER_KEY = ''
 TWITTER_CONSUMER_SECRET = ''
 TWITTER_ACCESS_TOKEN_KEY = ''
