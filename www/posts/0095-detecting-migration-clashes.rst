@@ -40,7 +40,7 @@ where the ``migration_test`` target is:
 
     MIGRATION_CLASHES=$(shell find . -type f -name "*.py" | grep -o ".*/migrations/[0-9]\+" | sort | uniq -c | awk '$$1 > 1 {print $$0}')
     migration_test:
-        [ `echo $(MIGRATION_CLASHES) | wc -l` -gt 0 ] && exit 1
+        [ -n $(MIGRATION_CLASHES) ] && exit 1 || true
 
 Here the ``$(shell ...)`` call extracts the app name and migration number from
 all migration files then uses ``awk`` to look for clashes.  If any are found,
