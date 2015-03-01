@@ -12,8 +12,8 @@ def deploy():
     prepare_build(archive_file)
     upload(archive_file)
     unpack(archive_file)
-    collect_static_files()
     update_virtualenv()
+    collect_static_files()
     migrate_schema()
     deploy_apache_config()
     deploy_nginx_config()
@@ -25,7 +25,7 @@ def prepare_build(archive_file, reference='master'):
     local('git archive --format tar %s %s | gzip > %s' % (reference, env.web_dir, archive_file))
 
 def upload(local_path):
-    local('scp %s jupiter:/tmp' % local_path)
+    local('scp %s venus:/tmp' % local_path)
 
 def unpack(archive_path):
     now = datetime.datetime.now()
