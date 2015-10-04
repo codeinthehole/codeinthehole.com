@@ -12,9 +12,9 @@ message template to:
 
     # If applied, this commit will...
 
-    # Why is this change being made?
+    # Explain why this change is being made
 
-    # Provide links to any relevant tickets, URLs or other resources
+    # Provide links to any relevant tickets, articles or other resources
 
 and you'll be guided into writing concise commit subjects in the imperative
 mood - a good practice.  See rule 5 of Chris Beam's `"How to write a commit message"`_ 
@@ -26,12 +26,14 @@ To do this in Git, save the above content in a file (eg
 
 .. sourcecode:: bash
 
-    $ git config —global commit.template ~/.git_commit_msg.txt
+    $ git config --global commit.template ~/.git_commit_msg.txt
 
 Here's what this looks like in practice:
 
 .. image:: /static/images/git-commit-snap.png
     :width: 800px
+
+Try it - it's genuinely useful.
 
 .. _`"How to write a commit message"`: http://chris.beams.io/posts/git-commit/
 
