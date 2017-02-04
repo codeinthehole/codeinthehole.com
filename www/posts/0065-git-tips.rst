@@ -245,7 +245,7 @@ from the feature branch.
     (feature/masquerading) $ git checkout master
     (master) $ git merge --no-ff feature/masquerading
 
-When you view the your history as a graph, you will be able to tell which
+When you view the history as a graph, you will be able to tell which
 commits were from the feature branch.
 
 Now delete the local and remote feature branches:
