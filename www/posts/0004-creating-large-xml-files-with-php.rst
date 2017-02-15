@@ -30,7 +30,7 @@ For example, DOMDocument stores the XML tree in memory while it is being built
     file_put_contents('example.xml', $dom->saveXML());
 
 However, this doesn't scale once your feed size starts exceeding the available
-memory (teaking memory settings in php.ini is only a short-term fix). A good
+memory (tweaking memory settings in php.ini is only a short-term fix). A good
 solution to this is to use the XMLWriter library as this provides the ability
 to periodically flush the XML in memory out to file. By doing so, you reclaim
 the memory so you can keep building the XML tree without exceeding memory
